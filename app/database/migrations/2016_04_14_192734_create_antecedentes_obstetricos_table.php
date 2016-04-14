@@ -23,7 +23,7 @@ class CreateAntecedentesObstetricosTable extends Migration
             $table->boolean('data7');
             $table->integer('patient_id')->unsigned();
             $table->foreign('patient_id')
-                  ->references('id')->on('patients')
+                  ->references('id')->on('patients');
             $table->timestamps();
         });
     }
