@@ -14,7 +14,21 @@ class CreateHistoriaClinicaGeneralTable extends Migration
     {
         Schema::create('historia_clinica_general', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('dato1');
+            $table->boolean('dato2');
+            $table->boolean('dato3');
+            $table->boolean('dato4');
+            $table->boolean('dato5');
+            $table->boolean('dato6');
+            $table->boolean('dato7');
+
+            $table->integer('patient_id')->unsigned();
+
             $table->timestamps();
+
+            $table->foreign('patient_id')
+                  ->references('id')
+                  ->on('patients');
         });
     }
 
