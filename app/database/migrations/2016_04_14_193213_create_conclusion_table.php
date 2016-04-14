@@ -14,6 +14,13 @@ class CreateConclusionTable extends Migration
     {
         Schema::create('conclusion', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('evaluacion_medica');
+            $table->varchar('referido_a');
+            $table->date('fecha');
+            $table->varchar('nombre');
+            $table->integer('patient_id')->unsigned();
+            $table->foreign('patient_id')
+                  ->references('id')->on('patients')
             $table->timestamps();
         });
     }
