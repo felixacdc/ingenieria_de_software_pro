@@ -12,9 +12,8 @@
 
     <!-- Bootstrap CSS -->
     {!!Html::style("css/bootstrap.min.css")!!}
-    <!-- bootstrap theme -->
-    {!!Html::style("css/login/bootstrap-theme.css")!!}
     <!--external css-->
+    {!!Html::style("css/login/bootstrap-theme.css")!!}
     <!-- font icon -->
     {!!Html::style("css/login/elegant-icons-style.css")!!}
     {!!Html::style("css/font-awesome.css")!!}

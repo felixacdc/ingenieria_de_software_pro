@@ -4938,3 +4938,29 @@ span.customSelect.changed {
 .customSelectInner {
     background:url(/img/customSelect-arrow.gif) no-repeat center right;
 }
+
+/*
+    Component: alert
+------------------------
+*/
+.alert {
+  padding-left: 30px;
+  margin-left: 15px;
+  margin-bottom: -60px;
+  position: relative;
+}
+.alert > .fa,
+.alert > .glyphicon {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  width: 35px;
+  height: 35px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  line-height: 35px;
+  text-align: center;
+  background: inherit;
+  border: inherit;
+}

@@ -7,6 +7,6 @@
 
     </div>
 
-
+    @include('layouts.partialsFrond.scripts')
   </body>
 </html>
