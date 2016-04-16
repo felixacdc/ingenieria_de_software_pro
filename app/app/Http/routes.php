@@ -18,4 +18,4 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('admin', function(){
     return 'soy el admin';
-})
+});
