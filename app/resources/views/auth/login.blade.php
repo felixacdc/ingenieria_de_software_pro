@@ -35,7 +35,7 @@
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña', 'required' => 'required'])!!}
             </div>
-            {!!Form::submit('Iniciar Secion', ['class' => 'btn btn-primary btn-lg btn-block'])!!}
+            {!!Form::submit('Iniciar Sesion', ['class' => 'btn btn-primary btn-lg btn-block'])!!}
         </div>
 
     {!!Form::close()!!}
