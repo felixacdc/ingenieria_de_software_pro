@@ -17,7 +17,9 @@ class TypeServicesHealthTableSeeder extends Seeder
         DB::table('type_services_health')->delete();
         DB::table('type_services_health')->insert(array(
              array('type_service'=>'Tipo A'),
-             array('type_service'=>'Tipo B')
+             array('type_service'=>'Tipo B'),
+             array('type_service'=>'CAP'),
+             array('type_service'=>'CENAPA'),
           ));
        }
 
