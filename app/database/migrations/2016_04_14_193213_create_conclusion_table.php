@@ -18,9 +18,9 @@ class CreateConclusionTable extends Migration
             $table->string('referido_a');
             $table->date('fecha');
             $table->string('nombre');
-            $table->integer('patient_id')->unsigned();
-            $table->foreign('patient_id')
-                  ->references('id')->on('patients');
+            $table->integer('paciente_id')->unsigned();
+            $table->foreign('paciente_id')
+                  ->references('id')->on('pacientes');
             $table->timestamps();
         });
     }

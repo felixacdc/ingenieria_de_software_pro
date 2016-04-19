@@ -26,14 +26,11 @@ class CreateEmbarazoActualTable extends Migration
             $table->boolean('dato10');
             $table->boolean('dato11');
             $table->boolean('dato12');
-
-            $table->integer('patient_id')->unsigned();
-
-            $table->timestamps();
-
-            $table->foreign('patient_id')
+            $table->integer('pacientes_id')->unsigned();
+            $table->foreign('pacientes_id')
                   ->references('id')
-                  ->on('patients');
+                  ->on('pacientes');
+            $table->timestamps();
         });
     }
 
