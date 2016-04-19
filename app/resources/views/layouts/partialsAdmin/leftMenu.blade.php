@@ -20,7 +20,7 @@
                     <i class="fa fa-dashboard"></i> <span> Inicio</span>
                 </a>
             </li>
-            @if( Auth::user()->tipo_usuario != 1 )
+            @if( Auth::user()->tipo_usuario == 1 )
 
                 <li>
                     <a href="{{ url('admin') }}">
