@@ -17,9 +17,18 @@
         <ul class="sidebar-menu">
             <li>
                 <a href="{{ url('admin') }}">
-                    <i class="fa fa-dashboard"></i> <span>Inicio</span>
+                    <i class="fa fa-dashboard"></i> <span> Inicio</span>
                 </a>
             </li>
+            @if( Auth::user()->tipo_usuario != 1 )
+
+                <li>
+                    <a href="{{ url('admin') }}">
+                        <i class="fa fa-user"></i> <span> Crear Usuario</span>
+                    </a>
+                </li>
+
+            @endif
         </ul>
     </section>
     <!-- /.sidebar -->

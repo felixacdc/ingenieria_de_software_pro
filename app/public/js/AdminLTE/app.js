@@ -123,7 +123,7 @@ $(function() {
 
     //Fix the fixed layout sidebar scroll bug
     fix_sidebar();
-
+});
 function fix_sidebar() {
     //Make sure the body tag has the .fixed class
     if (!$("body").hasClass("fixed")) {
