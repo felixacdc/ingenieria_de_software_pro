@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Center;
+use App\Centro;
 
 class CentersTableSeeder extends Seeder
 {
@@ -13,10 +13,10 @@ class CentersTableSeeder extends Seeder
      */
     public function run()
     {
-        $center = new Center;
+        $center = new Centro;
 
-        $center->center = "First Center";
-        $center->type_service_health_id = 1;
+        $center->centro = "First Center";
+        $center->tipo_centro_id = 1;
 
         $center->save();
     }

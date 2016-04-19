@@ -16,6 +16,6 @@ class antecedentes_obstetricos extends Model
       'dato5',
       'dato6',
       'dato7',
-      'patient_id'
+      'paciente_id'
     ];
 }

@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class patient extends Model
+class Paciente extends Model
 {
     //
-    protected $table='patients';
+    protected $table='pacientes';
 
     protected $fillable =
-    ['no_registro',
+    [
+     'no_registro',
      'no_boleta',
      'nombre',
      'edad',
@@ -35,7 +36,6 @@ class patient extends Model
      'no_hijos_vivos',
      'no_hijos_muertos',
      'user_id',
-     'center_id'
-                  ];
-
+     'centro_id'
+      ];
 }

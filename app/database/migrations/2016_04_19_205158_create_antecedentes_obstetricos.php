@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAntecedentesObstetricosTable extends Migration
+class CreateAntecedentesObstetricos extends Migration
 {
     /**
      * Run the migrations.

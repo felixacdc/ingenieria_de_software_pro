@@ -21,19 +21,20 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone', 8);
 
-            $table->integer('center_id')->unsigned();
-            $table->integer('type_user_id')->unsigned();
+            $table->integer('centro_id')->unsigned();
+            $table->integer('tipo_usuario')->unsigned();
 
             $table->rememberToken();
+
+
+            $table->foreign('centro_id')
+                  ->references('id')
+                  ->on('centros');
+
+            $table->foreign('tipo_usuario')
+                  ->references('id')
+                  ->on('tipo_usuario');
             $table->timestamps();
-
-            $table->foreign('center_id')
-                  ->references('id')
-                  ->on('centers');
-
-            $table->foreign('type_user_id')
-                  ->references('id')
-                  ->on('type_users');
         });
     }
 

@@ -16,7 +16,7 @@ class CreateTipoCentroTable extends Migration
             $table->increments('id');
             $table->string('tipo');
             $table->timestamps();
-            $table->timestamps();
+            
         });
     }
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\type_services_health;
+use App\Tipo_centro;
 
 class TypeServicesHealthTableSeeder extends Seeder
 {
@@ -13,13 +13,13 @@ class TypeServicesHealthTableSeeder extends Seeder
      */
     public function run()
     {
-        $type = new type_services_health;
-        DB::table('type_services_health')->delete();
-        DB::table('type_services_health')->insert(array(
-             array('type_service'=>'Tipo A'),
-             array('type_service'=>'Tipo B'),
-             array('type_service'=>'CAP'),
-             array('type_service'=>'CENAPA'),
+        $type = new Tipo_centro;
+        DB::table('tipo_centro')->delete();
+        DB::table('tipo_centro')->insert(array(
+             array('tipo'=>'Tipo A'),
+             array('tipo'=>'Tipo B'),
+             array('tipo'=>'CAP'),
+             array('tipo'=>'CENAPA'),
           ));
        }
 
