@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\type_user;
+use App\Tipo_usuario;
 
 class TypeUsersTableSeeder extends Seeder
 {
@@ -13,14 +13,14 @@ class TypeUsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $type = new type_user;
+        $type = new Tipo_usuario;
 
-        $type->type_user = 'Administrador';
+        $type->tipo = 'Administrador';
         $type->save();
 
-        $type = new type_user;
+        $type = new Tipo_usuario;
 
-        $type->type_user = 'General';
+        $type->tipo = 'General';
         $type->save();
     }
 }

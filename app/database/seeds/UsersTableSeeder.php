@@ -21,9 +21,8 @@ class UsersTableSeeder extends Seeder
         $user->address = 'Suchi';
         $user->email = 'my@muy.com';
         $user->phone = '58564759';
-        $user->center_id = 1;
-        $user->type_user_id = 1;
-
+        $user->centro_id = 1;
+        $user->tipo_usuario = 1;
         $user->save();
     }
 }
