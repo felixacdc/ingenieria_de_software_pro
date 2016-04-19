@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeUsersTable extends Migration
+class CreateCentrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,13 @@ class CreateTypeUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_users', function (Blueprint $table) {
+        Schema::create('centros', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type_user');
+            $table->string('centro');
+            $table->integer('tipo_centro_id')->unsigned();
+            $table->foreign('tipo_centro_id')
+                  ->references('id')
+                  ->on('tipo_centro');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateTypeUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('type_users');
+        Schema::drop('centros');
     }
 }
