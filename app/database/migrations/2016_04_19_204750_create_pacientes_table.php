@@ -45,7 +45,8 @@ class CreatePacientesTable extends Migration
                   ->on('users');
             $table->foreign('centro_id')
                   ->references('id')
-                  ->on('centors');
+                  ->on('centros');
+
             $table->timestamps();
         });
     }
