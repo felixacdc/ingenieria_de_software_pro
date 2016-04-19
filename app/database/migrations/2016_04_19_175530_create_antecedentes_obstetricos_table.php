@@ -21,9 +21,9 @@ class CreateAntecedentesObstetricosTable extends Migration
             $table->boolean('dato5');
             $table->boolean('data6');
             $table->boolean('data7');
-            $table->integer('patient_id')->unsigned();
-            $table->foreign('patient_id')
-                  ->references('id')->on('patients');
+            $table->integer('pacientes_id')->unsigned();
+            $table->foreign('pacientes_id')
+                  ->references('id')->on('pacientes');
             $table->timestamps();
         });
     }

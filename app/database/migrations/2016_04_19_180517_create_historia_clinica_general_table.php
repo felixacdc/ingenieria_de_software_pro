@@ -21,14 +21,11 @@ class CreateHistoriaClinicaGeneralTable extends Migration
             $table->boolean('dato5');
             $table->boolean('dato6');
             $table->boolean('dato7');
-
-            $table->integer('patient_id')->unsigned();
-
-            $table->timestamps();
-
-            $table->foreign('patient_id')
+            $table->integer('paciente_id')->unsigned();
+            $table->foreign('paciente_id')
                   ->references('id')
-                  ->on('patients');
+                  ->on('pacientes');
+            $table->timestamps();
         });
     }
 
