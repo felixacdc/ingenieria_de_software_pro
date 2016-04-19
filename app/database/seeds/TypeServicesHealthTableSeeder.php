@@ -14,8 +14,11 @@ class TypeServicesHealthTableSeeder extends Seeder
     public function run()
     {
         $type = new type_services_health;
+        DB::table('type_services_health')->delete();
+        DB::table('type_services_health')->insert(array(
+             array('type_service'=>'Tipo A'),
+             array('type_service'=>'Tipo B')
+          ));
+       }
 
-        $type->type_service = 'OneCenter';
-        $type->save();
-    }
 }
