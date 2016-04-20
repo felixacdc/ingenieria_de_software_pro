@@ -28,6 +28,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ url('admin/centros') }}">
+                        <i class="fa fa-bell"></i> <span>Centros de Salud</span>
+                    </a>
+                </li>
+
             @endif
         </ul>
     </section>
