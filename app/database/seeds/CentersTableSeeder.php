@@ -15,9 +15,29 @@ class CentersTableSeeder extends Seeder
     {
         $center = new Centro;
 
-        $center->centro = "First Center";
-        $center->tipo_centro_id = 1;
-
-        $center->save();
+        DB::table('centros')->delete();
+        DB::table('centros')->insert(array(
+             array('centro'=>'Mazatenango','tipo_centro_id'=>4),
+             array('centro'=>'San Francisco','tipo_centro_id'=>4),
+             array('centro'=>'San Lorenzo','tipo_centro_id'=>4),
+             array('centro'=>'San Gabriel','tipo_centro_id'=>4),
+             array('centro'=>'San Jose El Idolo','tipo_centro_id'=>4),
+             array('centro'=>'San Gabriel','tipo_centro_id'=>4),
+             array('centro'=>'Santo Tomas La Union','tipo_centro_id'=>4),
+             array('centro'=>'Samayac','tipo_centro_id'=>4),
+             array('centro'=>'San Pablo Jocopilas','tipo_centro_id'=>4),
+             array('centro'=>'Rio Bravo','tipo_centro_id'=>4),
+             array('centro'=>'Pueblo Nuevo','tipo_centro_id'=>4),
+             array('centro'=>'Zunilito','tipo_centro_id'=>3),
+             array('centro'=>'Santo Domingo','tipo_centro_id'=>4),
+             array('centro'=>'Santa Barbara','tipo_centro_id'=>4),
+             array('centro'=>'Chicacao','tipo_centro_id'=>3),
+             array('centro'=>'Patulul','tipo_centro_id'=>3),
+             array('centro'=>'San Jose La Maquina','tipo_centro_id'=>3),
+             array('centro'=>'Cuyotenango','tipo_centro_id'=>3),
+             array('centro'=>'San Antonio','tipo_centro_id'=>3),
+             array('centro'=>'San Bernandino','tipo_centro_id'=>4),
+             array('centro'=>'San Miguel Panon','tipo_centro_id'=>4),
+          ));
     }
 }
