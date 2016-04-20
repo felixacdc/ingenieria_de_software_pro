@@ -9,6 +9,16 @@ use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
+
+    /*
+    *
+    *Routa para acceder a la pantalla principal de admin
+    */
+
+    public function begin()
+    {
+        return view('admin.index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        //
     }
 
     /**
@@ -26,7 +36,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
