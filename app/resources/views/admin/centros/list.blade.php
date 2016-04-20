@@ -5,15 +5,7 @@
     <aside class="right-side">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Inicio
-                <small>Estas en la pagina de inicio</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-                <li><a href="#">Examples</a></li>
-                <li class="active">Blank page</li>
-            </ol>
+
         </section>
 
         <!-- Main content -->
@@ -30,6 +22,7 @@
                                                 <th>No.</th>
                                                 <th>Nombre de Centro</th>
                                                 <th>Tipo de Centro</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -38,6 +31,7 @@
                                                  <td>{{ $key + 1   }}</td>
                                                  <td>{{ $centro->centro }} </td>
                                                  <td>{{ $centro->tipo_centro->tipo }} </td>
+                                                 <td><button type="button" name="button"></button></td>
 
                                              </tr>
                                          @endforeach

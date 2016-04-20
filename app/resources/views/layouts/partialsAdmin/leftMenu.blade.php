@@ -30,7 +30,7 @@
 
                 <li>
                     <a href="{{ url('admin/centros') }}">
-                        <i class="fa fa-bell"></i> <span>Centros de Salud</span>
+                        <i class="fa fa-bell-o"></i> <span>Centros de Salud</span>
                     </a>
                 </li>
 
