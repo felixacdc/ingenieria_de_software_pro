@@ -15,6 +15,8 @@ class CreateCentrosTable extends Migration
         Schema::create('centros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('centro');
+            $table->string('direccion');
+            $table->string('telefono');
             $table->integer('tipo_centro_id')->unsigned();
             $table->foreign('tipo_centro_id')
                   ->references('id')
