@@ -20,6 +20,10 @@ class TypeServicesHealthTableSeeder extends Seeder
              array('tipo'=>'Tipo B'),
              array('tipo'=>'CAP'),
              array('tipo'=>'CENAPA'),
+             array('tipo'=>'Centro Salud'),
+             array('tipo'=>'P/S Fortalecido'),
+
+
           ));
        }
 
