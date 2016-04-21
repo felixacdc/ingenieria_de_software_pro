@@ -1,5 +1,5 @@
 <!-- jQuery 2.0.2 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+{!!Html::script('js/jquery.min.js')!!}
 <!-- Bootstrap -->
 {!!Html::script("js/bootstrap.min.js")!!}
 <!-- AdminLTE App -->
