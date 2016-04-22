@@ -31,13 +31,11 @@
                                         <tbody>
                                           @foreach($data as  $key => $usuario)
                                              <tr>
-                                                 
+
                                                  <td>{{ $usuario->name }} </td>
                                                  <td>{{ $usuario->address }} </td>
                                                  <td>{{ $usuario->phone }} </td>
-                                                 <td>{{ $usuario->centro->centro }} </td>
-                                                 <td>{{ $usuario->name }} </td>
-                                                 <td><button type="button" name="button"></button></td>
+
 
                                              </tr>
                                          @endforeach
