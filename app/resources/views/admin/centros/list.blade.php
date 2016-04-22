@@ -12,33 +12,40 @@
         <section class="content">
 
             <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Centros de Salud</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Nombre de Centro</th>
-                                                <th>Tipo de Centro</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          @foreach($data as  $key => $centro)
-                                             <tr>
-                                                 <td>{{ $key + 1   }}</td>
-                                                 <td>{{ $centro->centro }} </td>
-                                                 <td>{{ $centro->tipo_centro->tipo }} </td>
-                                                 <td><button type="button" name="button"></button></td>
+                <div class="box-header">
+                    <h3 class="box-title">Centros de Salud</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nombre de Centro</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Tipo de Centro</th>
+                                <th>Operaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($data as  $key => $centro)
+                             <tr>
+                                 <td>{{ $key + 1   }}</td>
+                                 <td>{{ $centro->centro }} </td>
+                                 <td>{{ $centro->direccion }} </td>
+                                 <td>{{ $centro->telefono }} </td>
+                                 <td>{{ $centro->tipo_centro->tipo }} </td>
+                                 <td class="text-center">
+                                     <button type="button" name="button" class="btn btn-info btn-sm">Editar</button>
+                                     <button type="button" name="button" class="btn btn-danger btn-sm">Eliminar</button>
+                                 </td>
 
-                                             </tr>
-                                         @endforeach
-                                        </tbody>
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+                             </tr>
+                         @endforeach
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
 
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
