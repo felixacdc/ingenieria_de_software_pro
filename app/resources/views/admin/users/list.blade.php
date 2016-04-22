@@ -20,18 +20,23 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Nombre de Centro</th>
-                                                <th>Tipo de Centro</th>
-                                                <th></th>
+                                                <th>Usuario</th>
+                                                <th>Nombre</th>
+                                                <th>Direccion</th>
+                                                <th>Telefono</th>
+                                                <th>Centro</th>
+                                                <th>Tipo Usuario</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          @foreach($data as  $key => $centro)
+                                          @foreach($data as  $key => $usuario)
                                              <tr>
                                                  <td>{{ $key + 1   }}</td>
-                                                 <td>{{ $centro->centro }} </td>
-                                                 <td>{{ $centro->tipo_centro->tipo }} </td>
-                                                 <td><button type="button" name="button"></button></td>
+                                                 <td>{{ $usuario->user }} </td>
+                                                 <td>{{ $usuario->name }} </td>
+                                                 <td>{{ $usuario->address }} </td>
+                                                 <td>{{ $usuario->phone }} </td>
+                                                
 
                                              </tr>
                                          @endforeach
