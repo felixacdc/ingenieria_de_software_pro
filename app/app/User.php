@@ -32,4 +32,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public  $relations=[
+        'centro',
+        'tipo_usuario'
+      ];
+
+      public function centro()
+      {
+        return $this->hasOne('App\Centro' , 'id' , 'center_id');
+      }
+
+      public function tipo_usuario()
+      {
+        return $this->hasOne('App\Tipo_usuario' , 'id' , 'type_user_id');
+      }
+
 }
