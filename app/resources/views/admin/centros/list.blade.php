@@ -36,8 +36,8 @@
                                  <td>{{ $centro->telefono }} </td>
                                  <td>{{ $centro->tipo_centro->tipo }} </td>
                                  <td class="text-center">
-                                     <button type="button" name="button" class="btn btn-info btn-sm">Editar</button>
-                                     <button type="button" name="button" class="btn btn-danger btn-sm">Eliminar</button>
+                                     <button type="button" name="edit" class="btn btn-info btn-sm" data-toggle='modal' data-target='#editModal' data-url="{{ url('admin') }}" onclick="edit(this)" id="{{ $centro->id }}">Editar</button>
+                                     <button type="button" name="delete" class="btn btn-danger btn-sm">Eliminar</button>
                                  </td>
 
                              </tr>
@@ -49,12 +49,15 @@
 
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
+
+    @include('admin.centros.partials.modal')
 @endsection
 
 @section('scripts')
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
+    {!!Html::script("js/admin/center.js")!!}
 
     <!-- page script -->
     <script type="text/javascript">
