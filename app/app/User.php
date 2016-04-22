@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['user', 'password', 'name', 'email', 'address', 'phone', 'center_id', 'type_user_id'];
+    protected $fillable = ['user', 'password', 'name', 'email', 'address', 'phone', 'centro_id', 'tipo_usuario_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -35,17 +35,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public  $relations=[
         'centro',
-        'tipo_usuario'
+        'tipo'
       ];
 
       public function centro()
       {
-        return $this->hasOne('App\Centro' , 'id' , 'center_id');
+        return $this->hasOne('App\Centro' , 'id' , 'centro_id');
       }
 
-      public function tipo_usuario()
+      public function tipo()
       {
-        return $this->hasOne('App\Tipo_usuario' , 'id' , 'type_user_id');
+        return $this->hasOne('App\Tipo_usuario' , 'id' , 'tipo_usuario_id');
       }
 
 }

@@ -26,8 +26,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $data=User::get()->all();
-
+        $data=User::all();
+        //return $data;
         return view('admin.users.list',compact('data'));
     }
 

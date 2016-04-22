@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone', 8);
 
             $table->integer('centro_id')->unsigned();
-            $table->integer('tipo_usuario')->unsigned();
+            $table->integer('tipo_usuario_id')->unsigned();
 
             $table->rememberToken();
 
@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
                   ->references('id')
                   ->on('centros');
 
-            $table->foreign('tipo_usuario')
+            $table->foreign('tipo_usuario_id')
                   ->references('id')
                   ->on('tipo_usuario');
             $table->timestamps();
