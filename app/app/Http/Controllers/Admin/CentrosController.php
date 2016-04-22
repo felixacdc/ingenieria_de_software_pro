@@ -61,7 +61,8 @@ class CentrosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $center = Centro::find($id);
+        return view('admin.centros.partials.inputsForm', compact('center'));
     }
 
     /**
