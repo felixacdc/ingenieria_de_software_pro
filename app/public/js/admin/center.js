@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-$(document).ready(function () {
-
-});
-
-function edit(btn) {
-    $('#editForm').attr('action', $(btn).data('url'));
-=======
 var urlActive = '/admin';
 
 /*
@@ -28,5 +20,4 @@ $('.editModal').on('click', function(e){
 */
 function loadContent(url){
    $('#containerBase').load('/admin/'+url);
->>>>>>> 02f4521dfd123663d84a3e675194aac05b51ed5c
 }

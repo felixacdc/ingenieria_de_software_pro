@@ -14,11 +14,7 @@
         <!-- Main content -->
         <section class="content">
 
-<<<<<<< HEAD
-            <div class="box">
-=======
             <div class="box box-primary">
->>>>>>> 02f4521dfd123663d84a3e675194aac05b51ed5c
                 <div class="box-header">
                     <h3 class="box-title">Centros de Salud</h3>
                 </div><!-- /.box-header -->
@@ -43,11 +39,7 @@
                                  <td>{{ $centro->telefono }} </td>
                                  <td>{{ $centro->tipo_centro->tipo }} </td>
                                  <td class="text-center">
-<<<<<<< HEAD
-                                     <button type="button" name="edit" class="btn btn-info btn-sm" data-toggle='modal' data-target='#editModal' data-url="{{ url('admin') }}" onclick="edit(this)" id="{{ $centro->id }}">Editar</button>
-=======
                                      <button type="button" name="edit" class="btn btn-info btn-sm editModal" data-toggle='modal' data-target='#editModal' data-url="centros/{{ $centro->id }}/edit" data-title="Actualizar Centro">Editar</button>
->>>>>>> 02f4521dfd123663d84a3e675194aac05b51ed5c
                                      <button type="button" name="delete" class="btn btn-danger btn-sm">Eliminar</button>
                                  </td>
 
