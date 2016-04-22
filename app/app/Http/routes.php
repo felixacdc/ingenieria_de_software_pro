@@ -25,4 +25,5 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
     //Routes Users
     Route::resource('users', 'UsersController');
+    
 });

@@ -23,7 +23,7 @@
             @if( Auth::user()->tipo_usuario == 1 )
 
                 <li>
-                    <a href="{{ url('admin/users/create') }}">
+                    <a href="{{ url('admin/users') }}">
                         <i class="fa fa-user"></i> <span> Crear Usuario</span>
                     </a>
                 </li>
