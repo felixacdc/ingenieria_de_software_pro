@@ -17,6 +17,7 @@
             <div class="box box-primary">
                 <div class="box-header">
                     <h3 class="box-title">Centros de Salud</h3>
+                    <button type="button" name="delete" class="btn btn-primary text-right">Crear Centro</button>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
