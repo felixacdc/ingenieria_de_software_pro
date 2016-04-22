@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +26,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $data=User::get()->all();
+        return $data;
+      //  return view('admin.users.list');
     }
 
     /**
