@@ -3406,3 +3406,7 @@ fieldset[disabled] .btn-vk.active {
 .dataTables_filter, .dataTables_paginate {
     text-align: right;
 }
+
+.modal {
+    overflow:hidden;
+}
