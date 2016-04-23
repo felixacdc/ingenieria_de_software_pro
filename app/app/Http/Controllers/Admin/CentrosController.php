@@ -45,7 +45,7 @@ class CentrosController extends Controller
     public function store(CenterRequest $request)
     {
         Centro::create($request->all());
-        return redirect('/admin/centros')->with('message', 'Centro creado correctamente');
+        return redirect('/admin/centros')->with('message', 'Centro creado correctamente.');
     }
 
     /**
@@ -84,7 +84,7 @@ class CentrosController extends Controller
         $center = Centro::find($id);
         $center->fill($request->all());
         $center->save();
-        return redirect('/admin/centros')->with('message', 'Centro editado correctamente');
+        return redirect('/admin/centros')->with('message', 'Centro editado correctamente.');
     }
 
     /**
@@ -97,6 +97,6 @@ class CentrosController extends Controller
     {
         $center = Centro::find($id);
         $center->delete();
-        return redirect('/admin/centros')->with('message', 'Centro eliminado correctamente');
+        return redirect('/admin/centros')->with('message', 'Centro eliminado correctamente.');
     }
 }

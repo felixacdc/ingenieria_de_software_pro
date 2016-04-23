@@ -3414,3 +3414,8 @@ fieldset[disabled] .btn-vk.active {
 .deleteForm {
     display: inline-block;
 }
+
+.alert {
+    position: absolute !important;
+    z-index: 100 !important;
+}
