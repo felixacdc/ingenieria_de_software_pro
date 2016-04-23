@@ -5,6 +5,8 @@
     </head>
     <body class="skin-blue">
 
+        <div id="element" class="introLoading"></div>
+        
         @include('layouts.partialsAdmin.header')
 
         <div class="wrapper row-offcanvas row-offcanvas-left">
