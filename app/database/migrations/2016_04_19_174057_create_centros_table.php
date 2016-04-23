@@ -16,7 +16,7 @@ class CreateCentrosTable extends Migration
             $table->increments('id');
             $table->string('centro');
             $table->string('direccion');
-            $table->string('telefono');
+            $table->bigInteger('telefono');
             $table->integer('padre')->unsigned();
             $table->integer('tipo_centro_id')->unsigned();
             $table->foreign('tipo_centro_id')

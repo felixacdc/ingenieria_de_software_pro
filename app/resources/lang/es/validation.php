@@ -45,7 +45,7 @@ return [
     'ip'                   => ':attribute debe ser una dirección IP válida.',
     'json'                 => 'El campo :attribute debe tener una cadena JSON válida.',
     'max'                  => [
-        'numeric' => ':attribute no debe ser mayor a :max.',
+        'numeric' => 'El campo :attribute no debe ser mayor a :max.',
         'file'    => ':attribute no debe ser mayor que :max kilobytes.',
         'string'  => ':attribute no debe ser mayor que :max caracteres.',
         'array'   => ':attribute no debe tener más de :max elementos.',
