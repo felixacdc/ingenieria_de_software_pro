@@ -1,4 +1,4 @@
-{!!Form::model($center, array('route' => ['admin.centros.update', $center->id], 'method' => 'PUT'))!!}
+{!!Form::model($center, array('route' => ['admin.centros.update', $center->id], 'method' => 'PUT', 'class' => 'form-validate', 'id' => 'editForm'))!!}
 
     @include('admin.centros.partials.inputsForm')
 

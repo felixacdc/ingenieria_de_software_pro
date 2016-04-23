@@ -16,3 +16,41 @@
 	{!!Form::label('tipo_centro_id','Tipo de Centro:')!!}
 	{!!Form::select('tipo_centro_id', $type, null,['class' => 'form-control'])!!}
 </div>
+
+
+<script type="text/javascript">
+    $("#createForm, #editForm").validate({
+        rules: {
+                centro: {
+                    required: true
+                },
+                direccion: {
+                    required: true
+                },
+				telefono: {
+					digits: true,
+			        minlength: 8,
+					maxlength: 8
+				},
+                tipo_centro_id: {
+                    required: true
+                }
+            },
+            messages: {
+                centro: {
+                    required: "Por favor ingrese el centro."
+                },
+                direccion: {
+                    required: "Por favor ingrese la direccion."
+                },
+				telefono: {
+					digits: "Por favor ingrese solo numeros",
+					minlength: "El telefono debe contener 8 caracteres.",
+					maxlength: "El telefono debe contener 8 caracteres."
+				},
+                tipo_centro_id: {
+                    required: "Por favor ingrese el tipo de centro."
+                }
+            }
+    });
+</script>
