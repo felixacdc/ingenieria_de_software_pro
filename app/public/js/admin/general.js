@@ -21,3 +21,18 @@ $('.loadModal').on('click', function(e){
 function loadContent(url){
    $('#containerBase').load('/admin/'+url);
 }
+
+$(document).ready(function() {
+    $("#element").introLoader({
+        animation: {
+            name: 'cssLoader',
+            options: {
+                exitFx:'slideUp',
+                ease: "easeInOutCirc",
+                style: 'ocean',
+                delayBefore: 1000,
+                exitTime: 500
+            }
+        }
+    });
+});

@@ -5,20 +5,4 @@
 <!-- AdminLTE App -->
 {!!Html::script('js/AdminLTE/app.js')!!}
 {!!Html::script("js/jquery.introLoader.pack.min.js")!!}
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#element").introLoader({
-        animation: {
-            name: 'cssLoader',
-            options: {
-                exitFx:'slideUp',
-                ease: "easeInOutCirc",
-                style: 'ocean',
-                delayBefore: 1000,
-                exitTime: 500
-            }
-        }
-    });
-});
-</script>
+{!!Html::script("js/admin/general.js")!!}

@@ -70,7 +70,6 @@
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
-    {!!Html::script("js/admin/general.js")!!}
 
     <!-- page script -->
     <script type="text/javascript">
