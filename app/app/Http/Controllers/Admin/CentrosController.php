@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Centro;
+use App\Http\Requests\CenterRequest;
 use App\Http\Requests;
+
 use App\Http\Controllers\Controller;
 
+use App\Centro;
 use App\Tipo_centro;
 
 class CentrosController extends Controller
@@ -40,7 +42,7 @@ class CentrosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CenterRequest $request)
     {
         Centro::create($request->all());
         return redirect('/admin/centros')->with('message', 'Centro creado correctamente');
@@ -77,7 +79,7 @@ class CentrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CenterRequest $request, $id)
     {
         $center = Centro::find($id);
         $center->fill($request->all());
