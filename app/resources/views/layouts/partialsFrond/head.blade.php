@@ -21,4 +21,6 @@
     {!!Html::style("css/login/style.css")!!}
     {!!Html::style("css/login/style-responsive.css")!!}
     {!!Html::style("css/introLoader.css")!!}
+
+    {!!Html::style("css/animate.css")!!}
 </head>

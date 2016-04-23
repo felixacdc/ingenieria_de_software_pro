@@ -1,6 +1,7 @@
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}
 {!!Html::script("js/jquery.introLoader.pack.min.js")!!}
+{!!Html::script("js/wow.min.js")!!}
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -11,9 +12,12 @@
                     ease: "easeInOutCirc",
                     style: 'ocean',
                     delayBefore: 500,
-                    exitTime: 300,
+                    exitTime: 400,
                     loaderText: 'Génecis!',
-                    lettersDelayTime: 0
+                    lettersDelayTime: 0,
+                    onAfter: function() {
+                        $(".homeloader").css("display", "block"), (new WOW).init();
+                    }
                 }
             },
 

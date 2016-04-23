@@ -23,19 +23,19 @@
 
 	@endif
 
-    {!!Form::open(['url' => 'auth/login', 'method' => 'POS', 'class' => 'login-form'])!!}
+    {!!Form::open(['url' => 'auth/login', 'method' => 'POS', 'class' => 'login-form homeloader wow bounceInDown', 'data-wow-duration' => '1s'])!!}
 
         <div class="login-wrap">
-            <p class="login-img"><i class="icon_lock_alt"></i></p>
-            <div class="input-group">
+            <p class="login-img wow bounceInDown" data-wow-duration="1.5s"><i class="icon_lock_alt"></i></p>
+            <div class="input-group wow fadeInLeft" data-wow-duration="1.5s">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
               {!!Form::text('user', null, ['class' => 'form-control', 'placeholder' => 'Usuario', 'autofocus' => 'autofocus', 'required' => 'required'])!!}
             </div>
-            <div class="input-group">
+            <div class="input-group wow fadeInLeft" data-wow-duration="1.7s">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña', 'required' => 'required'])!!}
             </div>
-            {!!Form::submit('Iniciar Sesion', ['class' => 'btn btn-primary btn-lg btn-block'])!!}
+            {!!Form::submit('Iniciar Sesion', ['class' => 'btn btn-primary btn-lg btn-block homeloader wow bounceInDown', 'data-wow-duration' => '1.5s'])!!}
         </div>
 
     {!!Form::close()!!}
