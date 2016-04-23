@@ -20,4 +20,5 @@
     <!-- Custom styles -->
     {!!Html::style("css/login/style.css")!!}
     {!!Html::style("css/login/style-responsive.css")!!}
+    {!!Html::style("css/introLoader.css")!!}
 </head>
