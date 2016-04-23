@@ -7,6 +7,8 @@ use App\Centro;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Tipo_centro;
+
 class CentrosController extends Controller
 {
     /**
@@ -62,7 +64,8 @@ class CentrosController extends Controller
     public function edit($id)
     {
         $center = Centro::find($id);
-        return view('admin.centros.partials.inputsForm', compact('center'));
+        $type = Tipo_centro::lists('tipo', 'id');
+        return view('admin.centros.partials.inputsForm', compact('center', 'type'));
     }
 
     /**
@@ -74,7 +77,10 @@ class CentrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $center = Centro::find($id);
+        $center->fill($request->all());
+        $center->save();
+        return redirect('/admin/centros')->with('message', 'Pelicula editada correctamente');
     }
 
     /**

@@ -16,8 +16,12 @@
 
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Centros de Salud</h3>
-                    <button type="button" name="delete" class="btn btn-primary text-right">Crear Centro</button>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-6"><h3 class="box-title">Centros de Salud</h3></div>
+                            <div class="col-md-6  text-right"><button type="button" name="delete" class="btn btn-primary">Crear Centro</button></div>
+                        </div>
+                    </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
                     <table id="example1" class="table table-bordered table-striped">
