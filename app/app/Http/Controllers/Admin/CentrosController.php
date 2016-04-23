@@ -30,7 +30,8 @@ class CentrosController extends Controller
      */
     public function create()
     {
-        //
+        $type = Tipo_centro::lists('tipo', 'id');
+        return view('admin.centros.partials.createForm', compact('type'));
     }
 
     /**
@@ -41,7 +42,8 @@ class CentrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Centro::create($request->all());
+        return redirect('/admin/centros')->with('message', 'Centro creado correctamente');
     }
 
     /**
@@ -65,7 +67,7 @@ class CentrosController extends Controller
     {
         $center = Centro::find($id);
         $type = Tipo_centro::lists('tipo', 'id');
-        return view('admin.centros.partials.inputsForm', compact('center', 'type'));
+        return view('admin.centros.partials.editForm', compact('center', 'type'));
     }
 
     /**
@@ -80,7 +82,7 @@ class CentrosController extends Controller
         $center = Centro::find($id);
         $center->fill($request->all());
         $center->save();
-        return redirect('/admin/centros')->with('message', 'Pelicula editada correctamente');
+        return redirect('/admin/centros')->with('message', 'Centro editado correctamente');
     }
 
     /**
@@ -91,6 +93,8 @@ class CentrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $center = Centro::find($id);
+        $center->delete();
+        return redirect('/admin/centros')->with('message', 'Centro eliminado correctamente');
     }
 }

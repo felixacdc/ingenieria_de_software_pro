@@ -19,7 +19,7 @@
                     <div class="content">
                         <div class="row">
                             <div class="col-md-6"><h3 class="box-title">Centros de Salud</h3></div>
-                            <div class="col-md-6  text-right"><button type="button" name="delete" class="btn btn-primary">Crear Centro</button></div>
+                            <div class="col-md-6  text-right"><button type="button" name="create" class="btn btn-primary loadModal" data-toggle='modal' data-target='#generalModal' data-url="centros/create " data-title="Crear Centro">Crear Centro</button></div>
                         </div>
                     </div>
                 </div><!-- /.box-header -->
@@ -44,8 +44,10 @@
                                  <td>{{ $centro->telefono }} </td>
                                  <td>{{ $centro->tipo_centro->tipo }} </td>
                                  <td class="text-center">
-                                     <button type="button" name="edit" class="btn btn-info btn-sm editModal" data-toggle='modal' data-target='#editModal' data-url="centros/{{ $centro->id }}/edit" data-title="Actualizar Centro">Editar</button>
-                                     <button type="button" name="delete" class="btn btn-danger btn-sm">Eliminar</button>
+                                     <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="centros/{{ $centro->id }}/edit" data-title="Actualizar Centro">Editar</button>
+                                     {!!Form::open(['route' => ['admin.centros.destroy', $centro->id], 'method' => 'DELETE', 'class' => 'deleteForm'])!!}
+                                        {!!Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm'])!!}
+                                     {!!Form::close()!!}
                                  </td>
 
                              </tr>
@@ -58,14 +60,14 @@
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
 
-    @include('admin.centros.partials.modal')
+    @include('admin.partials.modal')
 @endsection
 
 @section('scripts')
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
-    {!!Html::script("js/admin/center.js")!!}
+    {!!Html::script("js/admin/general.js")!!}
 
     <!-- page script -->
     <script type="text/javascript">
