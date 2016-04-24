@@ -25,12 +25,25 @@
 	<label>No</label>
 </div>
 
-<div class="form-group">
+<div class="form-group" id="divFather">
 	{!!Form::label('padre','Distrito:')!!}
 	{!!Form::select('padre', $fathers, null, ['class' => 'form-control'])!!}
 </div>
 
 <script type="text/javascript">
+	$(document).ready(function () {
+		hiddenFather();
+		$('input:radio[name=distrito]').change(hiddenFather);
+	});
+
+	function hiddenFather(){
+		if( $('input:radio[name=distrito]:checked').val() == true )
+			$("#divFather").fadeOut();
+		else
+			$("#divFather").fadeIn();
+
+	}
+
     $("#createForm, #editForm").validate({
         rules: {
                 centro: {
