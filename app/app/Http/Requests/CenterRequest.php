@@ -26,7 +26,7 @@ class CenterRequest extends Request
         return [
             'centro' => 'required',
             'direccion' => 'required',
-            'telefono' => 'numeric|min:8|max:8',
+            'telefono' => 'numeric|min:8',
             'tipo_centro_id' => 'required',
         ];
     }

@@ -14,9 +14,21 @@
 
 <div class="form-group">
 	{!!Form::label('tipo_centro_id','Tipo de Centro:')!!}
-	{!!Form::select('tipo_centro_id', $type, null,['class' => 'form-control'])!!}
+	{!!Form::select('tipo_centro_id', $type, null, ['class' => 'form-control'])!!}
 </div>
 
+<div class="form-group">
+	{!!Form::label('distrito','Es un distrito:')!!} <br>
+	{!!Form::radio('distrito', true, true)!!}&nbsp;&nbsp;
+	<label>Si</label>&nbsp;&nbsp;
+	{!!Form::radio('distrito', false)!!}&nbsp;&nbsp;
+	<label>No</label>
+</div>
+
+<div class="form-group">
+	{!!Form::label('padre','Distrito:')!!}
+	{!!Form::select('padre', $fathers, null, ['class' => 'form-control'])!!}
+</div>
 
 <script type="text/javascript">
     $("#createForm, #editForm").validate({

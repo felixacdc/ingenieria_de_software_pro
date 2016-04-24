@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Centro extends Model
 {
   protected $table = "centros";
-  protected $fillable = ['centro', 'tipo_centro_id','direccion','telefono','padre'];
+  protected $fillable = ['centro', 'tipo_centro_id','direccion','telefono','padre', 'distrito'];
 
   public  $relations=[
       'tipo_centro'

@@ -16,8 +16,12 @@ class CentersTableSeeder extends Seeder
         $center = new Centro;
 
         DB::table('centros')->delete();
+        DB::table('centros')->insert([
+            ['centro'=>'Ninguno','tipo_centro_id'=>1,'direccion'=>'Ninguna','telefono'=>'00000000', 'distrito'=>true],
+            ['centro'=>'Mazatenango','tipo_centro_id'=>4,'direccion'=>'Direccion Fisica','telefono'=>'54545454', 'distrito'=>true]
+
+        ]);
         DB::table('centros')->insert(array(
-             array('centro'=>'Mazatenango','tipo_centro_id'=>4,'direccion'=>'Direccion Fisica','telefono'=>'54545454'),
              array('centro'=>'San Francisco','tipo_centro_id'=>4,'direccion'=>'Direccion Fisica','telefono'=>'54545454'),
              array('centro'=>'San Lorenzo','tipo_centro_id'=>4,'direccion'=>'Direccion Fisica','telefono'=>'54545454'),
              array('centro'=>'San Gabriel','tipo_centro_id'=>4,'direccion'=>'Direccion Fisica','telefono'=>'54545454'),
