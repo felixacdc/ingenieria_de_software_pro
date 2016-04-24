@@ -5,58 +5,69 @@
     <aside class="right-side">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+          <h1>
+              Usuarios
+              <small>Mantenimiento</small>
+          </h1>
 
         </section>
 
         <!-- Main content -->
         <section class="content">
+          @include('admin.partials.alertSuccess')
+          @include('admin.partials.alertErrors')
 
-            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Centros de Salud</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Usuario</th>
-                                                <th>Nombre</th>
-                                                <th>Direccion</th>
-                                                <th>Telefono</th>
-                                                <th>Centro</th>
-                                                <th>Tipo Usuario</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          @foreach($data as  $key => $usuario)
-                                             <tr>
-                                                 <td>{{ $key+1 }} </td>
-                                                 <td>{{ $usuario->name }} </td>
-                                                 <td>{{ $usuario->address }} </td>
-                                                 <td>{{ $usuario->phone }} </td>
-                                                 <td>{{ $usuario->phone }} </td>
-                                                 <td>{{ $usuario->centro->centro }} </td>
-                                                 <td>{{ $usuario->tipo->tipo }} </td>
+            <div class="box box-primary">
+                    <div class="box-header">
+                      <div class="content">
+                          <div class="row">
+                              <div class="col-md-6"><h3 class="box-title">Usuarios</h3></div>
+                              <div class="col-md-6  text-right"><button type="button" name="create" class="btn btn-primary loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/create " data-title="Crear Usuario">Crear Usuario</button></div>
+                          </div>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre</th>
+                                    <th>Direccion</th>
+                                    <th>Telefono</th>
+                                    <th>Centro</th>
+                                    <th>Tipo Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              @foreach($data as  $key => $usuario)
+                                 <tr>
+                                     <td>{{ $key+1 }} </td>
+                                     <td>{{ $usuario->name }} </td>
+                                     <td>{{ $usuario->address }} </td>
+                                     <td>{{ $usuario->phone }} </td>
+                                     <td>{{ $usuario->phone }} </td>
+                                     <td>{{ $usuario->centro->centro }} </td>
+                                     <td>{{ $usuario->tipo->tipo }} </td>
 
 
-
-
-                                             </tr>
-                                         @endforeach
-                                        </tbody>
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+                                 </tr>
+                             @endforeach
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
+    @include('admin.partials.modal')
 @endsection
 
 @section('scripts')
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
+    {!!Html::script("js/jquery.validate.js")!!}
 
     <!-- page script -->
     <script type="text/javascript">
