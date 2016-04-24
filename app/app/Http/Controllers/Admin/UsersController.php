@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Centro;
+use App\Tipo_usuario
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -38,7 +40,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $type=Tipo_usuario::lists('tipo','id');
+        $centro=Centro::lists('centro','id');
+        return view('admin.users.partials.createForm',compact('type','centro'));
     }
 
     /**
