@@ -13,7 +13,7 @@
                     style: 'ocean',
                     delayBefore: 500,
                     exitTime: 400,
-                    loaderText: 'Génecis!',
+                    loaderText: 'Génesis!',
                     lettersDelayTime: 0,
                     onAfter: function() {
                         $(".homeloader").css("display", "block"), (new WOW).init();
