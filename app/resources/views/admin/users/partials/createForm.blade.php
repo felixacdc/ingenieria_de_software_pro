@@ -1,6 +1,6 @@
 {!!Form::open(['route' => 'admin.users.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createForm'])!!}
 
-    @include('admin.centros.partials.inputsForm')
+    @include('admin.users.partials.inputsForm')
 
     <div class="modal-footer">
 		{!!Form::submit('Registrar', array('class' => 'btn btn-primary'))!!}
