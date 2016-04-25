@@ -48,20 +48,32 @@
 <script type="text/javascript">
     $("#createForm, #editForm").validate({
         rules: {
-                centro: {
+                user: {
                     required: true
                 },
-                direccion: {
+                password: {
                     required: true
                 },
-				telefono: {
-					digits: true,
-			        minlength: 8,
-					maxlength: 8
-				},
-                tipo_centro_id: {
+								name: {
+                    required: true
+                },
+								address: {
+                    required: true
+                },
+								email: {
+                    required: true
+                },
+								phone: {
+									digits: true,
+							        minlength: 8,
+									maxlength: 8
+								},
+				        centro_id: {
                     required: true
                 }
+								tipo_centro_id: {
+										required: true
+								}
             },
             messages: {
                 centro: {
@@ -70,14 +82,14 @@
                 direccion: {
                     required: "Por favor ingrese la direccion."
                 },
-				telefono: {
-					digits: "Por favor ingrese solo numeros",
-					minlength: "El telefono debe contener 8 caracteres.",
-					maxlength: "El telefono debe contener 8 caracteres."
-				},
-                tipo_centro_id: {
-                    required: "Por favor ingrese el tipo de centro."
-                }
+								telefono: {
+									digits: "Por favor ingrese solo numeros",
+									minlength: "El telefono debe contener 8 caracteres.",
+									maxlength: "El telefono debe contener 8 caracteres."
+								},
+		            tipo_centro_id: {
+		                required: "Por favor ingrese el tipo de centro."
+				        }
             }
     });
 </script>
