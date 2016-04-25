@@ -38,6 +38,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'tipo'
       ];
 
+      public function setPasswordAttribute($value)
+    {
+        if(! empty($value)) {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
       public function centro()
       {
         return $this->hasOne('App\Centro' , 'id' , 'centro_id');
