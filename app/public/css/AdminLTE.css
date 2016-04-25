@@ -3407,10 +3407,6 @@ fieldset[disabled] .btn-vk.active {
     text-align: right;
 }
 
-.modal {
-    overflow:hidden;
-}
-
 .deleteForm {
     display: inline-block;
 }

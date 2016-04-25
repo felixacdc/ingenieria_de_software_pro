@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <div class="alert alert-danger alert-dismissable ">
+            <div class="alert alert-danger alert-dismissable animated fadeInDown">
                 <i class="fa fa-ban"></i>
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <strong>Oh!</strong> Por favor corrige los siguientes errores.<br>
