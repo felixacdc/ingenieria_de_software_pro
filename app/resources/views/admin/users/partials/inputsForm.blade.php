@@ -27,21 +27,15 @@
 	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Telefono del usuario'))!!}
 </div>
 
-<div class="form-group">
-	{!!Form::label('tipo_centro_id','Centro:')!!}
-	{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
-</div>
 
 <div class="form-group">
-	{!!Form::label('tipo_centro_id','Tipo Usuario:')!!}
+	{!!Form::label('tipo_usuario_id','Tipo Usuario:')!!}
 	{!!Form::select('tipo_usuario_id', $type, null,['class' => 'form-control'])!!}
 </div>
 
-
-
 <div class="form-group">
-	{!!Form::label('tipo_centro_id','Tipo de Centro:')!!}
-	{!!Form::select('tipo_centro_id', $type, null,['class' => 'form-control'])!!}
+	{!!Form::label('centro_id','Centro:')!!}
+	{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
 </div>
 
 
@@ -60,9 +54,7 @@
 								address: {
                     required: true
                 },
-								email: {
-                    required: true
-                },
+
 								phone: {
 									digits: true,
 							        minlength: 8,
@@ -70,25 +62,38 @@
 								},
 				        centro_id: {
                     required: true
-                }
-								tipo_centro_id: {
+                },
+								tipo_usuario_id: {
 										required: true
 								}
             },
             messages: {
-                centro: {
-                    required: "Por favor ingrese el centro."
+                user: {
+                    required: "Por favor ingrese el Usuario."
                 },
-                direccion: {
-                    required: "Por favor ingrese la direccion."
+
+                password: {
+                    required: "Por favor ingrese la Contraseña."
                 },
-								telefono: {
+
+								name: {
+										required: "Por favor ingrese el Nombre."
+								},
+
+								address: {
+										required: "Por favor ingrese la Direccion."
+								},
+								phone: {
 									digits: "Por favor ingrese solo numeros",
 									minlength: "El telefono debe contener 8 caracteres.",
 									maxlength: "El telefono debe contener 8 caracteres."
 								},
-		            tipo_centro_id: {
-		                required: "Por favor ingrese el tipo de centro."
+		            centro_id: {
+		                required: "Por favor ingrese el Centro al que pertenece"
+				        },
+
+								tipo_usuario_id: {
+		                required: "Por favor ingrese el Tipo de Usuario"
 				        }
             }
     });
