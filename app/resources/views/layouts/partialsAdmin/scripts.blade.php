@@ -5,4 +5,5 @@
 <!-- AdminLTE App -->
 {!!Html::script('js/AdminLTE/app.js')!!}
 {!!Html::script("js/jquery.introLoader.pack.min.js")!!}
+{!!Html::script("js/wow.min.js")!!}
 {!!Html::script("js/admin/general.js")!!}

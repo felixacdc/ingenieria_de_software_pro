@@ -3433,3 +3433,7 @@ fieldset[disabled] .btn-vk.active {
 input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:focus, .form-validate .form-group input.error , .form-validate .form-group textarea.error{
     border-color: #00a0df !important;
 }
+
+.homeloader {
+    display: none;
+}
