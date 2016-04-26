@@ -37,6 +37,7 @@
                                     <th>Telefono</th>
                                     <th>Centro</th>
                                     <th>Tipo Usuario</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,7 @@
                                      <td>{{ $usuario->phone }} </td>
                                      <td>{{ $usuario->centro->centro }} </td>
                                      <td>{{ $usuario->tipo->tipo }} </td>
+                                     <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}/edit" data-title="Actualizar Usuario">Editar</button>
 
 
                                  </tr>
