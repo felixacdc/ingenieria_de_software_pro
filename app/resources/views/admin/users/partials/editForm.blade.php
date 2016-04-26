@@ -1,6 +1,6 @@
-{!!Form::model($center, array('route' => ['admin.users.update', $center->id], 'method' => 'PUT', 'class' => 'form-validate', 'id' => 'editForm'))!!}
+{!!Form::model($user, array('route' => ['admin.users.update', $user->id], 'method' => 'PUT', 'class' => 'form-validate', 'id' => 'editForm'))!!}
 
-    @include('admin.centros.partials.inputsForm')
+    @include('admin.users.partials.inputsForm')
 
 	<div class="modal-footer">
 		{!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!}
