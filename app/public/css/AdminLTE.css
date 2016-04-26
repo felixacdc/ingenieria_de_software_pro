@@ -3437,3 +3437,19 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 .homeloader {
     display: none;
 }
+
+.titleWelcome {
+    font-family:Georgia,"Times New Roman",Times,serif;
+    font-weight:normal;
+    text-shadow:0 0 1px #000;
+    color:#444444;
+    font-size:4em;
+    padding:2px 0 0;
+    text-transform:capitalize;
+    line-height:1.2em;
+    margin:0 0 10px;
+}
+
+.box-body .content {
+     background: #fff;
+}

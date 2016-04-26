@@ -19,42 +19,17 @@
         <!-- Main content -->
         <section class="content">
 
-            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Data Table With Full Features</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Data 1</td>
-                                                <td>Data 2</td>
-                                                <td>Data 3</td>
-                                                <td>Data 4</td>
-                                                <td>Data 5</td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
+            <div class="box  box-primary">
+                <div class="box-body text-center">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="wow animated zoomInRight titleWelcome" data-wow-delay=".2s"><i class="fa fa-stethoscope wow animated zoomInLeft" data-wow-delay=".5s"></i> <span class="wow animated zoomInDown" data-wow-delay=".9s">Bienvenido</span> {{ Auth::user()->user }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
 
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
