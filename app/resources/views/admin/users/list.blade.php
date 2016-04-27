@@ -53,7 +53,9 @@
                                      <td>{{ $usuario->tipo->tipo }} </td>
                                      <td class="text-center">
                                       <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}/edit" data-title="Actualizar Usuario">Editar</button>
-
+                                      {!!Form::open(['route' => ['admin.users.destroy', $usuario->id], 'method' => 'DELETE', 'class' => 'deleteForm'])!!}
+                                         {!!Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm'])!!}
+                                      {!!Form::close()!!}
                                      </td>
 
                                  </tr>
