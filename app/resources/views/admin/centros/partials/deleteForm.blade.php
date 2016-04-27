@@ -7,3 +7,9 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
     </div>
 {!!Form::close()!!}
+
+<script type="text/javascript">
+    $('#generalModal form').submit(function(e){
+        $("#generalModal .btn-primary").prop('disabled', true);
+    });
+</script>

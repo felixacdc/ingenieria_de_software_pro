@@ -76,6 +76,10 @@
                 tipo_centro_id: {
                     required: "Por favor ingrese el tipo de centro."
                 }
-            }
+            },
+			submitHandler: function(form) {
+				$("#generalModal .btn-primary").prop('disabled', true);
+				form.submit();
+			}
     });
 </script>
