@@ -1,4 +1,9 @@
 {!!Form::open(['route' => ['admin.centros.destroy', $id], 'method' => 'DELETE'])!!}
-    
-   {!!Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm'])!!}
+    <h4>
+        Desea eliminar este registro?
+    </h4>
+    <div class="modal-footer">
+        {!!Form::submit('Si', ['class' => 'btn btn-primary'])!!}
+        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+    </div>
 {!!Form::close()!!}
