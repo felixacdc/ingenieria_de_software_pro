@@ -54,7 +54,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         User::create($request->all());
-        return redirect('/admin/users')->with('messages','Usuario creado Correctamente.');
+        return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
     }
 
     /**
@@ -102,7 +102,9 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
     }
 
 }
