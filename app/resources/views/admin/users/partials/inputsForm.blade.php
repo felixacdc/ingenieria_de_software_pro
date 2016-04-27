@@ -95,6 +95,10 @@
 								tipo_usuario_id: {
 		                required: "Por favor ingrese el Tipo de Usuario"
 				        }
-            }
+            },
+			submitHandler: function(form) {
+				$("#generalModal .btn-primary").prop('disabled', true);
+				form.submit();
+			}
     });
 </script>
