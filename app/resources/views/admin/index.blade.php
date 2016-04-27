@@ -9,11 +9,6 @@
                 Inicio
                 <small>Estas en la pagina de inicio</small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-                <li><a href="#">Examples</a></li>
-                <li class="active">Blank page</li>
-            </ol>
         </section>
 
         <!-- Main content -->
