@@ -57,7 +57,7 @@ class CentrosController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.centros.partials.deleteForm')->with('id', $id);
     }
 
     /**

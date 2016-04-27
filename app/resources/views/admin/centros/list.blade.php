@@ -48,9 +48,7 @@
                                  <td>{{ $centro->tipo_centro->tipo }} </td>
                                  <td class="text-center">
                                      <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="centros/{{ $centro->id }}/edit" data-title="Actualizar Centro">Editar</button>
-                                     {!!Form::open(['route' => ['admin.centros.destroy', $centro->id], 'method' => 'DELETE', 'class' => 'deleteForm'])!!}
-                                        {!!Form::submit('Eliminar', ['class' => 'btn btn-danger btn-sm'])!!}
-                                     {!!Form::close()!!}
+                                     <button type="button" name="edit" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="centros/{{ $centro->id }}" data-title="Eliminar Centro">Eliminar</button>
                                  </td>
 
                              </tr>
