@@ -40,9 +40,10 @@ class UsersController extends Controller
      */
     public function create()
     {
+        $bandera=0;
         $type=Tipo_usuario::lists('tipo','id');
         $centro=Centro::lists('centro','id');
-        return view('admin.users.partials.createForm',compact('type','centro'));
+        return view('admin.users.partials.createForm',compact('type','centro','bandera'));
     }
 
     /**
@@ -76,10 +77,11 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
+      $bandera=1;
       $user=User::find($id);
       $type=Tipo_usuario::lists('tipo','id');
       $centro=Centro::lists('centro','id');
-      return view('admin.users.partials.editForm', compact('type','centro','user'));
+      return view('admin.users.partials.editForm', compact('type','centro','user','bandera'));
     }
 
     /**
@@ -91,7 +93,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

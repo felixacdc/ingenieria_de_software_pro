@@ -2,10 +2,12 @@
 	<label for="">Usuario</label>
 	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario'))!!}
 </div>
+@if(!$bandera==1)
 <div class="form-group">
 	<label for="">Password</label>
 	{!!Form::password('password',  array('class' => 'form-control', 'placeholder' => 'Inserte el Password del usuario'))!!}
 </div>
+@endif
 
 <div class="form-group">
 	<label for="">Nombre</label>
@@ -46,6 +48,7 @@
                     required: true
                 },
                 password: {
+
                     required: true
                 },
 								name: {
