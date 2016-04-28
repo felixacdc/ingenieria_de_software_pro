@@ -9,6 +9,8 @@ use App\Tipo_usuario;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\UserCreateRequest;
+
 class UsersController extends Controller
 {
 
@@ -51,7 +53,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
         User::create($request->all());
         return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
