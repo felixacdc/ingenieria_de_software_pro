@@ -21,6 +21,10 @@
 				address: {
                     required: true
                 },
+                email:
+                {
+                    email: true
+                },
 				phone: {
 					digits: true,
 			        minlength: 8,
@@ -38,12 +42,16 @@
                     required: "Por favor ingrese el Usuario."
                 },
 				name: {
-						required: "Por favor ingrese el Nombre."
+					required: "Por favor ingrese el Nombre."
 				},
 
 				address: {
-						required: "Por favor ingrese la Direccion."
+					required: "Por favor ingrese la Direccion."
 				},
+                email:
+                {
+                    email: "Por favor ingrese un correo electronico valido."
+                },
 				phone: {
 					digits: "Por favor ingrese solo numeros",
 					minlength: "El telefono debe contener 8 caracteres.",
