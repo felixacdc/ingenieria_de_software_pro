@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserEditRequest;
 
 class UsersController extends Controller
 {
@@ -92,7 +93,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
         $user=User::find($id);
         $user->fill($request->all());
