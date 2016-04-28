@@ -77,7 +77,7 @@ class UsersController extends Controller
     public function edit($id)
     {
       $user=User::find($id);
-      $type=Tipo_usuario::find('tipo','id');
+      $type=Tipo_usuario::lists('tipo','id');
       $centro=Centro::lists('centro','id');
       return view('admin.users.partials.editForm', compact('type','centro','user'));
     }
