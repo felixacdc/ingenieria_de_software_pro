@@ -34,6 +34,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ url('admin/centros') }}">
+                        <i class="fa fa-circle-o-notch" aria-hidden="true"></i> <span>Tipos de Centro</span>
+                    </a>
+                </li>
+
             @endif
         </ul>
     </section>
