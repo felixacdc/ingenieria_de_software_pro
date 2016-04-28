@@ -26,20 +26,19 @@
 								address: {
                     required: true
                 },
-
-								phone: {
-									digits: true,
-							        minlength: 8,
-									maxlength: 8
-								},
-				        centro_id: {
+				phone: {
+					digits: true,
+			        minlength: 8,
+					maxlength: 8
+				},
+				centro_id: {
                     required: true
                 },
-								tipo_usuario_id: {
-										required: true
-								}
+				tipo_usuario_id: {
+						required: true
+				}
             },
-            messages: {
+        messages: {
                 user: {
                     required: "Por favor ingrese el Usuario."
                 },
@@ -47,28 +46,26 @@
                 password: {
                     required: "Por favor ingrese la Contraseña."
                 },
+				name: {
+						required: "Por favor ingrese el Nombre."
+				},
 
-								name: {
-										required: "Por favor ingrese el Nombre."
-								},
-
-								address: {
-										required: "Por favor ingrese la Direccion."
-								},
-								phone: {
-									digits: "Por favor ingrese solo numeros",
-									minlength: "El telefono debe contener 8 caracteres.",
-									maxlength: "El telefono debe contener 8 caracteres."
-								},
-		            centro_id: {
-		                required: "Por favor ingrese el Centro al que pertenece"
-				        },
-
-								tipo_usuario_id: {
-		                required: "Por favor ingrese el Tipo de Usuario"
-				        }
+				address: {
+						required: "Por favor ingrese la Direccion."
+				},
+				phone: {
+					digits: "Por favor ingrese solo numeros",
+					minlength: "El telefono debe contener 8 caracteres.",
+					maxlength: "El telefono debe contener 8 caracteres."
+				},
+                centro_id: {
+	                required: "Por favor ingrese el Centro al que pertenece"
+			    },
+				tipo_usuario_id: {
+	                required: "Por favor ingrese el Tipo de Usuario"
+			    }
             },
-			submitHandler: function(form) {
+		submitHandler: function(form) {
 				$("#generalModal .btn-primary").prop('disabled', true);
 				form.submit();
 			}
