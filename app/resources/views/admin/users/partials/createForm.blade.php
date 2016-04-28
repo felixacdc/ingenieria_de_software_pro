@@ -20,11 +20,15 @@
 
                     required: true
                 },
-								name: {
+				name: {
                     required: true
                 },
-								address: {
+				address: {
                     required: true
+                },
+                email:
+                {
+                    email: true
                 },
 				phone: {
 					digits: true,
@@ -53,6 +57,10 @@
 				address: {
 						required: "Por favor ingrese la Direccion."
 				},
+                email:
+                {
+                    email: "Por favor ingrese un correo electronico valido."
+                },
 				phone: {
 					digits: "Por favor ingrese solo numeros",
 					minlength: "El telefono debe contener 8 caracteres.",
