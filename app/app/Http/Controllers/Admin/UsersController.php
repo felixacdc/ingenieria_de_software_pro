@@ -40,10 +40,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $bandera=0;
         $type=Tipo_usuario::lists('tipo','id');
         $centro=Centro::lists('centro','id');
-        return view('admin.users.partials.createForm',compact('type','centro','bandera'));
+        return view('admin.users.partials.createForm',compact('type','centro'));
     }
 
     /**
