@@ -15,6 +15,9 @@
                 user: {
                     required: true
                 },
+                password: {
+                    minlength: 8
+                },
 				name: {
                     required: true
                 },
@@ -40,6 +43,9 @@
         messages: {
                 user: {
                     required: "Por favor ingrese el Usuario."
+                },
+                password: {
+                    minlength: "La contraseña debe contener 8 caracteres como minimo."
                 },
 				name: {
 					required: "Por favor ingrese el Nombre."

@@ -17,8 +17,8 @@
                     required: true
                 },
                 password: {
-
-                    required: true
+                    required: true,
+                    minlength: 8
                 },
 				name: {
                     required: true
@@ -46,9 +46,9 @@
                 user: {
                     required: "Por favor ingrese el Usuario."
                 },
-
                 password: {
-                    required: "Por favor ingrese la Contraseña."
+                    required: "Por favor ingrese la Contraseña.",
+                    minlength: "La contraseña debe contener 8 caracteres como minimo."
                 },
 				name: {
 						required: "Por favor ingrese el Nombre."

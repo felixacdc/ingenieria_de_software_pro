@@ -27,6 +27,7 @@ class UserEditRequest extends Request
     {
         return [
             'user' => 'required',
+            'password' => 'min:8',
             'name' => 'required',
             'address' => 'required',
             'phone' => 'numeric|min:8',
