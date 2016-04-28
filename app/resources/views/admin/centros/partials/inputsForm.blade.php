@@ -1,10 +1,10 @@
 <div class="form-group">
 	<label for="">Nombre</label>
-	{!!Form::text('centro', null, array('class' => 'form-control', 'placeholder' => 'Inserta el Nombre del centro'))!!}
+	{!!Form::text('centro', null, array('class' => 'form-control', 'placeholder' => 'Inserta el Nombre del centro', 'required' => 'required'))!!}
 </div>
 <div class="form-group">
 	<label for="">Direccion</label>
-	{!!Form::text('direccion', null, array('class' => 'form-control', 'placeholder' => 'Inserta la direccion del centro'))!!}
+	{!!Form::text('direccion', null, array('class' => 'form-control', 'placeholder' => 'Inserta la direccion del centro', 'required' => 'required'))!!}
 </div>
 
 <div class="form-group">

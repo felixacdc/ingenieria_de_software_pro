@@ -1,6 +1,6 @@
 <div class="form-group">
 	<label for="">Usuario</label>
-	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario'))!!}
+	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required'))!!}
 </div>
 
 <div class="form-group">
@@ -10,12 +10,12 @@
 
 <div class="form-group">
 	<label for="">Nombre</label>
-	{!!Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Inserte el nombre completo'))!!}
+	{!!Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Inserte el nombre completo', 'required' => 'required'))!!}
 </div>
 
 <div class="form-group">
 	<label for="">Direccion</label>
-	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la direccion '))!!}
+	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la direccion ', 'required' => 'required'))!!}
 </div>
 
 <div class="form-group">
