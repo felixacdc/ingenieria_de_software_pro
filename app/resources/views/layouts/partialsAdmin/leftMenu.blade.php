@@ -35,7 +35,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ url('admin/centros') }}">
+                    <a href="{{ url('admin/TiposCentros') }}">
                         <i class="fa fa-circle-o-notch" aria-hidden="true"></i> <span>Tipos de Centro</span>
                     </a>
                 </li>
