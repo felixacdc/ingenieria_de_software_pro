@@ -6,7 +6,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-              Usuarios
+              Tipos de Centro
               <small>Mantenimiento</small>
           </h1>
 
@@ -21,7 +21,7 @@
                     <div class="box-header">
                       <div class="content">
                           <div class="row">
-                              <div class="col-md-6"><h3 class="box-title">Usuarios</h3></div>
+                              <div class="col-md-6"><h3 class="box-title">Tipos</h3></div>
                               <div class="col-md-6  text-right"><button type="button" name="create" class="btn btn-primary loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/create " data-title="Crear Usuario">Crear Usuario</button></div>
                           </div>
                       </div>
@@ -33,19 +33,16 @@
                                     <th>No.</th>
                                     <th>Tipo de Centro</th>
                                     <td>Operaciones</td>
-
-
                                 </tr>
                             </thead>
                             <tbody>
-                              @foreach($data as  $key => $usuario)
+                              @foreach($data as  $key => $tipo)
                                  <tr>
                                      <td>{{ $key+1 }} </td>
-                                     <td>hola </td>
-
+                                     <td>{{$tipo->tipo}}</td>
                                      <td class="text-center">
-                                      <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}/edit" data-title="Actualizar Usuario">Editar</button>
-                                      <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}" data-title="Eliminar Usuario">Eliminar</button>
+                                      <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $tipo->id }}/edit" data-title="Actualizar Usuario">Editar</button>
+                                      <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $tipo->id }}" data-title="Eliminar Usuario">Eliminar</button>
                                      </td>
 
                                  </tr>
