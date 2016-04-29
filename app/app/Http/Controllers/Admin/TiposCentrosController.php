@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Tipo_centro;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,8 @@ class TiposCentrosController extends Controller
      */
     public function index()
     {
-        return 'hola';
+        $data=Tipo_centro::all();
+        return view('admin.tiposCentros.list',compact('data'));
     }
 
     /**
