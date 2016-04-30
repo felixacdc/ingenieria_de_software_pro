@@ -41,6 +41,12 @@
                 </li>
 
             @endif
+
+            <li>
+                <a href="{{ url('admin/boleta') }}">
+                    <i class="fa fa-plus"></i> <span> Crear Boleta</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

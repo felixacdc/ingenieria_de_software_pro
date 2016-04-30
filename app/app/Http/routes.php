@@ -27,4 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
     Route::resource('users', 'UsersController');
     Route::resource('TiposCentros' , 'TiposCentrosController');
 
+    // Routes Boleta
+    Route::resource('boleta', 'BoletaController');
+
 });
