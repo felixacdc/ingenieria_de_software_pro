@@ -14,18 +14,18 @@
 </div>
 
 <div class="form-group">
-	<label for="">Direccion</label>
-	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la direccion ', 'required' => 'required'))!!}
+	<label for="">Dirección</label>
+	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la dirección ', 'required' => 'required'))!!}
 </div>
 
 <div class="form-group">
-	<label for="">Email</label>
-	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electronico'))!!}
+	<label for="">Correo Electrónico</label>
+	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico'))!!}
 </div>
 
 <div class="form-group">
-	<label for="">Telefono</label>
-	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Telefono del usuario'))!!}
+	<label for="">Teléfono</label>
+	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Teléfono del usuario'))!!}
 </div>
 
 

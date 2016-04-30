@@ -33,8 +33,8 @@
                                     <th>No.</th>
                                     <th>Usuario</th>
                                     <th>Nombre</th>
-                                    <th>Direccion</th>
-                                    <th>Telefono</th>
+                                    <th>Dirección</th>
+                                    <th>Teléfono</th>
                                     <th>Centro</th>
                                     <th>Tipo Usuario</th>
                                     <th>Operaciones</th>
