@@ -8,7 +8,7 @@
         <section class="content-header">
             <h1>
                 Boleta
-                <small>Creacion de Boleta</small>
+                <small>Creación de Boleta</small>
             </h1>
         </section>
 
