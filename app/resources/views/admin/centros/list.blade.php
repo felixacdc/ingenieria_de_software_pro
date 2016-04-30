@@ -32,8 +32,8 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nombre de Centro</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
                                 <th>Tipo de Centro</th>
                                 <th>Operaciones</th>
                             </tr>

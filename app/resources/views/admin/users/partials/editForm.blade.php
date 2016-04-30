@@ -45,23 +45,23 @@
                     required: "Por favor ingrese el Usuario."
                 },
                 password: {
-                    minlength: "La contraseña debe contener 8 caracteres como minimo."
+                    minlength: "La contraseña debe contener 8 caracteres como mínimo."
                 },
 				name: {
 					required: "Por favor ingrese el Nombre."
 				},
 
 				address: {
-					required: "Por favor ingrese la Direccion."
+					required: "Por favor ingrese la Dirección."
 				},
                 email:
                 {
-                    email: "Por favor ingrese un correo electronico valido."
+                    email: "Por favor ingrese un correo electrónico valido."
                 },
 				phone: {
 					digits: "Por favor ingrese solo numeros",
-					minlength: "El telefono debe contener 8 caracteres.",
-					maxlength: "El telefono debe contener 8 caracteres."
+					minlength: "El teléfono debe contener 8 caracteres.",
+					maxlength: "El teléfono debe contener 8 caracteres."
 				},
 	            centro_id: {
 	                required: "Por favor ingrese el Centro al que pertenece"

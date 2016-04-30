@@ -33,8 +33,8 @@
                                     <th>No.</th>
                                     <th>Usuario</th>
                                     <th>Nombre</th>
-                                    <th>Direccion</th>
-                                    <th>Telefono</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo Electrónico</th>
                                     <th>Centro</th>
                                     <th>Tipo Usuario</th>
                                     <th>Operaciones</th>
@@ -47,8 +47,8 @@
                                      <td>{{ $key+1 }} </td>
                                      <td>{{ $usuario->user }} </td>
                                      <td>{{ $usuario->name }} </td>
-                                     <td>{{ $usuario->address }} </td>
                                      <td>{{ $usuario->phone }} </td>
+                                     <td>{{ $usuario->email }} </td>
                                      <td>{{ $usuario->centro->centro }} </td>
                                      <td>{{ $usuario->tipo->tipo }} </td>
                                      <td class="text-center">
