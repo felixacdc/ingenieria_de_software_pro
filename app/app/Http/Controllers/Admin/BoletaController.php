@@ -16,7 +16,7 @@ class BoletaController extends Controller
      */
     public function index()
     {
-        return view('admin/boletas/ejemplo');
+        return view('admin/boletas/create');
     }
 
     /**
