@@ -27,7 +27,7 @@ class TiposCentrosController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tiposCentros.partials.createForm');
     }
 
     /**

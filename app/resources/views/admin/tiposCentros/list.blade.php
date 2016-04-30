@@ -22,7 +22,7 @@
                       <div class="content">
                           <div class="row">
                               <div class="col-md-6"><h3 class="box-title">Tipos</h3></div>
-                              <div class="col-md-6  text-right"><button type="button" name="create" class="btn btn-primary loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/create " data-title="Crear Usuario">Crear Tipo de Centro</button></div>
+                              <div class="col-md-6  text-right"><button type="button" name="create" class="btn btn-primary loadModal" data-toggle='modal' data-target='#generalModal' data-url="TiposCentros/create " data-title="Crear Tipo Centro">Crear Tipo de Centro</button></div>
                           </div>
                       </div>
                     </div><!-- /.box-header -->
