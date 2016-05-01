@@ -1,4 +1,4 @@
-{!!Form::open(['route' => 'admin.tiposCentros.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createForm'])!!}
+{!!Form::open(['route' => 'admin.TiposCentros.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createForm'])!!}
 
     @include('admin.tiposCentros.partials.inputsForm')
 

@@ -38,7 +38,8 @@ class TiposCentrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tipo_centro::create($request->all());
+        return redirect('/admin/TiposCentros')->with('message','Tipo de Ccentro Creado Exitosamente');
     }
 
     /**
