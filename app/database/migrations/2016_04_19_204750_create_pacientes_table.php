@@ -16,11 +16,11 @@ class CreatePacientesTable extends Migration
             $table->increments('id');
             $table->string('no_registro');
             $table->integer('no_boleta');
-            $table->string('nombre');
-            $table->integer('edad')->unsigned();
-            $table->string('pueblo');
-            $table->string('escolaridad');
-            $table->string('ocupacion');
+            $table->string('nombre_paciente');
+            $table->integer('edad_paciente')->unsigned();
+            $table->string('pueblo_paciente');
+            $table->string('escolaridad_paciente');
+            $table->string('ocupacion_paciente');
             $table->string('nombre_esposo');
             $table->integer('edad_esposo')->unsigned();
             $table->string('pueblo_esposo');
