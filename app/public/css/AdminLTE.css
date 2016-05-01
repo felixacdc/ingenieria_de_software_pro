@@ -3453,3 +3453,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 .box-body .content {
      background: #fff;
 }
+
+.back-white {
+    background: #fff;
+}
