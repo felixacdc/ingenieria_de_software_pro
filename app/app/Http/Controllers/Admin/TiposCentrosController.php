@@ -74,7 +74,10 @@ class TiposCentrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tipo=Tipo_centro::find($id);
+        $tipo->fill($request->all());
+        $tipo->save();
+        return redirect('/admin/TiposCentros')->with('message','Tipo Centro Editado correctamente.');
     }
 
     /**
