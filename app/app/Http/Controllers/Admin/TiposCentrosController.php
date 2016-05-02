@@ -61,7 +61,8 @@ class TiposCentrosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $type=Tipo_centro::find($id);
+        return view('admin.tiposCentros.partials.editForm',compact('type'));
     }
 
     /**
