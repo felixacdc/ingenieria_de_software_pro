@@ -42,7 +42,7 @@
                                      <td>{{$tipo->tipo}}</td>
                                      <td class="text-center">
                                       <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="TiposCentros/{{ $tipo->id }}/edit" data-title="Actualizar Usuario">Editar</button>
-                                      <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $tipo->id }}" data-title="Eliminar Usuario">Eliminar</button>
+                                      <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="TiposCentros/{{ $tipo->id }}" data-title="Eliminar Tipo Usuario">Eliminar</button>
                                      </td>
 
                                  </tr>
