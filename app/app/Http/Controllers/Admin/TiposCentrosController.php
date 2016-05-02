@@ -50,7 +50,7 @@ class TiposCentrosController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.tiposCentros.partials.deleteForm')->with('id',$id);
     }
 
     /**
@@ -88,6 +88,6 @@ class TiposCentrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }
