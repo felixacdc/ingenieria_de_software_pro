@@ -24,6 +24,7 @@ class CreateCentrosTable extends Migration
                   ->references('id')
                   ->on('tipo_centro');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
