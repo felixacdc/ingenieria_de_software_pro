@@ -4,8 +4,17 @@ namespace App\Http\Middleware;
 
 use Closure;
 
+use Illuminate\Contracts\Auth\Guard;
+
 class AdminMiddleware
 {
+
+    private $auth;
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
     /**
      * Handle an incoming request.
      *
@@ -15,6 +24,18 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if ( $this->auth->user()->tipo_usuario_id != 1 )
+        {
+
+            $this->auth->logout();
+
+            if ($request->ajax()) {
+                return response('Unauthorized.', 401);
+            } else {
+                return redirect()->guest('/');
+            }
+        }
+
         return $next($request);
     }
 }

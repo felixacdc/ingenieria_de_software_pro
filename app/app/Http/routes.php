@@ -20,12 +20,15 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
     Route::get('/', 'UsersController@begin');
 
-    //Routes centros
-    Route::resource('centros','CentrosController');
+    Route::group(['middleware' => ['adminAuth']], function () {
+        //Routes centros
+        Route::resource('centros', 'CentrosController');
 
-    //Routes Users
-    Route::resource('users', 'UsersController');
-    Route::resource('TiposCentros' , 'TiposCentrosController');
+        //Routes Users
+        Route::resource('users', 'UsersController');
+        Route::resource('TiposCentros' , 'TiposCentrosController');
+    });
+
 
     // Routes Boleta
     Route::resource('boleta', 'BoletaController');
