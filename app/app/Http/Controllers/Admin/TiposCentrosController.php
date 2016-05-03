@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Tipo_centro;
+use App\Centro;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -88,6 +89,15 @@ class TiposCentrosController extends Controller
      */
     public function destroy($id)
     {
-
+        $relations = Centro::where('tipo_centro_id','=','$id')->count();
+        if($relations>0){
+          echo "no se puede";
+        }
+        else {
+          echo "si se puede";
+        }
+        //$type=Tipo_centro::find($id);
+        //$type->delete();
+        //return redirect('/admin/TiposCentros')->with('message','Eliminado Exitosamente');
     }
 }
