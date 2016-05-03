@@ -89,15 +89,15 @@ class TiposCentrosController extends Controller
      */
     public function destroy($id)
     {
-        $relations = Centro::where('tipo_centro_id','=','$id')->count();
+        $relations = Centro::where('tipo_centro_id','=',$id)->count();
         if($relations>0){
-          echo "no se puede";
+          return redirect('/admin/TiposCentros')->with('message','Error No se puede Eliminar este registro, ya que contiene informacion relacionada a el.');
         }
         else {
-          echo "si se puede";
+          $type=Tipo_centro::find($id);
+          $type->delete();
+          return redirect('/admin/TiposCentros')->with('message','Eliminado Exitosamente');
         }
-        //$type=Tipo_centro::find($id);
-        //$type->delete();
-        //return redirect('/admin/TiposCentros')->with('message','Eliminado Exitosamente');
+
     }
 }
