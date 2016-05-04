@@ -7,7 +7,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <br><br>
-                <div class="alert alert-danger alert-dismissable">
+                <div class="alert alert-danger alert-dismissable homeloader wow zoomInDown" data-wow-duration="1.5s">
                     <i class="fa fa-ban"></i>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <strong>Oh!</strong> Por favor corrige los siguientes errores.<br><br>
@@ -26,7 +26,7 @@
     {!!Form::open(['url' => 'auth/login', 'method' => 'POS', 'class' => 'login-form homeloader wow bounceInDown', 'data-wow-duration' => '1s'])!!}
 
         <div class="login-wrap">
-            <p class="login-img wow bounceInDown" data-wow-duration="1.5s"><i class="icon_lock_alt"></i></p>
+            <p class="login-img homeloader wow bounceInDown" data-wow-duration="1.5s"><i class="icon_lock_alt"></i></p>
             <div class="input-group wow fadeInLeft" data-wow-duration="1.5s">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
               {!!Form::text('user', null, ['class' => 'form-control', 'placeholder' => 'Usuario', 'autofocus' => 'autofocus', 'required' => 'required'])!!}
