@@ -6,38 +6,62 @@
             <hr>
             <div class="row">
                 <div class="form-group col-md-6">
-                	{!!Form::label('adato1','Muerte fetal o muerte neonatal previas:')!!}
-                	{!!Form::select('adato1', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::label('bdato1','Diagnostico o sospecha de embarazo múltiple:')!!}
+                	{!!Form::select('bdato1', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
                 <div class="form-group col-md-6">
-                    {!!Form::label('adato2','Antecedentes de 3 o más abortos espontáneos consecutivos:')!!}
-                	{!!Form::select('adato2', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6">
-                	{!!Form::label('adato3','Antecedentes de 3 o más gestas:')!!}
-                	{!!Form::select('adato3', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
-                </div>
-                <div class="form-group col-md-6">
-                    {!!Form::label('adato4','Peso al nacer del último bebe < 2500 g. (5 lb. 8 onz.):')!!}
-                	{!!Form::select('adato4', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                    {!!Form::label('bdato2','Menos de 20 años:')!!}
+                	{!!Form::select('bdato2', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                	{!!Form::label('adato5','Peso al nacer del último bebe > 4500 g. (9 lb. 4 onz.):')!!}
-                	{!!Form::select('adato5', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::label('bdato3','Más de 35 años:')!!}
+                	{!!Form::select('bdato3', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
                 <div class="form-group col-md-6">
-                    {!!Form::label('adato6','Antecedentes de hipertensión o preclampsia/eclampsia:')!!}
-                	{!!Form::select('adato6', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                    {!!Form::label('bdato4','Paciente Rh (-):')!!}
+                	{!!Form::select('bdato4', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                	{!!Form::label('adato7','Cirugías previas en el tacto reproductivo (miomectomia, conización, cesáreas o cerclaje cervical):')!!}
-                	{!!Form::select('adato7', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::label('bdato5','Hemorragia vaginal sin importar cantidad:')!!}
+                	{!!Form::select('bdato5', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+                <div class="form-group col-md-6">
+                    {!!Form::label('bdato6','VIH positivo o sífilis positivo:')!!}
+                	{!!Form::select('bdato6', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                	{!!Form::label('bdato7','Presión arterial diastólica de 90 mm Hg o más durante el registro de datos:')!!}
+                	{!!Form::select('bdato7', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+                <div class="form-group col-md-6">
+                    {!!Form::label('bdato8','Anemia clínica o de laboratorio:')!!}
+                	{!!Form::select('bdato8', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                	{!!Form::label('bdato9','Desnutrición u obesidad:')!!}
+                	{!!Form::select('bdato9', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+                <div class="form-group col-md-6">
+                    {!!Form::label('bdato10','Dolor abdominal:')!!}
+                	{!!Form::select('bdato10', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                	{!!Form::label('bdato11','Sintomatología urinaria:')!!}
+                	{!!Form::select('bdato11', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                </div>
+                <div class="form-group col-md-6">
+                    {!!Form::label('bdato12','Ictericia:')!!}
+                	{!!Form::select('bdato12', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             {{-- {!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!} --}}
