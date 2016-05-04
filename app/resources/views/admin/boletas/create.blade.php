@@ -28,23 +28,23 @@
                     <div id="my-tab-content" class="tab-content">
 
                         <!-- Datos Personales-->
-                        <div class="tab-pane in active animated flipInX" id="tabData1">
+                        <div class="tab-pane in active animated zoomIn" id="tabData1">
                             @include('admin.boletas.pacientes')
                         </div>
                         <!-- Antecedentes Obstétricos-->
-                        <div class="tab-pane in animated flipInX" id="tabData2">
+                        <div class="tab-pane in animated zoomIn" id="tabData2">
                             @include('admin.boletas.antecedentes')
                         </div>
                         <!-- Embarazo Actual-->
-                        <div class="tab-pane in animated flipInX" id="tabData3">
+                        <div class="tab-pane in animated zoomIn" id="tabData3">
                             @include('admin.boletas.embarazoactual')
                         </div>
                         <!-- Historia Clínica General-->
-                        <div class="tab-pane in animated flipInX" id="tabData4">
+                        <div class="tab-pane in animated zoomIn" id="tabData4">
                             @include('admin.boletas.historiaclinica')
                         </div>
                         <!-- Persona Responsable-->
-                        <div class="tab-pane in animated flipInX" id="tabData5">
+                        <div class="tab-pane in animated zoomIn" id="tabData5">
                             @include('admin.boletas.responsable')
                         </div>
                     </div>

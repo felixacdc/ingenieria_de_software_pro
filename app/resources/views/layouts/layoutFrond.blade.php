@@ -10,5 +10,12 @@
     </div>
 
     @include('layouts.partialsFrond.scripts')
+
+
+    <script type="text/javascript">
+        $( "#send" ).submit(function( event ) {
+            $("#send .btn-primary").prop('disabled', true);
+        });
+    </script>
   </body>
 </html>
