@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('pueblo_paciente','Pueblo:')!!}
-                	{{-- {!!Form::select('pueblo_paciente', null, null, ['class' => 'form-control'])!!} --}}
+                	{!!Form::select('pueblo_paciente', config('pueblos'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('pueblo_esposo','Pueblo:')!!}
-                	{{-- {!!Form::select('pueblo_paciente', null, null, ['class' => 'form-control'])!!} --}}
+                	{!!Form::select('pueblo_esposo', config('pueblos'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
