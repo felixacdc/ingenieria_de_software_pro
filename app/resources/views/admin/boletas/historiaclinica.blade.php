@@ -36,8 +36,8 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
-                    {!!Form::label('cdato7','Por favor, especifique::')!!}
-                	{!!Form::textarea('cdato7', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la embarazada', 'rows' => '4', 'cols' => '50', 'required' => 'required'))!!}
+                    {!!Form::label('cdato7','Por favor, especifique:')!!}
+                	{!!Form::textarea('cdato7', null, array('class' => 'form-control', 'placeholder' => 'Por favor, especifique', 'rows' => '4', 'cols' => '50', 'required' => 'required'))!!}
                 </div>
             </div>
             {{-- {!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!} --}}
