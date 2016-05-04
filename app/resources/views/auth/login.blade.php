@@ -23,7 +23,7 @@
 
 	@endif
 
-    {!!Form::open(['url' => 'auth/login', 'method' => 'POS', 'class' => 'login-form homeloader wow bounceInDown', 'data-wow-duration' => '1s'])!!}
+    {!!Form::open(['url' => 'auth/login', 'method' => 'POS', 'class' => 'login-form homeloader wow bounceInDown', 'data-wow-duration' => '1s', 'id' => 'send'])!!}
 
         <div class="login-wrap">
             <p class="login-img homeloader wow bounceInDown" data-wow-duration="1.5s"><i class="icon_lock_alt"></i></p>
@@ -39,6 +39,5 @@
         </div>
 
     {!!Form::close()!!}
-
 
 @endsection
