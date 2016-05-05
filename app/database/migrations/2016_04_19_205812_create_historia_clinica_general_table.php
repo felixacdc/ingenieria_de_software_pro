@@ -20,7 +20,7 @@ class CreateHistoriaClinicaGeneralTable extends Migration
             $table->boolean('dato4');
             $table->boolean('dato5');
             $table->boolean('dato6');
-            $table->boolean('dato7');
+            $table->longText('dato7');
             $table->integer('paciente_id')->unsigned();
             $table->foreign('paciente_id')
                   ->references('id')
