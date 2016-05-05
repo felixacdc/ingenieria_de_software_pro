@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PacienteTableSeeder extends Seeder
+class ObstetricosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PacienteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Paciente::class, 50)->create();
+        factory(App\antecedentes_obstetricos::class, 50)->create();
     }
 }

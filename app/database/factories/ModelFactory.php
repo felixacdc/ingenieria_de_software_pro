@@ -30,7 +30,7 @@ $factory->define(App\Paciente::class, function ($faker) {
         'escolaridad_paciente'    =>'Basico',
         'ocupacion_paciente'      => $faker->word,
         'nombre_esposo'           => $faker->lastName,
-        'edad_esposo'             =>$faker->randomDigit,
+        'edad_esposo'             => $faker->randomDigit,
         'pueblo_esposo'           => $faker->city,
         'escolaridad_esposo'      => $faker->word,
         'ocupacion_esposo'        => $faker->word ,
@@ -40,13 +40,28 @@ $factory->define(App\Paciente::class, function ($faker) {
         'dpi_paciente_com_esp'    => $faker->randomDigit,
         'fecha_ultima_regla'      => $faker->dateTime,
         'fecha_probable_parto'    => $faker->dateTime,
-        'no_embarazos'            =>$faker->randomDigit ,
-        'no_partos'               =>$faker->randomDigit,
-        'no_cesarias'             =>$faker->randomDigit,
-        'no_abortos'              =>$faker->randomDigit,
-        'no_hijos_vivos'          =>$faker->randomDigit,
-        'no_hijos_muertos'        =>$faker->randomDigit,
+        'no_embarazos'            => $faker->randomDigit ,
+        'no_partos'               => $faker->randomDigit,
+        'no_cesarias'             => $faker->randomDigit,
+        'no_abortos'              => $faker->randomDigit,
+        'no_hijos_vivos'          => $faker->randomDigit,
+        'no_hijos_muertos'        => $faker->randomDigit,
         'user_id'                 => 1,
-        'centro_id'               =>1,
+        'centro_id'               => 1,
+        ];
+});
+
+
+$factory->define(App\antecedentes_obstetricos::class, function ($faker) {
+    return [
+            'dato1'         => $faker->randomElement([true, false]),
+            'dato2'         => $faker->randomElement([true, false]),
+            'dato3'         => $faker->randomElement([true, false]),
+            'dato4'         => $faker->randomElement([true, false]),
+            'dato5'         => $faker->randomElement([true, false]),
+            'dato6'         => $faker->randomElement([true, false]),
+            'dato7'         => $faker->randomElement([true, false]),
+            'pacientes_id'   => rand(1,50),
+
         ];
 });
