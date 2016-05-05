@@ -18,12 +18,17 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                	{!!Form::label('fecha_ultima_regla','Fecha  última regla:')!!}
-                	{!!Form::date('fecha_ultima_regla', null, array('class' => 'form-control', 'placeholder' => 'Fecha  última regla', 'required' => 'required'))!!}
+                	{!!Form::label('dFecha','Fecha:')!!}
+                	{!!Form::date('dFecha', null, array('class' => 'form-control', 'placeholder' => 'Fecha', 'required' => 'required'))!!}
                 </div>
                 <div class="form-group col-md-6">
-                    {!!Form::label('edad_paciente','Edad en años:')!!}
-                	{!!Form::number('edad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Edad en años', 'required' => 'required'))!!}
+                    {!!Form::label('dNombre','Nombre:')!!}
+                	{!!Form::text('dNombre', null, array('class' => 'form-control', 'placeholder' => 'Nombre', 'required' => 'required'))!!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12 text-right">
+                    {!!Form::submit('Crear Boleta', array('class' => 'btn btn-primary'))!!}
                 </div>
             </div>
         </div>
