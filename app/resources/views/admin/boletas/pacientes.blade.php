@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group col-md-6">
                 	{!!Form::label('dpi_pasiente_com_esp','No. de celular de señora, pareja o comunitario:')!!}
-                	{!!Form::text('dpi_pasiente_com_esp', null, array('class' => 'form-control', 'placeholder' => 'No. de celular de señora, pareja o comunitario', 'required' => 'required'))!!}
+                	{!!Form::text('dpi_paciente_com_esp', null, array('class' => 'form-control', 'placeholder' => 'No. de celular de señora, pareja o comunitario', 'required' => 'required'))!!}
                 </div>
             </div>
             <div class="row">
