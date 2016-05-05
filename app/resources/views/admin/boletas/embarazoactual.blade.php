@@ -64,7 +64,12 @@
                 	{!!Form::select('bdato12', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
-            {{-- {!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!} --}}
+            <div class="row">
+                <div class="form-group col-md-12 text-right">
+                    <a href="#tabData2" data-id="menuItem2" data-toggle="tab" class="btn btn-primary btn-lg nextButton"><i class="fa fa-arrow-left"></i></a>
+                    <a href="#tabData4" data-id="menuItem4" data-toggle="tab" class="btn btn-primary btn-lg nextButton"><i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

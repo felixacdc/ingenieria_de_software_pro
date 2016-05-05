@@ -40,7 +40,12 @@
                 	{!!Form::textarea('cdato7', null, array('class' => 'form-control', 'placeholder' => 'Por favor, especifique', 'rows' => '4', 'cols' => '50'))!!}
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="form-group col-md-12 text-right">
+                    <a href="#tabData3" data-id="menuItem3" data-toggle="tab" class="btn btn-primary btn-lg nextButton"><i class="fa fa-arrow-left"></i></a>
+                    <a href="#tabData5" data-id="menuItem5" data-toggle="tab" class="btn btn-primary btn-lg nextButton"><i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -18,11 +18,11 @@
 
                 <!-- TABS -->
                 <ul class="nav nav-tabs">
-                    <li class="active" role="presentation"><a href="#tabData1" data-toggle="tab">Datos Personales</a></li>
-                    <li role="presentation" id="two"><a href="#tabData2" data-toggle="tab">Antecedentes Obstétricos</a></li>
-                    <li role="presentation"><a href="#tabData3" data-toggle="tab">Embarazo Actual</a></li>
-                    <li role="presentation"><a href="#tabData4" data-toggle="tab">Historia Clínica General</a></li>
-                    <li role="presentation"><a href="#tabData5" data-toggle="tab">Persona Responsable</a></li>
+                    <li class="active" id="menuItem1" role="presentation"><a href="#tabData1" data-toggle="tab">Datos Personales</a></li>
+                    <li role="presentation" id="menuItem2"><a href="#tabData2" data-toggle="tab">Antecedentes Obstétricos</a></li>
+                    <li role="presentation" id="menuItem3"><a href="#tabData3" data-toggle="tab">Embarazo Actual</a></li>
+                    <li role="presentation" id="menuItem4"><a href="#tabData4" data-toggle="tab">Historia Clínica General</a></li>
+                    <li role="presentation" id="menuItem5"><a href="#tabData5" data-toggle="tab">Persona Responsable</a></li>
                 </ul>
                 {!!Form::open(['route' => 'admin.boleta.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createForm'])!!}
                     <div id="my-tab-content" class="tab-content">
