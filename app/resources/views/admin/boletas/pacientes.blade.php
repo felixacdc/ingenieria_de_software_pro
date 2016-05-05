@@ -114,7 +114,11 @@
                 	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required'))!!}
                 </div>
             </div>
-            {{-- {!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!} --}}
+            <div class="row">
+                <div class="form-group col-md-12 text-right">
+                    <a href="#tabData2" data-toggle="tab" class="btn btn-primary btn-lg nextButton"><i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
