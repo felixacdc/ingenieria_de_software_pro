@@ -37,7 +37,7 @@ $factory->define(App\Paciente::class, function ($faker) {
         'distancia_se_si_cercana' => $faker->randomDigit,
         'tiempo_para_llegar' => $faker->randomDigit,
         'nombre_comunidad' => $faker->city,
-        'dpi_pasiente_com_esp' $faker->randomDigit,
+        'dpi_paciente_com_esp' $faker->randomDigit,
         'fecha_ultima_regla' => $faker->dateTime,
         'fecha_probable_parto'=> $faker->dateTime,
         'no_embarazos' =>$faker->randomDigit ,
@@ -47,7 +47,7 @@ $factory->define(App\Paciente::class, function ($faker) {
         'no_hijos_vivos' =>$faker->randomDigit,
         'no_hijos_muertos' =>$faker->randomDigit,
         'user_id' => 1,
-        'centro_id' =>1
+        'centro_id' =>1,
 
         ];
 });
