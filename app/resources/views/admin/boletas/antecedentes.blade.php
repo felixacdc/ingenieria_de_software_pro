@@ -40,7 +40,12 @@
                 	{!!Form::select('adato7', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
-            {{-- {!!Form::submit('Editar', array('class' => 'btn btn-primary'))!!} --}}
+            <div class="row">
+                <div class="form-group col-md-12 text-right">
+                    <a href="#tabData1" data-id="menuItem1" data-toggle="tab" class="btn btn-primary nextButton"><i class="fa fa-arrow-left"></i></a>
+                    <a href="#tabData3" data-id="menuItem3" data-toggle="tab" class="btn btn-primary nextButton"><i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

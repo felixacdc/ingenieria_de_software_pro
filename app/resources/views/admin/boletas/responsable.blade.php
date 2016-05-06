@@ -28,6 +28,7 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-12 text-right">
+                    <a href="#tabData4" data-id="menuItem4" data-toggle="tab" class="btn btn-primary nextButton"><i class="fa fa-arrow-left"></i></a>
                     {!!Form::submit('Crear Boleta', array('class' => 'btn btn-primary'))!!}
                 </div>
             </div>
