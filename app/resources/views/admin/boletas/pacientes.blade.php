@@ -114,12 +114,11 @@
                 	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required'))!!}
                 </div>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="form-group col-md-12 text-right">
                     <a href="#tabData2" data-id="menuItem2" data-toggle="tab" class="btn btn-primary nextButton"><i class="fa fa-arrow-right"></i></a>
-                    {{-- {!!Form::submit('Crear Boleta', array('class' => 'btn btn-primary'))!!} --}}
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

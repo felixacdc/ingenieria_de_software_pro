@@ -42,9 +42,8 @@ $(document).ready(function () {
 				}
             },
 			submitHandler: function(form) {
-				// $("#generalModal .btn-primary").prop('disabled', true);
-				// form.submit();
-                alert('si');
+				$("#createBoleta .btn-primary").prop('disabled', true);
+				form.submit();
 			}
     });
 
