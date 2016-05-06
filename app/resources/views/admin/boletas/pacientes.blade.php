@@ -23,37 +23,37 @@
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('escolaridad_paciente','Escolaridad:')!!}
-                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required'))!!}
+                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('ocupacion_paciente','Ocupación:')!!}
-                	{!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
+                	{!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('nombre_esposo','Nombre de esposo o conviviente:')!!}
-                	{!!Form::text('nombre_esposo', null, array('class' => 'form-control', 'placeholder' => 'Nombre de esposo o conviviente', 'required' => 'required'))!!}
+                	{!!Form::text('nombre_esposo', null, array('class' => 'form-control', 'placeholder' => 'Nombre de esposo o conviviente'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('edad_esposo','Edad en años:')!!}
-                	{!!Form::number('edad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Edad de esposo o conviviente', 'required' => 'required'))!!}
+                	{!!Form::number('edad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Edad de esposo o conviviente'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('pueblo_esposo','Pueblo:')!!}
-                	{!!Form::select('pueblo_esposo', config('pueblos'), null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('pueblo_esposo', config('pueblos'), null, ['class' => 'form-control'])!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-8">
                 	{!!Form::label('escolaridad_esposo','Escolaridad:')!!}
-                	{!!Form::text('escolaridad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required'))!!}
+                	{!!Form::text('escolaridad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('ocupacion_esposo','Ocupación:')!!}
-                	{!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
+                	{!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
                 </div>
             </div>
             <div class="row">

@@ -7,31 +7,31 @@
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('cdato1','Diabetes:')!!}
-                	{!!Form::select('cdato1', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato1', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
                 <div class="form-group col-md-6">
                     {!!Form::label('cdato2','Enfermedad renal:')!!}
-                	{!!Form::select('cdato2', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato2', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('cdato3','Enfermedad del corazón:')!!}
-                	{!!Form::select('cdato3', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato3', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
                 <div class="form-group col-md-6">
                     {!!Form::label('cdato4','Hipertensión arterial:')!!}
-                	{!!Form::select('cdato4', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato4', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('cdato5','Consumo de drogas incluido alcohol y tabaco:')!!}
-                	{!!Form::select('cdato5', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato5', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
                 <div class="form-group col-md-6">
                     {!!Form::label('cdato6','Cualquier otra enfermedad o afección médica severa:')!!}
-                	{!!Form::select('cdato6', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('cdato6', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
