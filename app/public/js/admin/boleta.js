@@ -20,21 +20,9 @@ $(document).ready(function () {
 
     $("#createBoleta").validate({
         rules: {
-                nombre_paciente: {
-                    required: true
-                },
                 edad_paciente: {
                     required: true,
                     digits: true
-                },
-				pueblo_paciente: {
-					required: true
-				},
-                escolaridad_paciente: {
-                    required: true
-                },
-                ocupacion_paciente: {
-                    required: true
                 },
                 edad_esposo: {
                     digits: true
@@ -47,12 +35,6 @@ $(document).ready(function () {
                     required: true,
                     digits: true
                 },
-                nombre_comunidad: {
-                    required: true
-                },
-				dpi_paciente_com_esp: {
-					required: true
-				},
                 fecha_ultima_regla: {
                     required: true,
                     date: true
@@ -84,27 +66,6 @@ $(document).ready(function () {
                 no_hijos_muertos: {
                     required: true,
                     digits: true
-                },
-                adato1: {
-                    required: true
-                },
-				adato2: {
-					required: true
-				},
-                adato3: {
-                    required: true
-                },
-                adato4: {
-                    required: true
-                },
-				adato5: {
-					required: true
-				},
-                adato6: {
-                    required: true
-                },
-                adato7: {
-                    required: true
                 }
             },
             messages: {
@@ -192,6 +153,42 @@ $(document).ready(function () {
                     required: "Por favor seleccione una opción."
                 },
                 adato7: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato1: {
+                    required: "Por favor seleccione una opción."
+                },
+				bdato2: {
+					required: "Por favor seleccione una opción."
+				},
+                bdato3: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato4: {
+                    required: "Por favor seleccione una opción."
+                },
+				bdato5: {
+					required: "Por favor seleccione una opción."
+				},
+                bdato6: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato7: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato8: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato9: {
+                    required: "Por favor seleccione una opción."
+                },
+				bdato10: {
+					required: "Por favor seleccione una opción."
+				},
+                bdato11: {
+                    required: "Por favor seleccione una opción."
+                },
+                bdato12: {
                     required: "Por favor seleccione una opción."
                 }
             },
