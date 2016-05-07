@@ -84,3 +84,17 @@ $factory->define(App\embarazo_actual::class, function ($faker) {
 
         ];
 });
+
+$factory->define(App\embarazo_actual::class, function ($faker) {
+    return [
+            'dato1'         => $faker->randomElement([true, false]),
+            'dato2'         => $faker->randomElement([true, false]),
+            'dato3'         => $faker->randomElement([true, false]),
+            'dato4'         => $faker->randomElement([true, false]),
+            'dato5'         => $faker->randomElement([true, false]),
+            'dato6'         => $faker->randomElement([true, false]),
+            'dato7'         => $faker->paragraph,
+            'pacientes_id'   => rand(1,50),
+
+        ];
+});
