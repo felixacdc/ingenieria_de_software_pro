@@ -17,6 +17,6 @@ class Historia_clinica_general extends Model
       'dato5',
       'dato6',
       'dato7',
-      'patient_id'
+      'paciente_id'
     ];
 }

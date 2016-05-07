@@ -11,6 +11,6 @@ class HistorialTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      factory(App\Historia_clinica_general::class, 50)->create();
     }
 }
