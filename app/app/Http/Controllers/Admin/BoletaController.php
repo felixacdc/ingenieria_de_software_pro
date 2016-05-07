@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\BoletaRequest;
+
 class BoletaController extends Controller
 {
     /**
@@ -35,9 +37,9 @@ class BoletaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BoletaRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**
