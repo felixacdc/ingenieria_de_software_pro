@@ -26,7 +26,7 @@ class CreatePacientesTable extends Migration
             $table->string('pueblo_esposo');
             $table->string('escolaridad_esposo');
             $table->string('ocupacion_esposo');
-            $table->integer('distancia_se_si_cercana')->unsigned(); # en KM
+            $table->decimal('distancia_se_si_cercana', 5, 2); # en KM
             $table->decimal('tiempo_para_llegar', 5, 2); # en Horas
             $table->string('nombre_comunidad');
             $table->string('dpi_paciente_com_esp'); # com = comunitario y esp = edad_esposo

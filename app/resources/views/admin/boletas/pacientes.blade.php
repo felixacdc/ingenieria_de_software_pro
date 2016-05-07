@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('distancia_se_si_cercana','Distancia en KM al servicio de salud más cercano:')!!}
-                	{!!Form::number('distancia_se_si_cercana', null, array('class' => 'form-control', 'placeholder' => 'Distancia en KM al servicio de salud más cercano', 'required' => 'required'))!!}
+                	{!!Form::number('distancia_se_si_cercana', null, array('class' => 'form-control', 'placeholder' => 'Distancia en KM al servicio de salud más cercano', 'required' => 'required', 'step' => 'any'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('tiempo_para_llegar','Tiempo en horas para llegar:')!!}

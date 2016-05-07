@@ -29,11 +29,11 @@ $(document).ready(function () {
                 },
 				distancia_se_si_cercana: {
 					required: true,
-                    digits: true
+                    number: true
 				},
                 tiempo_para_llegar: {
                     required: true,
-                    digits: true
+                    number: true
                 },
                 fecha_ultima_regla: {
                     required: true,
