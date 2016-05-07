@@ -190,6 +190,24 @@ $(document).ready(function () {
                 },
                 bdato12: {
                     required: "Por favor seleccione una opción."
+                },
+                cdato1: {
+                    required: "Por favor seleccione una opción."
+                },
+				cdato2: {
+					required: "Por favor seleccione una opción."
+				},
+                cdato3: {
+                    required: "Por favor seleccione una opción."
+                },
+                cdato4: {
+                    required: "Por favor seleccione una opción."
+                },
+				cdato5: {
+					required: "Por favor seleccione una opción."
+				},
+                cdato6: {
+                    required: "Por favor seleccione una opción."
                 }
             },
 			submitHandler: function(form) {
