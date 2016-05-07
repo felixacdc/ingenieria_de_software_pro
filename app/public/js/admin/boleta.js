@@ -66,6 +66,10 @@ $(document).ready(function () {
                 no_hijos_muertos: {
                     required: true,
                     digits: true
+                },
+                dFecha: {
+                    required: true,
+                    date: true
                 }
             },
             messages: {
@@ -103,12 +107,12 @@ $(document).ready(function () {
 					required: "Por favor ingrese el No. de celular de señora, pareja o comunitario."
 				},
                 fecha_ultima_regla: {
-                    required: "Por favor ingrese la fecha última regla.",
-                    date: "Por favor ingrese una fecha"
+                    required: "Por favor seleccione la fecha última regla.",
+                    date: "Por favor ingrese una fecha valida"
                 },
                 fecha_probable_parto: {
-                    required: "Por favor ingrese la fecha probable de parto.",
-                    date: "Por favor ingrese una fecha"
+                    required: "Por favor seleccione la fecha probable de parto.",
+                    date: "Por favor ingrese una fecha valida"
                 },
 				no_embarazos: {
 					required: "Por favor ingrese el No. de embarazos.",
@@ -208,7 +212,17 @@ $(document).ready(function () {
 				},
                 cdato6: {
                     required: "Por favor seleccione una opción."
-                }
+                },
+                ddato1: {
+                    required: "Por favor seleccione una opción."
+                },
+                dFecha: {
+                    required: "Por favor seleccione la fecha.",
+                    date: "Por favor ingrese una fecha valida"
+                },
+                dNombre: {
+                    required: "Por favor ingrese el nombre."
+                },
             },
 			submitHandler: function(form) {
 				$("#createBoleta .btn-primary").prop('disabled', true);
