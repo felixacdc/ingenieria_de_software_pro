@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="form-group col-md-12">
                 	{!!Form::label('ddato1','La presencia de algunas de las características anteriores hace necesaria la evaluación de la paciente por un médico, quien tomara la decisión de referirla o no a otro servicio de mayor complejidad:')!!}
-                	{!!Form::select('ddato1', ['0' => 'No', '1' => 'Si'], null, ['class' => 'form-control', 'required' => 'required'])!!}
+                	{!!Form::select('ddato1', config('cboOptions'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
@@ -28,7 +28,6 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-12 text-right">
-                    <a href="#tabData4" data-id="menuItem4" data-toggle="tab" class="btn btn-primary nextButton"><i class="fa fa-arrow-left"></i></a>
                     {!!Form::submit('Crear Boleta', array('class' => 'btn btn-primary'))!!}
                 </div>
             </div>

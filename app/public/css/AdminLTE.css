@@ -3426,12 +3426,12 @@ fieldset[disabled] .btn-vk.active {
 .form-validate .form-group label.error {
     display: inline;
     margin: 5px 0;
-    color: #00a0df;
+    color: #f56954;
     font-weight: 400;
 }
 
 input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:focus, .form-validate .form-group input.error , .form-validate .form-group textarea.error{
-    border-color: #00a0df !important;
+    border-color: #f56954 !important;
 }
 
 .homeloader {
