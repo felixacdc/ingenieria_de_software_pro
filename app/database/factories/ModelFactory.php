@@ -98,3 +98,14 @@ $factory->define(App\Historia_clinica_general::class, function ($faker) {
 
         ];
 });
+
+$factory->define(App\Conclusion::class, function ($faker) {
+    return [
+            'evaluacion_medica'  => $faker->randomElement([true, false]),
+            'referido_a'         => $faker->randomElement([true, false]),
+            'fecha'              => $faker->randomElement([true, false]),
+            'nombre'             => $faker->randomElement([true, false]),
+            'paciente_id'        => rand(1,50),
+
+        ];
+});
