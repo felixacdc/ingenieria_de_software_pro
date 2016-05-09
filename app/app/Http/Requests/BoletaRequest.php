@@ -24,13 +24,13 @@ class BoletaRequest extends Request
     public function rules()
     {
         return [
-            # Validacion de paciente
+            # validacion pacientes
             'nombre_paciente' => 'required',
             'edad_paciente' => 'required|numeric',
             'pueblo_paciente' => 'required',
             'escolaridad_paciente' => 'required',
             'ocupacion_paciente' => 'required',
-            'edad_esposo' => 'numeric'
+            'edad_esposo' => 'numeric',
             'distancia_se_si_cercana' => 'required|numeric',
             'tiempo_para_llegar' => 'required|numeric',
             'nombre_comunidad' => 'required',
@@ -43,7 +43,14 @@ class BoletaRequest extends Request
             'no_abortos' => 'required|numeric',
             'no_hijos_vivos' => 'required|numeric',
             'no_hijos_muertos' => 'required|numeric',
-            // '' => 'required',
+            # Validacion Antecedentes
+            'adato1' => 'required',
+            'adato2' => 'required',
+            'adato3' => 'required',
+            'adato4' => 'required',
+            'adato5' => 'required',
+            'adato6' => 'required',
+            'adato7' => 'required',
         ];
     }
 }
