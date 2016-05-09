@@ -15,6 +15,9 @@
         <!-- Main content -->
         <section class="content">
 
+            @include('admin.partials.alertSuccess')
+            @include('admin.partials.alertErrors')
+
             <div class="box box-primary">
                 <div class="box-header">
                     <div class="content">
