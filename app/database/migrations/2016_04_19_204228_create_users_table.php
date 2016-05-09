@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('email')->unique();
             $table->string('phone', 8);
+            $table->boolean('state');
 
             $table->integer('centro_id')->unsigned();
             $table->integer('tipo_usuario_id')->unsigned();
