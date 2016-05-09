@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BoletaRequest;
 
 use App\Paciente;
+use App\antecedentes_obstetricos;
 
 class BoletaController extends Controller
 {
@@ -42,7 +43,8 @@ class BoletaController extends Controller
     public function store(BoletaRequest $request)
     {
         // dd($request);
-        $this::savePatient($request);
+        // $this::savePatient($request);
+        $this::saveObstetricalHistory($request);
     }
 
     /**
@@ -108,6 +110,21 @@ class BoletaController extends Controller
         $patient->user_id = $request->user_id;
         $patient->centro_id = $request->centro_id;
 
-        dd ($patient);
+        dd($patient);
+    }
+
+    public static function saveObstetricalHistory($request)
+    {
+        $obstetrical = new antecedentes_obstetricos;
+
+        $obstetrical->dato1 = $request->adato1;
+        $obstetrical->dato2 = $request->adato2;
+        $obstetrical->dato3 = $request->adato3;
+        $obstetrical->dato4 = $request->adato4;
+        $obstetrical->dato5 = $request->adato5;
+        $obstetrical->dato6 = $request->adato6;
+        $obstetrical->dato7 = $request->adato7;
+
+        dd($obstetrical);
     }
 }
