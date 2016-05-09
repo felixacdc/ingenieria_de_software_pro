@@ -43,6 +43,8 @@ class BoletaRequest extends Request
             'no_abortos' => 'required|numeric',
             'no_hijos_vivos' => 'required|numeric',
             'no_hijos_muertos' => 'required|numeric',
+            'user_id' => 'required',
+            'centro_id' => 'required',
             # Validacion Antecedentes
             'adato1' => 'required',
             'adato2' => 'required',
