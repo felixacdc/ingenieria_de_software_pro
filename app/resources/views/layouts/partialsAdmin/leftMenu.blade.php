@@ -50,7 +50,7 @@
 
             <li>
                 <a href="{{ url('admin/TiposCentros') }}">
-                    <i class="fa fa-circle-o-notch" aria-hidden="true"></i> <span>Registro</span>
+                    <i class="fa fa-list" aria-hidden="true"></i> <span>Registro</span>
                 </a>
             </li>
         </ul>
