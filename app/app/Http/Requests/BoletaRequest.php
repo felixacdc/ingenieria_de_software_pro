@@ -51,6 +51,19 @@ class BoletaRequest extends Request
             'adato5' => 'required',
             'adato6' => 'required',
             'adato7' => 'required',
+            # Validacion Embarazo actual
+            'bdato1' => 'required',
+            'bdato2' => 'required',
+            'bdato3' => 'required',
+            'bdato4' => 'required',
+            'bdato5' => 'required',
+            'bdato6' => 'required',
+            'bdato7' => 'required',
+            'bdato8' => 'required',
+            'bdato9' => 'required',
+            'bdato10' => 'required',
+            'bdato11' => 'required',
+            'bdato12' => 'required',
         ];
     }
 }
