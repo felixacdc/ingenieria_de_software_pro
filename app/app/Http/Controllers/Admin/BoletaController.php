@@ -105,6 +105,8 @@ class BoletaController extends Controller
         $patient->no_abortos = $request->no_abortos;
         $patient->no_hijos_vivos = $request->no_hijos_vivos;
         $patient->no_hijos_muertos = $request->no_hijos_muertos;
+        $patient->user_id = $request->user_id;
+        $patient->centro_id = $request->centro_id;
 
         dd ($patient);
     }
