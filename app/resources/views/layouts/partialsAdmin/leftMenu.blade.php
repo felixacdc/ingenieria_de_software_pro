@@ -47,6 +47,12 @@
                     <i class="fa fa-plus"></i> <span> Crear Boleta</span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ url('admin/TiposCentros') }}">
+                    <i class="fa fa-circle-o-notch" aria-hidden="true"></i> <span>Registro</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
