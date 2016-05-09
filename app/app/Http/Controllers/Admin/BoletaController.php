@@ -11,6 +11,7 @@ use App\Http\Requests\BoletaRequest;
 
 use App\Paciente;
 use App\antecedentes_obstetricos;
+use App\embarazo_actual;
 
 class BoletaController extends Controller
 {
@@ -44,7 +45,8 @@ class BoletaController extends Controller
     {
         // dd($request);
         // $this::savePatient($request);
-        $this::saveObstetricalHistory($request);
+        // $this::saveObstetricalHistory($request);
+        $this::saveCurrentPregnancy($request);
     }
 
     /**
@@ -126,5 +128,25 @@ class BoletaController extends Controller
         $obstetrical->dato7 = $request->adato7;
 
         dd($obstetrical);
+    }
+
+    public static function saveCurrentPregnancy($request)
+    {
+        $currentPregnancy = new embarazo_actual;
+
+        $currentPregnancy->dato1 = $request->bdato1;
+        $currentPregnancy->dato2 = $request->bdato2;
+        $currentPregnancy->dato3 = $request->bdato3;
+        $currentPregnancy->dato4 = $request->bdato4;
+        $currentPregnancy->dato5 = $request->bdato5;
+        $currentPregnancy->dato6 = $request->bdato6;
+        $currentPregnancy->dato7 = $request->bdato7;
+        $currentPregnancy->dato8 = $request->bdato8;
+        $currentPregnancy->dato9 = $request->bdato9;
+        $currentPregnancy->dato10 = $request->bdato1;
+        $currentPregnancy->dato11 = $request->bdato1;
+        $currentPregnancy->dato12 = $request->bdato1;
+
+        dd($currentPregnancy);
     }
 }
