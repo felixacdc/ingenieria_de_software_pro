@@ -64,6 +64,17 @@ class BoletaRequest extends Request
             'bdato10' => 'required',
             'bdato11' => 'required',
             'bdato12' => 'required',
+            # Validacion Historia Clinica
+            'cdato1' => 'required',
+            'cdato2' => 'required',
+            'cdato3' => 'required',
+            'cdato4' => 'required',
+            'cdato5' => 'required',
+            'cdato6' => 'required',
+            # Validacion Responsable
+            'ddato1' => 'required',
+            'dFecha' => 'required|date',
+            'dNombre' => 'required',
         ];
     }
 }
