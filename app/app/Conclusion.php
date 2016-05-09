@@ -14,6 +14,6 @@ class Conclusion extends Model
       'referido_a',
       'fecha',
       'nombre',
-      'patient_id'
+      'paciente_id'
     ];
 }
