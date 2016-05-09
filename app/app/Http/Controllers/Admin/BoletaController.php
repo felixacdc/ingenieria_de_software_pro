@@ -13,6 +13,7 @@ use App\Paciente;
 use App\antecedentes_obstetricos;
 use App\embarazo_actual;
 use App\Historia_clinica_general;
+use App\Conclusion;
 
 class BoletaController extends Controller
 {
@@ -48,7 +49,8 @@ class BoletaController extends Controller
         // $this::savePatient($request);
         // $this::saveObstetricalHistory($request);
         // $this::saveCurrentPregnancy($request);
-        $this::saveClinicHistory($request);
+        // $this::saveClinicHistory($request);
+        $this::saveConclusion($request);
     }
 
     /**
@@ -165,5 +167,17 @@ class BoletaController extends Controller
         $clinicHistory->dato7 = $request->cdato7;
 
         dd($clinicHistory);
+    }
+
+    public static function saveConclusion($request)
+    {
+        $conclusion = new Conclusion;
+
+        $conclusion->evaluacion_medica = $request->ddato1;
+        $conclusion->referido_a = $request->ddato2;
+        $conclusion->fecha = $request->dFecha;
+        $conclusion->nombre = $request->dNombre;
+
+        dd($conclusion);
     }
 }
