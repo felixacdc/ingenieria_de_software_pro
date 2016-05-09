@@ -12,6 +12,7 @@ use App\Http\Requests\BoletaRequest;
 use App\Paciente;
 use App\antecedentes_obstetricos;
 use App\embarazo_actual;
+use App\Historia_clinica_general;
 
 class BoletaController extends Controller
 {
@@ -46,7 +47,8 @@ class BoletaController extends Controller
         // dd($request);
         // $this::savePatient($request);
         // $this::saveObstetricalHistory($request);
-        $this::saveCurrentPregnancy($request);
+        // $this::saveCurrentPregnancy($request);
+        $this::saveClinicHistory($request);
     }
 
     /**
@@ -143,10 +145,25 @@ class BoletaController extends Controller
         $currentPregnancy->dato7 = $request->bdato7;
         $currentPregnancy->dato8 = $request->bdato8;
         $currentPregnancy->dato9 = $request->bdato9;
-        $currentPregnancy->dato10 = $request->bdato1;
-        $currentPregnancy->dato11 = $request->bdato1;
-        $currentPregnancy->dato12 = $request->bdato1;
+        $currentPregnancy->dato10 = $request->bdato10;
+        $currentPregnancy->dato11 = $request->bdato11;
+        $currentPregnancy->dato12 = $request->bdato12;
 
         dd($currentPregnancy);
+    }
+
+    public static function saveClinicHistory($request)
+    {
+        $clinicHistory = new Historia_clinica_general;
+
+        $clinicHistory->dato1 = $request->cdato1;
+        $clinicHistory->dato2 = $request->cdato2;
+        $clinicHistory->dato3 = $request->cdato3;
+        $clinicHistory->dato4 = $request->cdato4;
+        $clinicHistory->dato5 = $request->cdato5;
+        $clinicHistory->dato6 = $request->cdato6;
+        $clinicHistory->dato7 = $request->cdato7;
+
+        dd($clinicHistory);
     }
 }
