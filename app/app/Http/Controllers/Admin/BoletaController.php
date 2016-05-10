@@ -50,6 +50,8 @@ class BoletaController extends Controller
         $this::saveCurrentPregnancy($request, $idPatient);
         $this::saveClinicHistory($request, $idPatient);
         $this::saveConclusion($request, $idPatient);
+
+        return redirect('/admin/boleta')->with('message', 'Boleta creada correctamente.');
     }
 
     /**
