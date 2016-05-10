@@ -48,7 +48,7 @@ class BoletaController extends Controller
         $idPatient = $this::savePatient($request);
         $this::saveObstetricalHistory($request, $idPatient);
         $this::saveCurrentPregnancy($request, $idPatient);
-        // $this::saveClinicHistory($request);
+        $this::saveClinicHistory($request, $idPatient);
         // $this::saveConclusion($request);
     }
 
@@ -159,7 +159,7 @@ class BoletaController extends Controller
         $currentPregnancy->save();
     }
 
-    public static function saveClinicHistory($request)
+    public static function saveClinicHistory($request, $idPatient)
     {
         $clinicHistory = new Historia_clinica_general;
 
@@ -170,8 +170,9 @@ class BoletaController extends Controller
         $clinicHistory->dato5 = $request->cdato5;
         $clinicHistory->dato6 = $request->cdato6;
         $clinicHistory->dato7 = $request->cdato7;
+        $clinicHistory->paciente_id = $idPatient;
 
-        dd($clinicHistory);
+        $clinicHistory->save();
     }
 
     public static function saveConclusion($request)
