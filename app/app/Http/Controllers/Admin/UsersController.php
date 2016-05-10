@@ -22,7 +22,11 @@ class UsersController extends Controller
 
     public function begin()
     {
-        return view('admin.index');
+
+          return view('admin.index');
+        
+
+
     }
     /**
      * Display a listing of the resource.

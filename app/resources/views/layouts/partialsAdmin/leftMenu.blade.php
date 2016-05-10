@@ -14,12 +14,14 @@
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
+          @if( Auth::user()->state == 1 )
         <ul class="sidebar-menu">
             <li>
                 <a href="{{ url('admin') }}">
                     <i class="fa fa-dashboard"></i> <span> Inicio</span>
                 </a>
             </li>
+
             @if( Auth::user()->tipo_usuario_id == 1 )
 
                 <li>
@@ -54,6 +56,11 @@
                 </a>
             </li>
         </ul>
+        @else
+        <p>
+          Este usuario se encuentra de Baja por el momento, por favor comunicarse con el administrador.
+        </p>
+        @endif
     </section>
     <!-- /.sidebar -->
 </aside>
