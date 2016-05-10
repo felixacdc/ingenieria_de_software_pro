@@ -45,12 +45,11 @@ class BoletaController extends Controller
      */
     public function store(BoletaRequest $request)
     {
-        // dd($request);
-        // $this::savePatient($request);
+        $idPatient = $this::savePatient($request);
         // $this::saveObstetricalHistory($request);
         // $this::saveCurrentPregnancy($request);
         // $this::saveClinicHistory($request);
-        $this::saveConclusion($request);
+        // $this::saveConclusion($request);
     }
 
     /**
@@ -91,6 +90,8 @@ class BoletaController extends Controller
     {
         $patient = new Paciente;
 
+        $patient->no_registro = 1;
+        $patient->no_boleta = 1;
         $patient->nombre_paciente = $request->nombre_paciente;
         $patient->edad_paciente = $request->edad_paciente;
         $patient->pueblo_paciente = $request->pueblo_paciente;
@@ -116,7 +117,9 @@ class BoletaController extends Controller
         $patient->user_id = $request->user_id;
         $patient->centro_id = $request->centro_id;
 
-        dd($patient);
+        $patient->save();
+
+        return $patient->id;
     }
 
     public static function saveObstetricalHistory($request)
