@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BoletaRequest;
 
 use App\Paciente;
+use App\antecedentes_obstetricos;
+use App\embarazo_actual;
+use App\Historia_clinica_general;
+use App\Conclusion;
 
 class BoletaController extends Controller
 {
@@ -42,7 +46,11 @@ class BoletaController extends Controller
     public function store(BoletaRequest $request)
     {
         // dd($request);
-        $this::savePatient($request);
+        // $this::savePatient($request);
+        // $this::saveObstetricalHistory($request);
+        // $this::saveCurrentPregnancy($request);
+        // $this::saveClinicHistory($request);
+        $this::saveConclusion($request);
     }
 
     /**
@@ -105,7 +113,71 @@ class BoletaController extends Controller
         $patient->no_abortos = $request->no_abortos;
         $patient->no_hijos_vivos = $request->no_hijos_vivos;
         $patient->no_hijos_muertos = $request->no_hijos_muertos;
+        $patient->user_id = $request->user_id;
+        $patient->centro_id = $request->centro_id;
 
-        dd ($patient);
+        dd($patient);
+    }
+
+    public static function saveObstetricalHistory($request)
+    {
+        $obstetrical = new antecedentes_obstetricos;
+
+        $obstetrical->dato1 = $request->adato1;
+        $obstetrical->dato2 = $request->adato2;
+        $obstetrical->dato3 = $request->adato3;
+        $obstetrical->dato4 = $request->adato4;
+        $obstetrical->dato5 = $request->adato5;
+        $obstetrical->dato6 = $request->adato6;
+        $obstetrical->dato7 = $request->adato7;
+
+        dd($obstetrical);
+    }
+
+    public static function saveCurrentPregnancy($request)
+    {
+        $currentPregnancy = new embarazo_actual;
+
+        $currentPregnancy->dato1 = $request->bdato1;
+        $currentPregnancy->dato2 = $request->bdato2;
+        $currentPregnancy->dato3 = $request->bdato3;
+        $currentPregnancy->dato4 = $request->bdato4;
+        $currentPregnancy->dato5 = $request->bdato5;
+        $currentPregnancy->dato6 = $request->bdato6;
+        $currentPregnancy->dato7 = $request->bdato7;
+        $currentPregnancy->dato8 = $request->bdato8;
+        $currentPregnancy->dato9 = $request->bdato9;
+        $currentPregnancy->dato10 = $request->bdato10;
+        $currentPregnancy->dato11 = $request->bdato11;
+        $currentPregnancy->dato12 = $request->bdato12;
+
+        dd($currentPregnancy);
+    }
+
+    public static function saveClinicHistory($request)
+    {
+        $clinicHistory = new Historia_clinica_general;
+
+        $clinicHistory->dato1 = $request->cdato1;
+        $clinicHistory->dato2 = $request->cdato2;
+        $clinicHistory->dato3 = $request->cdato3;
+        $clinicHistory->dato4 = $request->cdato4;
+        $clinicHistory->dato5 = $request->cdato5;
+        $clinicHistory->dato6 = $request->cdato6;
+        $clinicHistory->dato7 = $request->cdato7;
+
+        dd($clinicHistory);
+    }
+
+    public static function saveConclusion($request)
+    {
+        $conclusion = new Conclusion;
+
+        $conclusion->evaluacion_medica = $request->ddato1;
+        $conclusion->referido_a = $request->ddato2;
+        $conclusion->fecha = $request->dFecha;
+        $conclusion->nombre = $request->dNombre;
+
+        dd($conclusion);
     }
 }
