@@ -57,9 +57,7 @@
             </li>
         </ul>
         @else
-        <p>
-          Este usuario se encuentra de Baja por el momento, por favor comunicarse con el administrador.
-        </p>
+        <script>window.location.href = "auth/logout";</script>
         @endif
     </section>
     <!-- /.sidebar -->
