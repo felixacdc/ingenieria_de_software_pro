@@ -27,7 +27,7 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
-                    
+                    @include('admin.boletas.partials.contentList')
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
 
