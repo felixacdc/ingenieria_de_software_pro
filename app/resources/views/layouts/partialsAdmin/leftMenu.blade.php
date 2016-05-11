@@ -45,13 +45,13 @@
             @endif
 
             <li>
-                <a href="{{ url('admin/boleta') }}">
+                <a href="{{ url('admin/boleta/create') }}">
                     <i class="fa fa-plus"></i> <span> Crear Boleta</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{ url('admin/TiposCentros') }}">
+                <a href="{{ url('admin/boleta') }}">
                     <i class="fa fa-list" aria-hidden="true"></i> <span>Registro</span>
                 </a>
             </li>

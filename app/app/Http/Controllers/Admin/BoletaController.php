@@ -24,7 +24,7 @@ class BoletaController extends Controller
      */
     public function index()
     {
-        return view('admin/boletas/create');
+        return view('admin/boletas/list');
     }
 
     /**
@@ -34,7 +34,7 @@ class BoletaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/boletas/create');
     }
 
     /**
@@ -51,7 +51,7 @@ class BoletaController extends Controller
         $this::saveClinicHistory($request, $idPatient);
         $this::saveConclusion($request, $idPatient);
 
-        return redirect('/admin/boleta')->with('message', 'Boleta creada correctamente.');
+        return redirect('/admin/boleta/create')->with('message', 'Boleta creada correctamente.');
     }
 
     /**
