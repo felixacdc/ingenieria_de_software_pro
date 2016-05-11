@@ -24,9 +24,6 @@ class UsersController extends Controller
     {
 
           return view('admin.index');
-        
-
-
     }
     /**
      * Display a listing of the resource.
