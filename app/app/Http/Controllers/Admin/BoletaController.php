@@ -45,12 +45,13 @@ class BoletaController extends Controller
      */
     public function store(BoletaRequest $request)
     {
-        // dd($request);
-        // $this::savePatient($request);
-        // $this::saveObstetricalHistory($request);
-        // $this::saveCurrentPregnancy($request);
-        // $this::saveClinicHistory($request);
-        $this::saveConclusion($request);
+        $idPatient = $this::savePatient($request);
+        $this::saveObstetricalHistory($request, $idPatient);
+        $this::saveCurrentPregnancy($request, $idPatient);
+        $this::saveClinicHistory($request, $idPatient);
+        $this::saveConclusion($request, $idPatient);
+
+        return redirect('/admin/boleta')->with('message', 'Boleta creada correctamente.');
     }
 
     /**
@@ -91,6 +92,8 @@ class BoletaController extends Controller
     {
         $patient = new Paciente;
 
+        $patient->no_registro = 1;
+        $patient->no_boleta = 1;
         $patient->nombre_paciente = $request->nombre_paciente;
         $patient->edad_paciente = $request->edad_paciente;
         $patient->pueblo_paciente = $request->pueblo_paciente;
@@ -116,10 +119,12 @@ class BoletaController extends Controller
         $patient->user_id = $request->user_id;
         $patient->centro_id = $request->centro_id;
 
-        dd($patient);
+        $patient->save();
+
+        return $patient->id;
     }
 
-    public static function saveObstetricalHistory($request)
+    public static function saveObstetricalHistory($request,$idPatient)
     {
         $obstetrical = new antecedentes_obstetricos;
 
@@ -130,11 +135,12 @@ class BoletaController extends Controller
         $obstetrical->dato5 = $request->adato5;
         $obstetrical->dato6 = $request->adato6;
         $obstetrical->dato7 = $request->adato7;
+        $obstetrical->pacientes_id = $idPatient;
 
-        dd($obstetrical);
+        $obstetrical->save();
     }
 
-    public static function saveCurrentPregnancy($request)
+    public static function saveCurrentPregnancy($request, $idPatient)
     {
         $currentPregnancy = new embarazo_actual;
 
@@ -150,11 +156,12 @@ class BoletaController extends Controller
         $currentPregnancy->dato10 = $request->bdato10;
         $currentPregnancy->dato11 = $request->bdato11;
         $currentPregnancy->dato12 = $request->bdato12;
+        $currentPregnancy->pacientes_id = $idPatient;
 
-        dd($currentPregnancy);
+        $currentPregnancy->save();
     }
 
-    public static function saveClinicHistory($request)
+    public static function saveClinicHistory($request, $idPatient)
     {
         $clinicHistory = new Historia_clinica_general;
 
@@ -165,11 +172,12 @@ class BoletaController extends Controller
         $clinicHistory->dato5 = $request->cdato5;
         $clinicHistory->dato6 = $request->cdato6;
         $clinicHistory->dato7 = $request->cdato7;
+        $clinicHistory->paciente_id = $idPatient;
 
-        dd($clinicHistory);
+        $clinicHistory->save();
     }
 
-    public static function saveConclusion($request)
+    public static function saveConclusion($request, $idPatient)
     {
         $conclusion = new Conclusion;
 
@@ -177,7 +185,8 @@ class BoletaController extends Controller
         $conclusion->referido_a = $request->ddato2;
         $conclusion->fecha = $request->dFecha;
         $conclusion->nombre = $request->dNombre;
+        $conclusion->paciente_id = $idPatient;
 
-        dd($conclusion);
+        $conclusion->save();
     }
 }
