@@ -15,6 +15,9 @@ use App\embarazo_actual;
 use App\Historia_clinica_general;
 use App\Conclusion;
 
+// use Illuminate\Contracts\Auth\Authenticatable;
+use App\Centro;
+
 class BoletaController extends Controller
 {
     /**
@@ -22,9 +25,16 @@ class BoletaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin/boletas/list');
+        $data = array("0" => "Ninguno");
+        $selects = Centro::where('padre', '=', $request->user()->centro_id)->get();
+
+        foreach($selects as $select) {
+            $data[$select->id] = $select->centro;
+        }
+
+        return view('admin/boletas/list', compact('data'));
     }
 
     /**
