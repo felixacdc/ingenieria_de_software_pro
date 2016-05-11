@@ -26,21 +26,32 @@
 				address: {
                     required: true
                 },
+
                 email:
                 {
-                    email: true
+                    email: true,
+                    /*remote:
+                       {
+                         url: 'UserExists',
+                         type: "get",
+                         data: {
+                            email:  $( "#correo" ).text()
+                          }
+                       }*/
                 },
-				phone: {
-					digits: true,
-			        minlength: 8,
-					maxlength: 8
-				},
-				centro_id: {
-                    required: true
-                },
-				tipo_usuario_id: {
-						required: true
-				}
+        				phone: {
+        					digits: true,
+        			    minlength: 8,
+        					maxlength: 8
+        				},
+        				centro_id: {
+                            required: true
+                        },
+        				tipo_usuario_id: {
+        						required: true
+        				},
+
+
             },
         messages: {
                 user: {
@@ -60,6 +71,7 @@
                 email:
                 {
                     email: "Por favor ingrese un correo electrónico valido."
+                    //remote:"ya esta en uso"
                 },
 				phone: {
 					digits: "Por favor ingrese solo numeros",
@@ -74,8 +86,24 @@
 			    }
             },
 		submitHandler: function(form) {
-				$("#generalModal .btn-primary").prop('disabled', true);
-				form.submit();
+				//$("#generalModal .btn-primary").prop('disabled', true);
+
+        $.ajax({
+          url: 'UserExists/' + $( "#correo" ).val(),
+          type: "get",
+          data: {
+             email:  $( "#correo" ).val()
+           },
+           success: function(response){
+             if(response=='si'){
+               $("#msg").html('El correo ya esta en Uso');
+               $('#msg').css('color', '#f56954');
+             }else {
+               alert('nooooooooo')
+             }
+           }
+        });
+				//form.submit();
 			}
     });
 </script>

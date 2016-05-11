@@ -19,8 +19,10 @@
 </div>
 
 <div class="form-group">
+
 	<label for="">Correo Electrónico</label>
-	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico'))!!}
+	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico','id'=>'correo'))!!}
+	<label for="" id="msg" style="display=none;"></label>
 </div>
 
 <div class="form-group">

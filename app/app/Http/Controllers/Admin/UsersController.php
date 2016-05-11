@@ -57,8 +57,10 @@ class UsersController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-        User::create($request->all());
-        return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
+
+
+          User::create($request->all());
+          return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
     }
 
     /**
@@ -113,6 +115,16 @@ class UsersController extends Controller
         $user=User::find($id);
         $user->delete();
         return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+    }
+
+    public function userExists($email)
+    {
+      $n = User::where('email','=',$email)->count();
+      if ($n>0) {
+          echo 'si';
+      } else {
+          echo 'no';
+      }
     }
 
 }
