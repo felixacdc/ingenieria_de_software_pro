@@ -97,6 +97,7 @@
            success: function(response){
              if(response=='si'){
                $("#msg").html('El correo ya esta en Uso');
+               $('#msg').css('display', 'block');
                $('#msg').css('color', '#f56954');
              }else {
                alert('nooooooooo')
