@@ -1,39 +1,10 @@
 $(document).ready(function () {
-var bandera=false;
+
     /**
     *
-    * Funcion Ajax
+    * validacion
     *
     **/
-    function ValidationEmail(){
-      $.ajax({
-        url: 'UserExists/' + $( "#correo" ).val(),
-        type: "get",
-        data: {
-           email:  $( "#correo" ).val()
-         },
-         success: function(response){
-           if(response=='si'){
-             	$("#generalModal .btn-primary").prop('disabled', true);
-             $("#msg").html('El correo ya esta en Uso');
-             $('#msg').css('display', 'block');
-             $('#msg').css('color', '#f56954');
-           }else {
-             	$("#generalModal .btn-primary").prop('disabled', false);
-             $('#msg').css('display', 'none');
-           }
-         }
-      });
-    }//Fin de la function
-
-
-
-    $("#correo").focusout(function(){
-        ValidationEmail();
-    });
-
-
-
     $("#createForm, #editForm").validate({
         rules: {
                 user: {
@@ -43,32 +14,28 @@ var bandera=false;
                     required: true,
                     minlength: 8
                 },
-        name: {
+                name: {
                     required: true
                 },
-        address: {
+                address: {
                     required: true
                 },
 
-                email:
-                {
-                  email: true,
-
+                email:{
+                    email: true,
                 },
-                phone: {
-                  digits: true,
-                  minlength: 8,
-                  maxlength: 8
+                phone:{
+                    digits: true,
+                    minlength: 8,
+                    maxlength: 8
                 },
-                centro_id: {
-                            required: true
-                        },
+                centro_id:{
+                    required: true
+                },
                 tipo_usuario_id: {
                     required: true
                 },
-
-
-            },
+            },///Fin de Reglas
         messages: {
                 user: {
                     required: "Por favor ingrese el Usuario."
@@ -84,32 +51,52 @@ var bandera=false;
                 address: {
                     required: "Por favor ingrese la Dirección."
                 },
-                        email:
-                        {
-                            email: "Por favor ingrese un correo electrónico valido."
-                            //remote:"ya esta en uso"
-                        },
-                phone: {
-                  digits: "Por favor ingrese solo numeros",
-                  minlength: "El teléfono debe contener 8 caracteres.",
-                  maxlength: "El teléfono debe contener 8 caracteres."
+                email:
+                {
+                    email: "Por favor ingrese un correo electrónico valido."
                 },
-                        centro_id: {
-                          required: "Por favor ingrese el Centro al que pertenece"
-                  },
-                tipo_usuario_id: {
-                          required: "Por favor ingrese el Tipo de Usuario"
+                phone: {
+                    digits: "Por favor ingrese solo numeros",
+                    minlength: "El teléfono debe contener 8 caracteres.",
+                    maxlength: "El teléfono debe contener 8 caracteres."
+                },
+                centro_id:{
+                    required: "Por favor ingrese el Centro al que pertenece"
+                },
+                tipo_usuario_id:{
+                    required: "Por favor ingrese el Tipo de Usuario"
                   }
-            },
+            },///fin de messages
+            submitHandler: function(form){
+              /**
+              *
+                  Ajax Valida Email
+              *
+              **/
+              $.ajax({
+                url: 'UserExists/' + $( "#correo" ).val(),
+                type: "get",
+                data:{
+                   email:  $( "#correo" ).val()
+                 },
+                 success: function(response){
+                   if(response=='si'){
+                     $("#msg").html('El correo ya esta en Uso');
+                     $('#msg').css('display', 'block');
+                     $('#msg').css('color', '#f56954');
+                   }else {
+                     form.submit();//Envio los datos del formulario
+                   }
+                 }
+              });
 
-            submitHandler: function(form) {
-
-                  form.submit();//Envio los datos del formulario
-                  $("#generalModal .btn-primary").prop('disabled', true);
-
-              }
-
-    });
+              /**
+              *
+                Fin de Ajax Email
+              *
+              **/
+            }
+          });
 
 
 
