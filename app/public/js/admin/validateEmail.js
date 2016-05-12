@@ -68,34 +68,76 @@ $(document).ready(function () {
                   }
             },///fin de messages
             submitHandler: function(form){
+              $('#msg').css('display', 'none');
+              $('#msg2').css('display', 'none');
               /**
               *
-                  Ajax Valida Email
+                Inicio de Ajax User
               *
               **/
               $.ajax({
-                url: 'UserExists/' + $( "#correo" ).val(),
-                type: "get",
-                data:{
-                   email:  $( "#correo" ).val()
-                 },
-                 success: function(response){
-                   if(response=='si'){
-                     $("#msg").html('El correo ya esta en Uso');
-                     $('#msg').css('display', 'block');
-                     $('#msg').css('color', '#f56954');
-                   }else {
-                     form.submit();//Envio los datos del formulario
-                   }
-                 }
-              });
+                url:  'EmailExists/'+ $('#usuario').val(),
+                type:  "get",
+                success:function(response){
+                  if(response=='si'){
+                    $("#msg2").html('El Usuario ya esta en Uso');
+                    $('#msg2').css('display', 'inline');
+                    $('#msg2').css('color', '#f56954');
+                  }else{
 
+
+
+                    /**
+                    *
+                        Ajax Valida Email
+                    *
+                    **/
+                    $.ajax({
+                      url: 'UserExists/' + $( "#correo" ).val(),
+                      type: "get",
+                      data:{
+                         email:  $( "#correo" ).val()
+                       },
+                       success: function(response){
+                         if(response=='si'){
+                           $("#msg").html('El correo ya esta en Uso');
+                           $('#msg').css('display', 'inline');
+                           $('#msg').css('color', '#f56954');
+
+                         }//Fin de else Principal
+                         else{
+
+                           $('#msg').css('display', 'none');
+                            form.submit();
+                         }
+                       }
+                    });
+
+                    /**
+                    *
+                      Fin de Ajax Email
+                    *
+                    **/
+
+
+                  }
+
+
+
+
+
+
+
+                }
+              });
               /**
               *
-                Fin de Ajax Email
+                Fin de Ajax User
               *
               **/
-            }
+
+
+            }///Fin Funcion Submit
           });
 
 

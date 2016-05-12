@@ -1,6 +1,7 @@
 <div class="form-group">
 	<label for="">Usuario</label>
-	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required'))!!}
+	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required','id'=>'usuario'))!!}
+	<label for="" id="msg2" style="display:none;"></label>
 </div>
 
 <div class="form-group">
