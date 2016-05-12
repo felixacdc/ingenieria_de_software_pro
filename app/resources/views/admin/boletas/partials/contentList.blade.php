@@ -1,31 +1,48 @@
-<div class="content back-white">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="row">
-                <div class="form-group col-md-6">
-                	{!!Form::label('children','Seleccione el centro que desa consultar:')!!}
-                	{!!Form::select('children', $data, null, ['class' => 'form-control'])!!}
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6">
-                    {!!Form::label('begin_date','Fecha inicial:')!!}
-                	{!!Form::date('begin_date', null, array('class' => 'form-control', 'placeholder' => 'Fecha  última regla', 'required' => 'required'))!!}
-                </div>
-                <div class="form-group col-md-6">
-                    {!!Form::label('final_date','Fecha final:')!!}
-                	{!!Form::date('final_date', null, array('class' => 'form-control', 'placeholder' => 'Fecha  última regla', 'required' => 'required'))!!}
-                </div>
-            </div>
-            <div class="content-report">
-
-            </div>
-            <div class="row">
-                <div class="form-group col-md-12 text-right">
-                    <a href="#" class="btn btn-primary nextButton">Buscar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<table id="example1" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo Electrónico</th>
+            <th>Centro</th>
+            <th>antecedentes</th>
+            <th>embarazo_actual</th>
+            <th>historia_clinica_general</th>
+            <th>Conclusion</th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach($patients as  $key => $patient)
+         <tr>
+             <td>{{ $key+1 }} </td>
+             <td>{{ $patient->nombre_paciente }} </td>
+             <td>{{ $patient->edad_paciente }} </td>
+             <td>{{ $patient->pueblo_paciente }} </td>
+             <td>{{ $patient->escolaridad_paciente }} </td>
+             <td>{{ $patient->ocupacion_paciente }} </td>
+             <td>
+                 @if($patient->antecedentes)
+                    {{ $patient->antecedentes->dato1 }}
+                 @endif
+             </td>
+             <td>
+                 @if($patient->embarazoActual)
+                    {{ $patient->embarazoActual->dato1 }}
+                 @endif
+             </td>
+             <td>
+                 @if($patient->historiaClinica)
+                    {{ $patient->historiaClinica->dato1 }}
+                 @endif
+             </td>
+             <td>
+                 @if($patient->conclusion)
+                    {{ $patient->conclusion->fecha }}
+                 @endif
+             </td>
+         </tr>
+     @endforeach
+    </tbody>
+</table>
