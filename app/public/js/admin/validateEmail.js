@@ -31,6 +31,8 @@ var bandera=false;
         ValidationEmail();
     });
 
+
+
     $("#createForm, #editForm").validate({
         rules: {
                 user: {
@@ -100,11 +102,11 @@ var bandera=false;
             },
 
             submitHandler: function(form) {
-                //$("#generalModal .btn-primary").prop('disabled', true);
+
                 if(bandera==true){
                   form.submit();//Envio los datos del formulario
                 }
-                ValidationEmail();
+
 
 
               }
