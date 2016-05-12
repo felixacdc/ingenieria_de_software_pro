@@ -14,11 +14,12 @@ var bandera=false;
          },
          success: function(response){
            if(response=='si'){
+             	$("#generalModal .btn-primary").prop('disabled', true);
              $("#msg").html('El correo ya esta en Uso');
              $('#msg').css('display', 'block');
              $('#msg').css('color', '#f56954');
            }else {
-             bandera=true;
+             	$("#generalModal .btn-primary").prop('disabled', false);
              $('#msg').css('display', 'none');
            }
          }
@@ -103,11 +104,8 @@ var bandera=false;
 
             submitHandler: function(form) {
 
-                if(bandera==true){
                   form.submit();//Envio los datos del formulario
-                }
-
-
+                  $("#generalModal .btn-primary").prop('disabled', true);
 
               }
 
