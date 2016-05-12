@@ -19,7 +19,7 @@ class CentrosController extends Controller
      */
     public function index()
     {
-        $data=Centro::where('id', '!=', 1)->get();
+        $data=Centro::where('id', '!=', 1)->Where('id', '!=', 2)->get();
         return view('admin.centros.list',compact('data'));
         //return view('admin.centros.list');
     }
