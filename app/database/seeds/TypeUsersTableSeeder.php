@@ -15,12 +15,18 @@ class TypeUsersTableSeeder extends Seeder
     {
         $type = new Tipo_usuario;
 
-        $type->tipo = 'Administrador';
+        $type->tipo = 'Super Administrador';
+        $type->save();
+
+        $type = new Tipo_usuario;
+
+        $type->tipo = 'Administrador Distrito';
         $type->save();
 
         $type = new Tipo_usuario;
 
         $type->tipo = 'General';
         $type->save();
+
     }
 }
