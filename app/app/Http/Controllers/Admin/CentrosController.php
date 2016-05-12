@@ -19,9 +19,8 @@ class CentrosController extends Controller
      */
     public function index()
     {
-        $data=Centro::where('id', '!=', 1)->Where('id', '!=', 2)->get();
+        $data=Centro::Where('id', '!=', 1)->get();
         return view('admin.centros.list',compact('data'));
-        //return view('admin.centros.list');
     }
 
     /**
@@ -32,7 +31,7 @@ class CentrosController extends Controller
     public function create()
     {
         $type = Tipo_centro::lists('tipo', 'id');
-        $fathers = Centro::where('distrito', '=', true)->lists('centro', 'id');
+        $fathers = $this::loadFathers();
         return view('admin.centros.partials.createForm', compact('type', 'fathers'));
     }
 
@@ -69,7 +68,7 @@ class CentrosController extends Controller
     {
         $center = Centro::find($id);
         $type = Tipo_centro::lists('tipo', 'id');
-        $fathers = Centro::where('distrito', '=', true)->lists('centro', 'id');
+        $fathers = $this::loadFathers();
         return view('admin.centros.partials.editForm', compact('center', 'type', 'fathers'));
     }
 
@@ -105,5 +104,17 @@ class CentrosController extends Controller
           return redirect('/admin/centros')->with('message', 'Centro eliminado correctamente.');
         }
 
+    }
+
+    public static function loadFathers()
+    {
+        $fathers = array("" => "Seleccione un centro");
+        $selects = Centro::where('distrito', '=', true)->get();
+
+        foreach($selects as $select) {
+            $fathers[$select->id] = $select->centro;
+        }
+
+        return $fathers;
     }
 }
