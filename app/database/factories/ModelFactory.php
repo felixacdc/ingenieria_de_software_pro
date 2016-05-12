@@ -1,5 +1,5 @@
 <?php
-
+use App\Paciente;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -53,6 +53,7 @@ $factory->define(App\Paciente::class, function ($faker) {
 
 
 $factory->define(App\antecedentes_obstetricos::class, function ($faker) {
+
     return [
             'dato1'         => $faker->randomElement([true, false]),
             'dato2'         => $faker->randomElement([true, false]),
@@ -61,12 +62,15 @@ $factory->define(App\antecedentes_obstetricos::class, function ($faker) {
             'dato5'         => $faker->randomElement([true, false]),
             'dato6'         => $faker->randomElement([true, false]),
             'dato7'         => $faker->randomElement([true, false]),
-            'pacientes_id'   => rand(1,50),
+            'pacientes_id'  => 1,
+          ];
 
-        ];
+
+
 });
 
 $factory->define(App\embarazo_actual::class, function ($faker) {
+
     return [
             'dato1'         => $faker->randomElement([true, false]),
             'dato2'         => $faker->randomElement([true, false]),

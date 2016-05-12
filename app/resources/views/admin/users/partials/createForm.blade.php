@@ -6,9 +6,3 @@
 	</div>
 {!!Html::script("js/admin/validateEmail.js")!!}
 {!!Form::close()!!}
-
-
-
-<script type="text/javascript">
-
-</script>
