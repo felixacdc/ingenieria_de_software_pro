@@ -38,4 +38,31 @@ class Paciente extends Model
      'user_id',
      'centro_id'
       ];
+
+      public  $relations=[
+          'antecedentes',
+          'embarazoActual',
+          'historiaClinica',
+          'conclusion'
+        ];
+
+      public function antecedentes()
+      {
+          return $this->hasOne('App\antecedentes_obstetricos', 'pacientes_id');
+      }
+
+      public function embarazoActual()
+      {
+          return $this->hasOne('App\embarazo_actual', 'pacientes_id');
+      }
+
+      public function historiaClinica()
+      {
+          return $this->hasOne('App\Historia_clinica_general', 'paciente_id');
+      }
+
+      public function conclusion()
+      {
+          return $this->hasOne('App\Conclusion', 'paciente_id');
+      }
 }

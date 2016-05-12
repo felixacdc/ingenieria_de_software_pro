@@ -22,6 +22,6 @@ class embarazo_actual extends Model
       'dato10',
       'dato11',
       'dato12',
-      'paciente_id'
+      'pacientes_id'
     ];
 }

@@ -59,7 +59,10 @@
 				},
                 tipo_centro_id: {
                     required: true
-                }
+                },
+				padre: {
+					required: true
+				}
             },
             messages: {
                 centro: {
@@ -75,6 +78,9 @@
 				},
                 tipo_centro_id: {
                     required: "Por favor ingrese el tipo de centro."
+                },
+                padre: {
+                    required: "Por favor seleccione un centro."
                 }
             },
 			submitHandler: function(form) {

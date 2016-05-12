@@ -15,7 +15,6 @@ use App\embarazo_actual;
 use App\Historia_clinica_general;
 use App\Conclusion;
 
-// use Illuminate\Contracts\Auth\Authenticatable;
 use App\Centro;
 
 class BoletaController extends Controller
@@ -27,14 +26,11 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        $data = array("0" => "Ninguno");
-        $selects = Centro::where('padre', '=', $request->user()->centro_id)->get();
+        $patients = Paciente::all();
 
-        foreach($selects as $select) {
-            $data[$select->id] = $select->centro;
-        }
+        // dd($patients->antecedentes);
 
-        return view('admin/boletas/list', compact('data'));
+        return view('admin/boletas/list', compact('patients'));
     }
 
     /**
