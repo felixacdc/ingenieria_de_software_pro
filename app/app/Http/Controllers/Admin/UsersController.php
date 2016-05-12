@@ -118,9 +118,19 @@ class UsersController extends Controller
     {
       $n = User::where('email','=',$email)->count();
       if ($n>0) {
-          echo 'si';
+          return 'si';
       } else {
-          echo 'no';
+          return 'no';
+      }
+    }
+
+    public function emailExists($user)
+    {
+      $n=User::where('user','=',$user)->count();
+      if($n>0){
+        echo 'si';
+      }else{
+        echo 'no';
       }
     }
 
