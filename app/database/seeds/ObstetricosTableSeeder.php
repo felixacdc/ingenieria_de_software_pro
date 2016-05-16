@@ -17,7 +17,7 @@ class ObstetricosTableSeeder extends Seeder
             'dato1'         => true,
             'dato2'         => true,
             'dato3'         => true,
-            'dato4'         => true,
+            'dato4'         => false,
             'dato5'         => true,
             'dato6'         => false,
             'dato7'         => true,

@@ -46,28 +46,12 @@ $factory->define(App\Paciente::class, function ($faker) {
         'no_abortos'              => $faker->randomDigit,
         'no_hijos_vivos'          => $faker->randomDigit,
         'no_hijos_muertos'        => $faker->randomDigit,
-        'user_id'                 => 1,
+        'user_id'                 => rand(1,5),
         'centro_id'               => 1,
         ];
 });
 
 
-$factory->define(App\antecedentes_obstetricos::class, function ($faker) {
-
-    return [
-            'dato1'         => $faker->randomElement([true, false]),
-            'dato2'         => $faker->randomElement([true, false]),
-            'dato3'         => $faker->randomElement([true, false]),
-            'dato4'         => $faker->randomElement([true, false]),
-            'dato5'         => $faker->randomElement([true, false]),
-            'dato6'         => $faker->randomElement([true, false]),
-            'dato7'         => $faker->randomElement([true, false]),
-            'pacientes_id'  => 1,
-          ];
-
-
-
-});
 
 $factory->define(App\embarazo_actual::class, function ($faker) {
 
