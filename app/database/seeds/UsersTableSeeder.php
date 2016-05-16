@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'my@muy.com';
         $user->phone = '58564759';
         $user->state=true;
-        $user->centro_id = 2;
+        $user->centro_id = 1;
         $user->tipo_usuario_id = 1;
         $user->save();
     }

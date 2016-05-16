@@ -26,10 +26,9 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        $patients = Paciente::all();
-
-        // dd($patients->antecedentes);
-
+        if ($request->user()->centro_id == 1)
+          $patients = Paciente::all();
+          
         return view('admin/boletas/list', compact('patients'));
     }
 

@@ -2,15 +2,13 @@
     <thead>
         <tr>
             <th>No.</th>
-            <th>Usuario</th>
             <th>Nombre</th>
-            <th>Teléfono</th>
-            <th>Correo Electrónico</th>
-            <th>Centro</th>
-            <th>antecedentes</th>
-            <th>embarazo_actual</th>
-            <th>historia_clinica_general</th>
-            <th>Conclusion</th>
+            <th>Edad</th>
+            <th>Pueblo</th>
+            <th>Escolaridad</th>
+            <th>Ocupación</th>
+            <th>Nombre de la comunidad</th>
+            <th>No. de celular</th>
         </tr>
     </thead>
     <tbody>
@@ -22,26 +20,8 @@
              <td>{{ $patient->pueblo_paciente }} </td>
              <td>{{ $patient->escolaridad_paciente }} </td>
              <td>{{ $patient->ocupacion_paciente }} </td>
-             <td>
-                 @if($patient->antecedentes)
-                    {{ $patient->antecedentes->dato1 }}
-                 @endif
-             </td>
-             <td>
-                 @if($patient->embarazoActual)
-                    {{ $patient->embarazoActual->dato1 }}
-                 @endif
-             </td>
-             <td>
-                 @if($patient->historiaClinica)
-                    {{ $patient->historiaClinica->dato1 }}
-                 @endif
-             </td>
-             <td>
-                 @if($patient->conclusion)
-                    {{ $patient->conclusion->fecha }}
-                 @endif
-             </td>
+             <td>{{ $patient->nombre_comunidad }} </td>
+             <td>{{ $patient->dpi_paciente_com_esp }} </td>
          </tr>
      @endforeach
     </tbody>
