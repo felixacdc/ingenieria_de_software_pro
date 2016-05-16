@@ -30,7 +30,11 @@ class BoletaController extends Controller
           $patients = Paciente::all();
         else {
           // dd($request->user()->id);
-          $patients = Paciente::where('user_id', '=', $request->user()->id)->get();
+          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+
+          $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
+          dd($children);
+
           // dd($patients);
         }
 

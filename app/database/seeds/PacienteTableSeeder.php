@@ -43,7 +43,7 @@ class PacienteTableSeeder extends Seeder
         DB::table('pacientes')
                 ->where('id','>=' ,21)
                 ->where('id','<=' ,30)
-                ->update(['centro_id' => 4]);
+                ->update(['centro_id' => 7]);
 
 
 
