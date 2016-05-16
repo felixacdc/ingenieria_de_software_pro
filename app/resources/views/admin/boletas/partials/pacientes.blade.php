@@ -23,11 +23,11 @@
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('escolaridad_paciente','Escolaridad:')!!}
-                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad'))!!}
+                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('ocupacion_paciente','Ocupación:')!!}
-                	{!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
+                	{!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
                 </div>
             </div>
             <div class="row">
