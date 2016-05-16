@@ -14,13 +14,13 @@ class ObstetricosTableSeeder extends Seeder
         //factory(App\antecedentes_obstetricos::class, 50)->create();
         for ($i=1; $i <=50 ; $i++) {
           DB::table('antecedentes_obstetricos')->insert([
-            'dato1'         => true,
-            'dato2'         => true,
-            'dato3'         => true,
-            'dato4'         => false,
-            'dato5'         => true,
-            'dato6'         => false,
-            'dato7'         => true,
+            'dato1'         => rand(0,1),
+            'dato2'         => rand(0,1),
+            'dato3'         => rand(0,1),
+            'dato4'         => rand(0,1),
+            'dato5'         => rand(0,1),
+            'dato6'         => rand(0,1),
+            'dato7'         => rand(0,1),
             'pacientes_id'  => $i,
         ]);
         }
