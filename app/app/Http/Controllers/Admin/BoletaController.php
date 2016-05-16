@@ -26,12 +26,14 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->user()->centro_id == 1)
+        if ($request->user()->tipo_usuario_id == 1)
           $patients = Paciente::all();
         else {
-          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id);
+          // dd($request->user()->id);
+          $patients = Paciente::where('user_id', '=', $request->user()->id)->get();
+          // dd($patients);
         }
-        
+
         return view('admin/boletas/list', compact('patients'));
     }
 

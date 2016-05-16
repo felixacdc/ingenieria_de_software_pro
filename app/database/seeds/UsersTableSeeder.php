@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
         $user->phone = '58564759';
         $user->state=true;
         $user->centro_id = 2;
-        $user->tipo_usuario_id = 1;
+        $user->tipo_usuario_id = 2;
         $user->save();
 
         $user = new User;
