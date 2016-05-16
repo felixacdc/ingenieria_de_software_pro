@@ -28,7 +28,10 @@ class BoletaController extends Controller
     {
         if ($request->user()->centro_id == 1)
           $patients = Paciente::all();
-          
+        else {
+          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id);
+        }
+        
         return view('admin/boletas/list', compact('patients'));
     }
 
