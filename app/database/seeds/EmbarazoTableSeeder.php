@@ -14,17 +14,17 @@ class EmbarazoTableSeeder extends Seeder
       for ($i=1; $i <=50 ; $i++) {
         DB::table('embarazo_actual')->insert([
           'dato1'          => rand(0,1),
-          'dato2'          => true,
-          'dato3'          => true,
-          'dato4'          => false,
-          'dato5'          => true,
-          'dato6'          => false,
-          'dato7'          => true,
-          'dato8'          => true,
-          'dato9'          => true,
-          'dato10'         => true,
-          'dato11'         => true,
-          'dato12'         => true,
+          'dato2'          => rand(0,1),
+          'dato3'          => rand(0,1),
+          'dato4'          => rand(0,1),
+          'dato5'          => rand(0,1),
+          'dato6'          => rand(0,1),
+          'dato7'          => rand(0,1),
+          'dato8'          => rand(0,1),
+          'dato9'          => rand(0,1),
+          'dato10'         => rand(0,1),
+          'dato11'         => rand(0,1),
+          'dato12'         => rand(0,1),
           'pacientes_id'   => $i,
       ]);
       }
