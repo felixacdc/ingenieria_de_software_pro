@@ -8,7 +8,7 @@
             <th>Escolaridad</th>
             <th>Ocupación</th>
             <th>Nombre de la comunidad</th>
-            <th>No. de celular</th>
+            <th>Fecha de creación</th>
         </tr>
     </thead>
     <tbody>
@@ -36,7 +36,7 @@
                <td>{{ $patient->escolaridad_paciente }} </td>
                <td>{{ $patient->ocupacion_paciente }} </td>
                <td>{{ $patient->nombre_comunidad }} </td>
-               <td>{{ $patient->dpi_paciente_com_esp }} </td>
+               <td>{{ $patient->conclusion->fecha }} </td>
            </tr>
        @endforeach
     </tbody>

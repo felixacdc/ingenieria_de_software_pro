@@ -26,21 +26,25 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        // if ($request->user()->tipo_usuario_id == 1)
-        //   $patients = Paciente::all();
-        // else {
-        $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
-        //   $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
-        //
-        //   $dataQuery['father'] = $patients;
-        //
-        //   foreach ($children as $son) {
-        //       $dataQuery[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
-        //   }
-        // }
-        //
-        // return view('admin/boletas/list', compact('dataQuery'));
-        return view('admin/boletas/list', compact('patients'));
+        if ($request->user()->tipo_usuario_id != 1) {
+          // if ($request->user()->tipo_usuario_id == 1)
+          //   $patients = Paciente::all();
+          // else {
+          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+          //   $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
+          //
+          //   $dataQuery['father'] = $patients;
+          //
+          //   foreach ($children as $son) {
+          //       $dataQuery[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
+          //   }
+          // }
+          //
+          // return view('admin/boletas/list', compact('dataQuery'));
+          return view('admin/boletas/list', compact('patients'));
+        } else {
+          return \back();
+        }
     }
 
     /**
@@ -204,5 +208,14 @@ class BoletaController extends Controller
         $conclusion->paciente_id = $idPatient;
 
         $conclusion->save();
+    }
+
+    public function weekReport(Request $request)
+    {
+      if ($request->user()->tipo_usuario_id != 1) {
+        echo 'No soy admin perras';
+      } else {
+        return \back();
+      }
     }
 }

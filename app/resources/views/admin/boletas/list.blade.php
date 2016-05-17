@@ -8,7 +8,7 @@
         <section class="content-header">
             <h1>
                 Boleta
-                <small>Listado de Boletas</small>
+                <small>Boletas del centro</small>
             </h1>
         </section>
 
@@ -22,7 +22,10 @@
                 <div class="box-header">
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-6"><h3 class="box-title">Listar Boletas</h3></div>
+                            <div class="col-md-6"><h3 class="box-title">Boletas del centro</h3></div>
+                            <div class="col-md-6 text-right">
+                              <a href="{{url('admin/weekReport')}}" class="btn btn-primary" style="color:white;">Crear Reporte</a>
+                            </div>
                         </div>
                     </div>
                 </div><!-- /.box-header -->
