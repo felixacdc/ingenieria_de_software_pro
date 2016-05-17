@@ -18,7 +18,6 @@ class PacienteTableSeeder extends Seeder
             ->where('id','<=' ,10)
             ->update(['user_id' => 1]);
 
-
         DB::table('pacientes')
             ->where('id','>=' ,1)
             ->where('id','<=' ,10)
@@ -38,15 +37,10 @@ class PacienteTableSeeder extends Seeder
                 ->where('id','>=' ,21)
                 ->where('id','<=' ,30)
                 ->update(['user_id' => 3]);
-
-
         DB::table('pacientes')
                 ->where('id','>=' ,21)
                 ->where('id','<=' ,30)
                 ->update(['centro_id' => 4]);
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////                /
 
         DB::table('pacientes')

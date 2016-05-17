@@ -40,4 +40,5 @@
 <div class="form-group">
 	{!!Form::label('centro_id','Centro:')!!}
 	{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
+	{!! Form::radio('state', 1, true, ['class' => 'form-control op']) !!}
 </div>
