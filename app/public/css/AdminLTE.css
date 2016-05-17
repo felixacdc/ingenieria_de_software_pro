@@ -19,6 +19,10 @@ body {
   min-height: 100%;
   background: #f9f9f9;
 }
+
+.op{
+  display: none;
+}
 a {
   color: #3c8dbc;
 }
