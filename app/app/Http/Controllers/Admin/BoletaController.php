@@ -213,9 +213,14 @@ class BoletaController extends Controller
     public function weekReport(Request $request)
     {
       if ($request->user()->tipo_usuario_id != 1) {
-        echo 'No soy admin perras';
+        return view('admin/boletas/weekReport');
       } else {
         return \back();
       }
+    }
+
+    public function dataWeekReport(Request $request)
+    {
+      dd($request);
     }
 }
