@@ -33,7 +33,6 @@ class UsersController extends Controller
     public function index()
     {
         $data=User::all();
-        //return $data;
         return view('admin.users.list',compact('data'));
     }
 
@@ -44,8 +43,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $type=Tipo_usuario::lists('tipo','id');
-        $centro=Centro::where('id', '!=', '1')->lists('centro','id');
+        $type = Tipo_usuario::lists('tipo','id');
+        $centro = Centro::lists('centro','id');
         return view('admin.users.partials.createForm',compact('type','centro'));
     }
 
@@ -57,8 +56,8 @@ class UsersController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-        User::create($request->all());
-        return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
+          User::create($request->all());
+          return redirect('/admin/users')->with('message','Usuario creado Correctamente.');
     }
 
     /**
@@ -81,9 +80,9 @@ class UsersController extends Controller
     public function edit($id)
     {
         $bandera=1;
-        $user=User::find($id);
-        $type=Tipo_usuario::lists('tipo','id');
-        $centro=Centro::where('id', '!=', '1')->lists('centro','id');
+        $user = User::find($id);
+        $type = Tipo_usuario::lists('tipo','id');
+        $centro = Centro::lists('centro','id');
         return view('admin.users.partials.editForm', compact('type','centro','user','bandera'));
     }
 
@@ -96,7 +95,7 @@ class UsersController extends Controller
      */
     public function update(UserEditRequest $request, $id)
     {
-        $user=User::find($id);
+        $user = User::find($id);
         $user->fill($request->all());
         $user->save();
         return redirect('/admin/users')->with('message','Usuario Editado Correctamente');
@@ -110,9 +109,29 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::find($id);
+        $user = User::find($id);
         $user->delete();
         return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+    }
+
+    public function userExists($email)
+    {
+      $n = User::where('email','=',$email)->count();
+      if ($n>0) {
+          return 'si';
+      } else {
+          return 'no';
+      }
+    }
+
+    public function emailExists($user)
+    {
+      $n=User::where('user','=',$user)->count();
+      if($n>0){
+        echo 'si';
+      }else{
+        echo 'no';
+      }
     }
 
 }

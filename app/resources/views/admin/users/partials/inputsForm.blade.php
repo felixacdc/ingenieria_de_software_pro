@@ -1,6 +1,7 @@
 <div class="form-group">
 	<label for="">Usuario</label>
-	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required'))!!}
+	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required','id'=>'usuario'))!!}
+	<label for="" id="msg2" style="display:none;"></label>
 </div>
 
 <div class="form-group">
@@ -19,8 +20,10 @@
 </div>
 
 <div class="form-group">
+
 	<label for="">Correo Electrónico</label>
-	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico'))!!}
+	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico','id'=>'correo'))!!}
+	<label for="" id="msg" style="display:none;"></label>
 </div>
 
 <div class="form-group">
@@ -37,4 +40,5 @@
 <div class="form-group">
 	{!!Form::label('centro_id','Centro:')!!}
 	{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
+	{!! Form::radio('state', 1, true, ['class' => 'form-control op']) !!}
 </div>
