@@ -65,7 +65,8 @@ class BoletaController extends Controller
      */
     public function store(BoletaRequest $request)
     {
-        $idPatient = $this::savePatient($request);
+        $number = $this::correlativeNumber($request);
+        $idPatient = $this::savePatient($request, $number);
         $this::saveObstetricalHistory($request, $idPatient);
         $this::saveCurrentPregnancy($request, $idPatient);
         $this::saveClinicHistory($request, $idPatient);
@@ -108,12 +109,12 @@ class BoletaController extends Controller
         //
     }
 
-    public static function savePatient($request)
+    public static function savePatient($request, $number)
     {
         $patient = new Paciente;
 
-        $patient->no_registro = 1;
-        $patient->no_boleta = 1;
+        $patient->no_registro = $request->no_registro;
+        $patient->no_boleta = $number;
         $patient->nombre_paciente = $request->nombre_paciente;
         $patient->edad_paciente = $request->edad_paciente;
         $patient->pueblo_paciente = $request->pueblo_paciente;
@@ -235,5 +236,12 @@ class BoletaController extends Controller
       return $pdf->stream();
 
       // dd($patients);
+    }
+
+    public static function correlativeNumber($request)
+    {
+      $number = Paciente::where('centro_id', '=', $request->user()->centro_id)->count();
+      $number++;
+      return $number;
     }
 }

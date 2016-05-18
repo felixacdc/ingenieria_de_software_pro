@@ -20,7 +20,10 @@ $(document).ready(function () {
 
     $("#createBoleta").validate({
         rules: {
-                edad_paciente: {
+          no_registro: {
+              required: true
+          },
+              edad_paciente: {
                     required: true,
                     digits: true
                 },
@@ -73,6 +76,9 @@ $(document).ready(function () {
                 }
             },
             messages: {
+                no_registro: {
+                    required: "Por favor ingrese el No. de Boleta."
+                },
                 nombre_paciente: {
                     required: "Por favor ingrese el nombre de la paciente."
                 },

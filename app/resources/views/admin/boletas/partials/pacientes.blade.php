@@ -5,6 +5,12 @@
             <h2>Datos Personales</h2>
             <hr>
             <div class="row">
+              <div class="form-group col-md-4">
+                  {!!Form::label('no_registro','No. de Registro:')!!}
+                  {!!Form::text('no_registro', null, array('class' => 'form-control', 'placeholder' => 'No. de Registro', 'required' => 'required'))!!}
+              </div>
+            </div>
+            <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('nombre_paciente','Nombre de la embarazada:')!!}
                 	{!!Form::text('nombre_paciente', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la embarazada', 'required' => 'required'))!!}
