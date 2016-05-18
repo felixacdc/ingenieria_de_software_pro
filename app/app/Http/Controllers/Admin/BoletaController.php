@@ -213,9 +213,20 @@ class BoletaController extends Controller
     public function weekReport(Request $request)
     {
       if ($request->user()->tipo_usuario_id != 1) {
-        echo 'No soy admin perras';
+        return view('admin/boletas/weekReport');
       } else {
         return \back();
       }
+    }
+
+    public function dataWeekReport(Request $request)
+    {
+      $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                  ->whereHas('conclusion', function ($query) use ($request) {
+                    $query->where('fecha', '>=', $request->begin_date)
+                          ->where('conclusion.fecha', '<=', $request->final_date);
+                  })->get();
+
+      dd($patients);
     }
 }
