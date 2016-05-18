@@ -227,6 +227,13 @@ class BoletaController extends Controller
                           ->where('conclusion.fecha', '<=', $request->final_date);
                   })->get();
 
-      dd($patients);
+      $das = Centro::where('id', '=', $request->user()->centro_id)->get();
+
+
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
+
+      return $pdf->stream();
+
+      // dd($patients);
     }
 }
