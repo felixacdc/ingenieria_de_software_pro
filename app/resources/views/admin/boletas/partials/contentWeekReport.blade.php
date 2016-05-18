@@ -1,5 +1,5 @@
 <div class="content">
-  {!!Form::open(['route' => 'admin/reports/dataWeekReport', 'method' => 'GET', 'class' => 'form-validate'])!!}
+  {!!Form::open(['route' => 'admin/reports/dataWeekReport', 'method' => 'GET', 'class' => 'form-validate', 'id' => 'weekReport'])!!}
     <div class="row">
       <div class="form-group col-md-6">
         {!!Form::label('begin_date','Fecha inicial:')!!}

@@ -6,11 +6,11 @@ $(document).ready(function () {
     *
     **/
 
-    $('.nextButton').click(function () {
-        var id = $(this).data( "id" );
-        $(".nav-tabs li").removeClass('active');
-        $("#" + id).addClass('active');
-    });
+    // $('.nextButton').click(function () {
+    //     var id = $(this).data( "id" );
+    //     $(".nav-tabs li").removeClass('active');
+    //     $("#" + id).addClass('active');
+    // });
 
     /**
     *
@@ -228,6 +228,33 @@ $(document).ready(function () {
 				$("#createBoleta .btn-primary").prop('disabled', true);
 				form.submit();
 			}
+    });
+
+    $("#weekReport").validate({
+      rules: {
+          begin_date: {
+            required: true,
+            date: true
+          },
+          final_date: {
+            required: true,
+            date: true
+          }
+        },
+        messages: {
+            begin_date: {
+              required: "Por favor seleccione la fecha.",
+              date: "Por favor ingrese una fecha valida"
+            },
+            final_date: {
+              required: "Por favor seleccione la fecha.",
+              date: "Por favor ingrese una fecha valida"
+            }
+        },
+        submitHandler: function(form) {
+          $("#weekReport .btn-primary").prop('disabled', true);
+          form.submit();
+        }
     });
 
 });

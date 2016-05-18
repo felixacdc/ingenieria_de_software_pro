@@ -36,14 +36,6 @@
 @endsection
 
 @section('scripts')
-    <!-- DATA TABES SCRIPT -->
-    {!!Html::script("js/datatables/jquery.dataTables.js")!!}
-    {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
-
-    <!-- page script -->
-    <script type="text/javascript">
-        $(function() {
-            $("#example1").dataTable();
-        });
-    </script>
+  {!!Html::script("js/jquery.validate.js")!!}
+  {!!Html::script("js/admin/boleta.js")!!}
 @endsection
