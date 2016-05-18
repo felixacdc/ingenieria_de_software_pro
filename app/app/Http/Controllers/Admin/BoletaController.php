@@ -221,6 +221,12 @@ class BoletaController extends Controller
 
     public function dataWeekReport(Request $request)
     {
-      dd($request);
+      $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                  ->whereHas('conclusion', function ($query) use ($request) {
+                    $query->where('fecha', '>=', $request->begin_date)
+                          ->where('conclusion.fecha', '<=', $request->final_date);
+                  })->get();
+
+      dd($patients);
     }
 }
