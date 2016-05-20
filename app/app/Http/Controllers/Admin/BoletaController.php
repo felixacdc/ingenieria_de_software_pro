@@ -223,12 +223,27 @@ class BoletaController extends Controller
                           ->where('conclusion.fecha', '<=', $request->final_date);
                   })->get();
 
+      $dataQuery['father'] = $patients;
+
       $das = Centro::where('id', '=', $request->user()->centro_id)->get();
+      $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
+      $dataCenters['father'] = $das;
+      $dataCenters['children'] = $children;
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
+      foreach ($children as $son) {
+          $dataQuery[$son->centro] = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                      ->whereHas('conclusion', function ($query) use ($request) {
+                        $query->where('fecha', '>=', $request->begin_date)
+                              ->where('conclusion.fecha', '<=', $request->final_date);
+                      })->get();
+      }
 
-      return $pdf->stream();
+      dd($dataQuery, $dataCenters);
+
+      // $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
+      //
+      // return $pdf->stream();
 
       // dd($patients);
     }
