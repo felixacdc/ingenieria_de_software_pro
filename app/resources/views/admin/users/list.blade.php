@@ -37,6 +37,7 @@
                                     <th>Correo Electrónico</th>
                                     <th>Centro</th>
                                     <th>Tipo Usuario</th>
+                                    <th>Estado</th>
                                     <th>Operaciones</th>
 
                                 </tr>
@@ -51,6 +52,11 @@
                                      <td>{{ $usuario->email }} </td>
                                      <td>{{ $usuario->centro->centro }} </td>
                                      <td>{{ $usuario->tipo->tipo }} </td>
+                                     @if($usuario->state==0 )
+                                     <td class="baja">De baja</td>
+                                     @else
+                                     <td>Activo</td>
+                                     @endif
                                      <td class="text-center">
                                       <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}/edit" data-title="Actualizar Usuario">Editar</button>
                                       <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}" data-title="Eliminar Usuario">Eliminar</button>

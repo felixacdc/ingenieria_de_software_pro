@@ -113,9 +113,9 @@ class UsersController extends Controller
         $user = User::find($id);///obtengo el Usuario
         $relations=Paciente::where('user_id','=',$id)->count();
         if($relations>0){
-          return $user;
-          //$user->state=0;
-          //return redirect('/admin/users')->with('message','Temporalmente El Usuario Fue dado de Baja');
+          $user->state=false;// Cambio el Estaado del Paciente
+          $user->save();
+          return redirect('/admin/users')->with('message','Temporalmente El Usuario Fue dado de Baja');
         }else{
           $user->delete();
           return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');

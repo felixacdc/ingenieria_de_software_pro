@@ -33,6 +33,9 @@ a:focus {
   text-decoration: none;
   color: #72afd2;
 }
+.baja{
+  color: red;
+}
 /* Layouts */
 .wrapper {
   min-height: 100%;
