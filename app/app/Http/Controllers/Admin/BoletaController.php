@@ -27,21 +27,16 @@ class BoletaController extends Controller
     public function index(Request $request)
     {
         if ($request->user()->tipo_usuario_id != 1) {
-          // if ($request->user()->tipo_usuario_id == 1)
-          //   $patients = Paciente::all();
-          // else {
-          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
-          //   $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
-          //
-          //   $dataQuery['father'] = $patients;
-          //
-          //   foreach ($children as $son) {
-          //       $dataQuery[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
-          //   }
-          // }
-          //
-          // return view('admin/boletas/list', compact('dataQuery'));
-          return view('admin/boletas/list', compact('patients'));
+            $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+            $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
+
+            $dataBallots['father'] = $patients;
+
+            foreach ($children as $son) {
+                $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
+            }
+
+          return view('admin/boletas/list', compact('dataBallots'));
         } else {
           return \back();
         }
@@ -228,12 +223,24 @@ class BoletaController extends Controller
                           ->where('conclusion.fecha', '<=', $request->final_date);
                   })->get();
 
-      $das = Centro::where('id', '=', $request->user()->centro_id)->get();
+      $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
+      $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
+      $dataBallots[$fatherCenter[0]->centro] = $patients;
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
+      foreach ($childrenCenter as $son) {
+          $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                      ->whereHas('conclusion', function ($query) use ($request) {
+                        $query->where('fecha', '>=', $request->begin_date)
+                              ->where('conclusion.fecha', '<=', $request->final_date);
+                      })->get();
+      }
 
-      return $pdf->stream();
+      dd($dataBallots);
+
+      // $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
+      //
+      // return $pdf->stream();
 
       // dd($patients);
     }
