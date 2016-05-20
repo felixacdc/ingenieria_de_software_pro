@@ -7,13 +7,13 @@
 </head>
 <body>
 	<header class="clearfix">
-		
+
 		<div id="container">
 
 			<div id="logo">
 				<img src="img/logo.jpg">
 			</div>
-			
+
 			<div id="company">
 				<br>
 				<!-- <hr style="color: #1B8EC7;"> -->
@@ -23,12 +23,12 @@
 		        <!-- <div><a href="mailto:company@example.com">company@example.com</a></div> -->
 		        <!-- <hr style="color: #1B8EC7;"> -->
 	     	</div>
-		</div>	    
+		</div>
 
     </header>
 	<!-- <h1>Listado de registros</h1> -->
 	<table>
-		
+
 	<!-- <div style="page-break-after: always;"></div> -->
 		<thead>
 			<tr>
@@ -43,19 +43,19 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($data as $paciente)
-				<tr>
-					<td>{{ $paciente->no_registro }}</td>
-					@foreach($DAS as $centro)
-						<td>{{ $centro->centro }}</td>
-					@endforeach
-					<td>{{ $paciente->nombre_paciente }}</td>
-					<td>{{ $paciente->edad_paciente }}</td>
-					<td>{{ $paciente->pueblo_paciente }}</td>
-					<td>{{ $paciente->distancia_se_si_cercana }}</td>
-					<td>{{ $paciente->fecha_ultima_regla }}</td>
-					<td>{{ $paciente->fecha_probable_parto }}</td>
-				</tr>
+			@foreach($data as  $centro => $paciente)
+				@foreach($paciente as $key => $ballot)
+					<tr>
+						<td>{{ $ballot->no_registro }}</td>
+						<td>{{ $centro }}</td>
+						<td>{{ $ballot->nombre_paciente }}</td>
+						<td>{{ $ballot->edad_paciente }}</td>
+						<td>{{ $ballot->pueblo_paciente }}</td>
+						<td>{{ $ballot->distancia_se_si_cercana }}</td>
+						<td>{{ $ballot->fecha_ultima_regla }}</td>
+						<td>{{ $ballot->fecha_probable_parto }}</td>
+					</tr>
+				@endforeach
 			@endforeach
 		</tbody>
 	</table>
@@ -77,171 +77,173 @@
 		</thead>
 		<tbody>
 			@foreach($data as $paciente)
-				<tr>
-					<td>{{ $paciente->no_embarazos }}</td>
-					<td>{{ $paciente->no_partos }}</td>
-					<td>{{ $paciente->no_cesarias }}</td>
-					<td>{{ $paciente->no_abortos }}</td>
-					<td>{{ $paciente->no_hijos_vivos }}</td>
-					<td>{{ $paciente->no_hijos_muertos }}</td>
-					
-					<!-- Columna 1 -->
-					<td class="celdas">
-						@if($paciente->antecedentes->dato1 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato2 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato3 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato4 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato5 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato6 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->antecedentes->dato7 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<!-- Columna 2 -->
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato1 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato2 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato3 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato4 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato5 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato6 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato7 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato8 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato9 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato10 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato11 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas2">
-						@if($paciente->embarazoActual->dato12 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					
-					<!-- Columna 3 -->
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato1 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato2 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato3 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato4 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato5 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>
-					<td class="celdas">
-						@if($paciente->historiaClinica->dato6 == 1)
-							<img src="img/si.png" alt="">
-						@else
-							<img src="img/no.png" alt="">
-						@endif</td>	
-				</tr>
+				@foreach($paciente as $key => $ballot)
+					<tr>
+						<td>{{ $ballot->no_embarazos }}</td>
+						<td>{{ $ballot->no_partos }}</td>
+						<td>{{ $ballot->no_cesarias }}</td>
+						<td>{{ $ballot->no_abortos }}</td>
+						<td>{{ $ballot->no_hijos_vivos }}</td>
+						<td>{{ $ballot->no_hijos_muertos }}</td>
+
+						<!-- Columna 1 -->
+						<td class="celdas">
+							@if($ballot->antecedentes->dato1 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato2 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato3 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato4 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato5 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato6 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->antecedentes->dato7 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<!-- Columna 2 -->
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato1 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato2 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato3 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato4 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato5 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato6 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato7 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato8 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato9 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato10 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato11 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas2">
+							@if($ballot->embarazoActual->dato12 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+
+						<!-- Columna 3 -->
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato1 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato2 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato3 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato4 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato5 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+						<td class="celdas">
+							@if($ballot->historiaClinica->dato6 == 1)
+								<img src="img/si.png" alt="">
+							@else
+								<img src="img/no.png" alt="">
+							@endif</td>
+					</tr>
+				@endforeach
 			@endforeach
-		</tbody>	
+		</tbody>
 	</table>
 </body>
 </html>

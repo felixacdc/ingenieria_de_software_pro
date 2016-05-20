@@ -236,11 +236,11 @@ class BoletaController extends Controller
                       })->get();
       }
 
-      dd($dataBallots);
+      // dd($dataBallots);
 
-      // $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $patients, 'DAS' => $das])->setPaper('Legal')->setOrientation('landscape');
-      //
-      // return $pdf->stream();
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+
+      return $pdf->stream();
 
       // dd($patients);
     }
