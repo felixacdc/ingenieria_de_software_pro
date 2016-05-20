@@ -79,7 +79,7 @@ h2.name {
   margin: 0;
 }
 
-#invoice {
+/*#invoice {
   float: right;
   text-align: right;
 }
@@ -96,6 +96,53 @@ h2.name {
   font-size: 1.1em;
   color: #777777;
 }
+*/
+.C1 {
+  width: 100px;
+}
+
+.C2 {
+  width: 150px;
+}
+
+.C3 {
+  width: 250px;
+}
+
+.C4 {
+  width: 40px;
+}
+
+.C5 {
+  width: 120px;
+}
+
+.C6 {
+  width: 180px;
+}
+
+
+.C7 {
+  width: 90px;
+}
+
+.C8 {
+  width: 70px;
+}
+
+
+.celdas1 {
+  width: 5px;
+}
+
+.celdas2 {
+  background-color: #C0C0C0;
+  width: 5px;
+}
+
+.celdas3 {
+  width: 5px;
+}
 
 table {
   width: 100%;
@@ -109,17 +156,20 @@ table td {
   padding: 5px;
   background: #EEEEEE;
   text-align: center;
-  border-bottom: 1px solid #FFFFFF;
+  border: 1px solid #808080;
+  /*border-bottom: 1px solid #808080;*/
 }
 
 table thead tr th {
-  font-size: 0.6em;
+  font-size: 0.9em;
+  background-color: #1B8EC7;
+  color: white;
 }
 
-/*tbody tr td,
+tbody tr td,
 tbody tr th {
-  font-size: 0.6em;
-}*/
+  font-size: 0.9em;
+}
 
 table th {
   white-space: nowrap;        
