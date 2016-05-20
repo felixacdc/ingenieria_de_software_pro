@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Centro;
 use App\Tipo_usuario;
+use App\Paciente;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -109,6 +110,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
+        $relations=
         $user = User::find($id);
         $user->delete();
         return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
