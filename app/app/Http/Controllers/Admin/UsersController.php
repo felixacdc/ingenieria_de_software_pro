@@ -110,10 +110,17 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $relations=
-        $user = User::find($id);
-        $user->delete();
-        return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+        $user = User::find($id);///obtengo el Usuario
+        $relations=Paciente::where('user_id','=',$id)->count();
+        if($relations>0){
+          return $user;
+          //$user->state=0;
+          //return redirect('/admin/users')->with('message','Temporalmente El Usuario Fue dado de Baja');
+        }else{
+          $user->delete();
+          return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+        }
+
     }
 
     public function userExists($email)
