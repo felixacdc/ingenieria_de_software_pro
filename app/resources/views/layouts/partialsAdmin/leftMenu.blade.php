@@ -48,10 +48,133 @@
                     <i class="fa fa-plus"></i> <span> Crear Boleta</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ url('admin/boleta') }}">
-                    <i class="fa fa-list" aria-hidden="true"></i> <span>Registro</span>
+            @if( Auth::user()->tipo_usuario_id != 1 )
+              <li>
+                  <a href="{{ url('admin/boleta') }}">
+                      <i class="fa fa-list" aria-hidden="true"></i> <span>Reporte Semanal</span>
+                  </a>
+              </li>
+            @endif
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i> <span> Reportes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+
+                <ul class="treeview-menu">
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-globe"></i> <span> Generales </span>
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+
+                    <ul class="treeview-menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Cesáreas anteriores </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Abortos</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Embarazos</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Partos</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes por preclampsia/eclampsia</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes por ITU</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con enfermedad renal</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con factor RH negativo</span>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </li>
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-calendar"></i> <span> Por edad</span>
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+
+                    <ul class="treeview-menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes embarazadas adolescentes (10 a 19 años)</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes embarazadas mayores de 35 años</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-stethoscope"></i> <span> Por enfermedad</span>
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+
+                    <ul class="treeview-menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con VIH</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con hipertensión</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con diabetes</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con anemia</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-medkit"></i> <span> Por estado nutricional</span>
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+
+                    <ul class="treeview-menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-angle-right"></i> <span> Pacientes con desnutrición u obesidad</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
             </li>
         </ul>
         @else

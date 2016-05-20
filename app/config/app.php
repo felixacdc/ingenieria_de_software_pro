@@ -150,6 +150,11 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * DOMPDF
+         */
+        Barryvdh\DomPDF\ServiceProvider::class,
+
     ],
 
     /*
@@ -202,8 +207,13 @@ return [
         *   aliases of user
         */
 
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+
+        /*
+         * Create DomPDF
+         */
+        'PDF'       => 'Barryvdh\DomPDF\Facade',
 
     ],
 

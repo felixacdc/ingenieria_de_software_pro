@@ -18,7 +18,7 @@ class ConclusionTableSeeder extends Seeder
         DB::table('conclusion')->insert([
           'evaluacion_medica'  => rand(1,0),
           'referido_a'         => 'Lorem ipsum',
-          'fecha'              => 05/15/2016,
+          'fecha'              => '2016/05/' . rand(1,30),
           'nombre'             => 'Jose rivera',
           'paciente_id'        => $i,
       ]);

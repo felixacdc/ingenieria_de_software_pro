@@ -26,19 +26,20 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->user()->tipo_usuario_id == 1)
-          $patients = Paciente::all();
-        else {
-          // dd($request->user()->id);
-          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+        if ($request->user()->tipo_usuario_id != 1) {
+            $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+            $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
-          $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
-          dd($children);
+            $dataBallots['father'] = $patients;
 
-          // dd($patients);
+            foreach ($children as $son) {
+                $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
+            }
+
+          return view('admin/boletas/list', compact('dataBallots'));
+        } else {
+          return \back();
         }
-
-        return view('admin/boletas/list', compact('patients'));
     }
 
     /**
@@ -59,7 +60,8 @@ class BoletaController extends Controller
      */
     public function store(BoletaRequest $request)
     {
-        $idPatient = $this::savePatient($request);
+        $number = $this::correlativeNumber($request);
+        $idPatient = $this::savePatient($request, $number);
         $this::saveObstetricalHistory($request, $idPatient);
         $this::saveCurrentPregnancy($request, $idPatient);
         $this::saveClinicHistory($request, $idPatient);
@@ -102,12 +104,12 @@ class BoletaController extends Controller
         //
     }
 
-    public static function savePatient($request)
+    public static function savePatient($request, $number)
     {
         $patient = new Paciente;
 
-        $patient->no_registro = 1;
-        $patient->no_boleta = 1;
+        $patient->no_registro = $request->no_registro;
+        $patient->no_boleta = $number;
         $patient->nombre_paciente = $request->nombre_paciente;
         $patient->edad_paciente = $request->edad_paciente;
         $patient->pueblo_paciente = $request->pueblo_paciente;
@@ -202,5 +204,51 @@ class BoletaController extends Controller
         $conclusion->paciente_id = $idPatient;
 
         $conclusion->save();
+    }
+
+    public function weekReport(Request $request)
+    {
+      if ($request->user()->tipo_usuario_id != 1) {
+        return view('admin/boletas/weekReport');
+      } else {
+        return \back();
+      }
+    }
+
+    public function dataWeekReport(Request $request)
+    {
+      $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                  ->whereHas('conclusion', function ($query) use ($request) {
+                    $query->where('fecha', '>=', $request->begin_date)
+                          ->where('conclusion.fecha', '<=', $request->final_date);
+                  })->get();
+
+      $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
+      $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
+
+      $dataBallots[$fatherCenter[0]->centro] = $patients;
+
+      foreach ($childrenCenter as $son) {
+          $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                      ->whereHas('conclusion', function ($query) use ($request) {
+                        $query->where('fecha', '>=', $request->begin_date)
+                              ->where('conclusion.fecha', '<=', $request->final_date);
+                      })->get();
+      }
+
+      // dd($dataBallots);
+
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+
+      return $pdf->stream();
+
+      // dd($patients);
+    }
+
+    public static function correlativeNumber($request)
+    {
+      $number = Paciente::where('centro_id', '=', $request->user()->centro_id)->count();
+      $number++;
+      return $number;
     }
 }

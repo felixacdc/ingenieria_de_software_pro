@@ -7,8 +7,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Boleta
-                <small>Boletas del centro</small>
+                Reporte
+                <small>Reporte Semanal</small>
             </h1>
         </section>
 
@@ -22,15 +22,12 @@
                 <div class="box-header">
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-6"><h3 class="box-title">Boletas del centro</h3></div>
-                            <div class="col-md-6 text-right">
-                              <a href="{{url('admin/weekReport')}}" class="btn btn-primary" style="color:white;">Crear Reporte</a>
-                            </div>
+                            <div class="col-md-6"><h3 class="box-title">Reporte Semanal</h3></div>
                         </div>
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
-                    @include('admin.boletas.partials.contentList')
+                  @include('admin.boletas.partials.contentWeekReport')
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
 
@@ -39,14 +36,6 @@
 @endsection
 
 @section('scripts')
-    <!-- DATA TABES SCRIPT -->
-    {!!Html::script("js/datatables/jquery.dataTables.js")!!}
-    {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
-
-    <!-- page script -->
-    <script type="text/javascript">
-        $(function() {
-            $("#example1").dataTable();
-        });
-    </script>
+  {!!Html::script("js/jquery.validate.js")!!}
+  {!!Html::script("js/admin/boleta.js")!!}
 @endsection

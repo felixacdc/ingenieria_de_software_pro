@@ -8,21 +8,23 @@
             <th>Escolaridad</th>
             <th>Ocupación</th>
             <th>Nombre de la comunidad</th>
-            <th>No. de celular</th>
+            <th>Fecha de creación</th>
         </tr>
     </thead>
     <tbody>
-      @foreach($patients as  $key => $patient)
-         <tr>
-             <td>{{ $key+1 }} </td>
-             <td>{{ $patient->nombre_paciente }} </td>
-             <td>{{ $patient->edad_paciente }} </td>
-             <td>{{ $patient->pueblo_paciente }} </td>
-             <td>{{ $patient->escolaridad_paciente }} </td>
-             <td>{{ $patient->ocupacion_paciente }} </td>
-             <td>{{ $patient->nombre_comunidad }} </td>
-             <td>{{ $patient->dpi_paciente_com_esp }} </td>
-         </tr>
+      @foreach($dataBallots as  $key => $elemnt)
+        @foreach($elemnt as $key => $ballot)
+           <tr>
+               <td>{{ $key+1 }} </td>
+               <td>{{ $ballot->nombre_paciente }} </td>
+               <td>{{ $ballot->edad_paciente }} </td>
+               <td>{{ $ballot->pueblo_paciente }} </td>
+               <td>{{ $ballot->escolaridad_paciente }} </td>
+               <td>{{ $ballot->ocupacion_paciente }} </td>
+               <td>{{ $ballot->nombre_comunidad }} </td>
+               <td>{{ $ballot->conclusion->fecha }} </td>
+           </tr>
+        @endforeach
      @endforeach
     </tbody>
 </table>

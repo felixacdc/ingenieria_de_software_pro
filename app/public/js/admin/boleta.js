@@ -6,11 +6,11 @@ $(document).ready(function () {
     *
     **/
 
-    $('.nextButton').click(function () {
-        var id = $(this).data( "id" );
-        $(".nav-tabs li").removeClass('active');
-        $("#" + id).addClass('active');
-    });
+    // $('.nextButton').click(function () {
+    //     var id = $(this).data( "id" );
+    //     $(".nav-tabs li").removeClass('active');
+    //     $("#" + id).addClass('active');
+    // });
 
     /**
     *
@@ -20,7 +20,10 @@ $(document).ready(function () {
 
     $("#createBoleta").validate({
         rules: {
-                edad_paciente: {
+          no_registro: {
+              required: true
+          },
+              edad_paciente: {
                     required: true,
                     digits: true
                 },
@@ -73,6 +76,9 @@ $(document).ready(function () {
                 }
             },
             messages: {
+                no_registro: {
+                    required: "Por favor ingrese el No. de Boleta."
+                },
                 nombre_paciente: {
                     required: "Por favor ingrese el nombre de la paciente."
                 },
@@ -228,6 +234,33 @@ $(document).ready(function () {
 				$("#createBoleta .btn-primary").prop('disabled', true);
 				form.submit();
 			}
+    });
+
+    $("#weekReport").validate({
+      rules: {
+          begin_date: {
+            required: true,
+            date: true
+          },
+          final_date: {
+            required: true,
+            date: true
+          }
+        },
+        messages: {
+            begin_date: {
+              required: "Por favor seleccione la fecha.",
+              date: "Por favor ingrese una fecha valida"
+            },
+            final_date: {
+              required: "Por favor seleccione la fecha.",
+              date: "Por favor ingrese una fecha valida"
+            }
+        },
+        submitHandler: function(form) {
+          $("#weekReport .btn-primary").prop('disabled', true);
+          form.submit();
+        }
     });
 
 });

@@ -35,5 +35,8 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
     // Routes Boleta
     Route::resource('boleta', 'BoletaController');
+    Route::get('weekReport', 'BoletaController@weekReport');
+    Route::get('reports/dataWeekReport', ['as' => 'admin/reports/dataWeekReport', 'uses' => 'BoletaController@dataWeekReport']);
+    Route::resource('reports', 'ReportsController');
 
 });

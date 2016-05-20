@@ -25,6 +25,7 @@ class BoletaRequest extends Request
     {
         return [
             # validacion pacientes
+            'no_registro' => 'required',
             'nombre_paciente' => 'required',
             'edad_paciente' => 'required|numeric',
             'pueblo_paciente' => 'required',
