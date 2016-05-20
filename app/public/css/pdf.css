@@ -102,14 +102,14 @@ h2.name {
 }
 
 .C2 {
-  width: 150px;
+  width: 100px;
 }
 
 .C3 {
-  width: 250px;
+  width: 180px;
 }
 
-.C4 {
+.C4, .C6 {
   width: 40px;
 }
 
@@ -117,17 +117,18 @@ h2.name {
   width: 120px;
 }
 
-.C6 {
-  width: 180px;
-}
+/*.C6 {
+  width: 40px;
+}*/
 
 
 .C7 {
-  width: 90px;
+  width: 70px;
 }
 
 .C8 {
   width: 70px;
+  text-align: center;
 }
 
 
@@ -142,6 +143,10 @@ h2.name {
 
 .celdas3 {
   width: 5px;
+}
+
+.center {
+   text-align: center;
 }
 
 table {
