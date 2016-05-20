@@ -12,17 +12,17 @@
         </tr>
     </thead>
     <tbody>
-      @foreach($dataQuery as  $key => $elemnt)
-        @foreach($elemnt as $key => $value)
+      @foreach($dataBallots as  $key => $elemnt)
+        @foreach($elemnt as $key => $ballot)
            <tr>
                <td>{{ $key+1 }} </td>
-               <td>{{ $value->nombre_paciente }} </td>
-               <td>{{ $value->edad_paciente }} </td>
-               <td>{{ $value->pueblo_paciente }} </td>
-               <td>{{ $value->escolaridad_paciente }} </td>
-               <td>{{ $value->ocupacion_paciente }} </td>
-               <td>{{ $value->nombre_comunidad }} </td>
-               <td>{{ $value->dpi_paciente_com_esp }} </td>
+               <td>{{ $ballot->nombre_paciente }} </td>
+               <td>{{ $ballot->edad_paciente }} </td>
+               <td>{{ $ballot->pueblo_paciente }} </td>
+               <td>{{ $ballot->escolaridad_paciente }} </td>
+               <td>{{ $ballot->ocupacion_paciente }} </td>
+               <td>{{ $ballot->nombre_comunidad }} </td>
+               <td>{{ $ballot->conclusion->fecha }} </td>
            </tr>
         @endforeach
      @endforeach
