@@ -229,7 +229,7 @@ class BoletaController extends Controller
       $dataBallots[$fatherCenter[0]->centro] = $patients;
 
       foreach ($childrenCenter as $son) {
-          $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $request->user()->centro_id)
+          $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
                       ->whereHas('conclusion', function ($query) use ($request) {
                         $query->where('fecha', '>=', $request->begin_date)
                               ->where('conclusion.fecha', '<=', $request->final_date);
@@ -238,9 +238,11 @@ class BoletaController extends Controller
 
       // dd($dataBallots);
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['data' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['dataBallots' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
 
       return $pdf->stream();
+
+      // return view('admin.boletas.pdf.createpdf', compact('dataBallots'));
 
       // dd($patients);
     }

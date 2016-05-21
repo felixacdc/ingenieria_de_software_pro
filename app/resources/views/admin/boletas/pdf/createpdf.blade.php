@@ -43,7 +43,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($data as  $centro => $paciente)
+			@foreach($dataBallots as  $centro => $paciente)
 				@foreach($paciente as $key => $ballot)
 					<tr>
 						<td>{{ $ballot->no_registro }}</td>
@@ -76,7 +76,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($data as $paciente)
+			@foreach($dataBallots as $center => $paciente)
 				@foreach($paciente as $key => $ballot)
 					<tr>
 						<td>{{ $ballot->no_embarazos }}</td>
