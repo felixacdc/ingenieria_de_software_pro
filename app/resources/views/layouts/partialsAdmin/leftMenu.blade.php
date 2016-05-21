@@ -70,7 +70,7 @@
 
                     <ul class="treeview-menu">
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/no_abortos') }}">
                           <i class="fa fa-angle-right"></i> <span> Cesáreas anteriores </span>
                         </a>
                       </li>

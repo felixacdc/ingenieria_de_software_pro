@@ -7,38 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Paciente;
+use App\antecedentes_obstetricos;
+use App\embarazo_actual;
+use App\Historia_clinica_general;
+use App\Conclusion;
+
+use App\Centro;
+
 class ReportsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -46,42 +24,28 @@ class ReportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $field)
     {
-        //
-    }
+        if ( !isset($request->dateBegin) and !isset($request->dateEnd) ) {
+          $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                      ->where($field, '>', 0)
+                      ->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+          $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
+          $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+          $dataBallots[$fatherCenter[0]->centro] = $patients;
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+          foreach ($childrenCenter as $son) {
+              $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
+                      ->where($field, '>', 0)
+                      ->get();
+          }
+
+          dd($dataBallots);
+        } else {
+
+        }
+
     }
 }
