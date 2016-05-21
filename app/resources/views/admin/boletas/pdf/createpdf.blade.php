@@ -37,7 +37,7 @@
 				<th class="C3">Nombre Paciente</th>
 				<th class="C4">Edad</th>
 				<th class="C5">Pueblo</th>
-				<th class="C6">Centro de Salud mas Cercano</th>
+				<th class="C6">CSC</th>
 				<th class="C7">FUR</th>
 				<th class="C7">FPP</th>
 			</tr>
@@ -49,11 +49,11 @@
 						<td>{{ $ballot->no_registro }}</td>
 						<td>{{ $centro }}</td>
 						<td>{{ $ballot->nombre_paciente }}</td>
-						<td>{{ $ballot->edad_paciente }}</td>
+						<td>{{ $ballot->edad_paciente }} Años</td>
 						<td>{{ $ballot->pueblo_paciente }}</td>
-						<td>{{ $ballot->distancia_se_si_cercana }}</td>
-						<td>{{ $ballot->fecha_ultima_regla }}</td>
-						<td>{{ $ballot->fecha_probable_parto }}</td>
+						<td>{{ $ballot->distancia_se_si_cercana }} Km.</td>
+						<td class="center">{{ $ballot->fecha_ultima_regla }}</td>
+						<td class="center">{{ $ballot->fecha_probable_parto }}</td>
 					</tr>
 				@endforeach
 			@endforeach

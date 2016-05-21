@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Centro;
 use App\Tipo_usuario;
+use App\Paciente;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -109,9 +110,17 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+        $user = User::find($id);///obtengo el Usuario
+        $relations=Paciente::where('user_id','=',$id)->count();
+        if($relations>0){
+          $user->state=false;// Cambio el Estaado del Paciente
+          $user->save();
+          return redirect('/admin/users')->with('message','Temporalmente El Usuario Fue dado de Baja');
+        }else{
+          $user->delete();
+          return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
+        }
+
     }
 
     public function userExists($email)
