@@ -24,7 +24,7 @@ class ReportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $field)
+    public function showPatient(Request $request, $field)
     {
         if ( !isset($request->dateBegin) and !isset($request->dateEnd) ) {
           $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
@@ -41,11 +41,10 @@ class ReportsController extends Controller
                       ->where($field, '>', 0)
                       ->get();
           }
-
-          dd($dataBallots);
         } else {
 
         }
+        return view('admin.reports.index', compact('dataBallots'))->with('field', $field);
 
     }
 }

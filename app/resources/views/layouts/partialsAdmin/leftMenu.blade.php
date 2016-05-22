@@ -70,22 +70,22 @@
 
                     <ul class="treeview-menu">
                       <li>
-                        <a href="{{ url('admin/reports/no_abortos') }}">
+                        <a href="{{ url('admin/reports/no_cesarias') }}">
                           <i class="fa fa-angle-right"></i> <span> Cesáreas anteriores </span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/no_abortos') }}">
                           <i class="fa fa-angle-right"></i> <span> Abortos</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/no_embarazos') }}">
                           <i class="fa fa-angle-right"></i> <span> Embarazos</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/no_partos') }}">
                           <i class="fa fa-angle-right"></i> <span> Partos</span>
                         </a>
                       </li>
