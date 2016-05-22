@@ -90,7 +90,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato6/1') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes por preclampsia/eclampsia</span>
                         </a>
                       </li>

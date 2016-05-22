@@ -40,6 +40,6 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
     Route::get('reports/dataWeekReport', ['as' => 'admin/reports/dataWeekReport', 'uses' => 'BoletaController@dataWeekReport']);
 
     // Report Routes
-    Route::get('reports/{field}', 'ReportsController@showPatient');
+    Route::get('reports/{field}/{type?}', 'ReportsController@showPatient');
 
 });

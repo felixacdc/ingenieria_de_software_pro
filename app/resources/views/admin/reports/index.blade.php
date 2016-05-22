@@ -24,7 +24,13 @@
                         <div class="row">
                             <div class="col-md-6">
                               <h3 class="box-title">
-                                {{trans('fields.' . $field)}}
+
+                                @if( $type == 0 )
+                                  {{trans('fields.' . $field)}}
+                                @elseif( $type == 1)
+                                  {{trans('fields.' . $field . 'A')}}
+                                @endif
+
                                 @if( isset($fecha_inicio) and isset($fecha_fin))
                                   del {{ $fecha_inicio }}
                                   a {{ $fecha_fin }}
@@ -38,7 +44,11 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
-                  @include('admin.reports.partials.contentList')
+                  @if( $type == 0 )
+                    @include('admin.reports.partials.contentListPatients')
+                  @elseif( $type == 1)
+                    @include('admin.reports.partials.contentListCurrentPregnancy')
+                  @endif
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
 
