@@ -7,136 +7,47 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Paciente;
-use App\antecedentes_obstetricos;
-use App\embarazo_actual;
-use App\Historia_clinica_general;
-use App\Conclusion;
-
-use App\Centro;
-
-class ReportsController extends Controller
+class ReportsController extends BaseReportsController
 {
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function showPatient(Request $request, $field, $type = 0)
     {
+        $this->insertData($request, $field, $type);
+
         if ( !isset($request->begin_date) and !isset($request->final_date) ) {
 
-          switch ($type) {
-            case 0:
-              $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
-                          ->where($field, '>', 0)
-                          ->get();
-              break;
-            case 1:
-              $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
-                          ->whereHas('embarazoActual', function ($query) use ($field){
-                            $query->where($field, '=', 1);
-                          })->get();
-              break;
+          $this->queryUndated();
 
-            default:
-              return \back();
-              break;
-          }
+          $this->queryCenters();
 
-          $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
-          $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
+          $this->dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
 
-          $dataBallots[$fatherCenter[0]->centro] = $patients;
-
-          foreach ($childrenCenter as $son) {
-              switch ($type) {
-                case 0:
-                  $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                          ->where($field, '>', 0)
-                          ->get();
-                  break;
-
-                case 1:
-                  $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                              ->whereHas('embarazoActual', function ($query) use ($field){
-                                $query->where($field, '=', 1);
-                              })->get();
-                  break;
-                default:
-                  return \back();
-                  break;
-              }
-          }
+          $this->queryChildren();
 
         } else {
 
-          switch ($type) {
-            case 0:
-              $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
-                          ->where($field, '>', 0)
-                          ->whereHas('conclusion', function ($query) use ($request) {
-                            $query->where('fecha', '>=', $request->begin_date)
-                                  ->where('fecha', '<=', $request->final_date);
-                          })->get();
-              break;
-            case 1:
-              $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
-                          ->whereHas('embarazoActual', function ($query) use ($field){
-                            $query->where($field, '=', 1);
-                          })
-                          ->whereHas('conclusion', function ($query) use ($request) {
-                            $query->where('fecha', '>=', $request->begin_date)
-                                  ->where('fecha', '<=', $request->final_date);
-                          })->get();
-              break;
-            default:
-              return \back();
-              break;
-          }
+          $this->queryDate();
 
-          $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
-          $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
+          $this->queryCenters();
 
-          $dataBallots[$fatherCenter[0]->centro] = $patients;
+          $dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
 
-          foreach ($childrenCenter as $son) {
-
-            switch ($type) {
-              case 0:
-                $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                        ->where($field, '>', 0)
-                        ->whereHas('conclusion', function ($query) use ($request) {
-                          $query->where('fecha', '>=', $request->begin_date)
-                                ->where('fecha', '<=', $request->final_date);
-                        })->get();
-                break;
-              case 1:
-                $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                            ->whereHas('embarazoActual', function ($query) use ($field){
-                              $query->where($field, '=', 1);
-                            })
-                            ->whereHas('conclusion', function ($query) use ($request) {
-                              $query->where('fecha', '>=', $request->begin_date)
-                                    ->where('fecha', '<=', $request->final_date);
-                            })->get();
-                break;
-              default:
-                return \back();
-                break;
-            }
-          }
+          $this->queryDateChildren();
         }
 
-        return view('admin.reports.index', compact('dataBallots'))
-                    ->with('field', $field)
-                    ->with('fecha_inicio', $request->begin_date)
-                    ->with('fecha_fin', $request->final_date)
-                    ->with('type', $type);
+        if ( $this->error ) {
+          return \Redirect::to('admin');
+        } else {
 
+          $dataBallots = $this->dataBallots;
+
+          return view('admin.reports.index', compact('dataBallots'))
+                      ->with('field', $field)
+                      ->with('fecha_inicio', $request->begin_date)
+                      ->with('fecha_fin', $request->final_date)
+                      ->with('type', $type);
+        }
     }
 
-    
+
 }
