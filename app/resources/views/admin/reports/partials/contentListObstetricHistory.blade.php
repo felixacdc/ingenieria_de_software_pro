@@ -1,7 +1,7 @@
 @extends('admin.reports.layouts.layoutContentList')
 
 @section('name')
-  <th>{{trans('fields.' . $field . 'B')}}</th>
+  <th>{{trans('fields.' . $field . 'A')}}</th>
 @endsection
 
 @section('tbody')
@@ -18,7 +18,7 @@
              <td>{{ $ballot->escolaridad_paciente }} </td>
              <td>{{ $ballot->ocupacion_paciente }} </td>
              <td>
-               @if( $ballot->embarazoActual->$field == 1 )
+               @if( $ballot->antecedentes->$field == 1)
                  Si
                @else
                  No

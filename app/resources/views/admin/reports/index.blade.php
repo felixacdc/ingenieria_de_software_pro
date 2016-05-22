@@ -29,11 +29,13 @@
                                   {{trans('fields.' . $field)}}
                                 @elseif( $type == 1)
                                   {{trans('fields.' . $field . 'A')}}
+                                @elseif( $type == 2)
+                                  {{trans('fields.' . $field . 'B')}}
                                 @endif
 
                                 @if( isset($fecha_inicio) and isset($fecha_fin))
                                   del {{ $fecha_inicio }}
-                                  a {{ $fecha_fin }}
+                                  al {{ $fecha_fin }}
                                 @endif
                               </h3>
                             </div>
@@ -47,6 +49,8 @@
                   @if( $type == 0 )
                     @include('admin.reports.partials.contentListPatients')
                   @elseif( $type == 1)
+                    @include('admin.reports.partials.contentListObstetricHistory')
+                  @elseif( $type == 2)
                     @include('admin.reports.partials.contentListCurrentPregnancy')
                   @endif
                 </div><!-- /.box-body -->

@@ -5,5 +5,6 @@ return [
   'no_cesarias' => 'Numero de cesarias',
   'no_embarazos' => 'Numero de embarazos',
   'no_partos' => 'Numero de partos',
-  'dato6A' => 'Preclampsia/Eclampsia'
+  'dato6A' => 'Preclampsia/Eclampsia',
+  'dato11B' => 'ITU (Sintomatología urinaria)'
 ];

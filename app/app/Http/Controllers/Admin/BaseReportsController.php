@@ -47,10 +47,10 @@ class BaseReportsController extends Controller
                       ->get();
           break;
         case 1:
-          $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
-                      ->whereHas('embarazoActual', function ($query) {
-                        $query->where($this->field, '=', 1);
-                      })->get();
+          $this->firstQueryUndated('antecedentes');
+          break;
+        case 2:
+          $this->firstQueryUndated('embarazoActual');
           break;
 
         default:
@@ -72,14 +72,10 @@ class BaseReportsController extends Controller
                       })->get();
           break;
         case 1:
-          $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
-                      ->whereHas('embarazoActual', function ($query){
-                        $query->where($this->field, '=', 1);
-                      })
-                      ->whereHas('conclusion', function ($query){
-                        $query->where('fecha', '>=', $this->request->begin_date)
-                              ->where('fecha', '<=', $this->request->final_date);
-                      })->get();
+          $this->firstQueryDate('antecedentes');
+          break;
+        case 2:
+          $this->firstQueryDate('embarazoActual');
           break;
         default:
           $this->error = true;
@@ -106,10 +102,10 @@ class BaseReportsController extends Controller
               break;
 
             case 1:
-              $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                          ->whereHas('embarazoActual', function ($query) {
-                            $query->where($this->field, '=', 1);
-                          })->get();
+              $this->secondQueryUndated('antecedentes', $son->centro, $son->id);
+              break;
+            case 2:
+              $this->secondQueryUndated('embarazoActual', $son->centro, $son->id);
               break;
             default:
               $this->error = true;
@@ -118,6 +114,7 @@ class BaseReportsController extends Controller
       }
     }
 
+    // Funcion que optiene los datos de los pacinetes de los hijos del padre si se envia un rando de fechas
     protected function queryDateChildren()
     {
       foreach ($this->childrenCenter as $son) {
@@ -132,19 +129,56 @@ class BaseReportsController extends Controller
                     })->get();
             break;
           case 1:
-            $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                        ->whereHas('embarazoActual', function ($query) {
-                          $query->where($this->field, '=', 1);
-                        })
-                        ->whereHas('conclusion', function ($query) {
-                          $query->where('fecha', '>=', $this->request->begin_date)
-                                ->where('fecha', '<=', $this->request->final_date);
-                        })->get();
+            $this->secondQueryDate('antecedentes', $son->centro, $son->id);
+            break;
+          case 2:
+            $this->secondQueryDate('embarazoActual', $son->centro, $son->id);
             break;
           default:
             $this->error = true;
             break;
         }
       }
+    }
+
+    // Funciones para optener los datos Genericas
+    protected function firstQueryUndated($table)
+    {
+      $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+                  ->whereHas($table, function ($query) {
+                    $query->where($this->field, '=', 1);
+                  })->get();
+    }
+
+    protected function firstQueryDate($table)
+    {
+      $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+                  ->whereHas($table, function ($query){
+                    $query->where($this->field, '=', 1);
+                  })
+                  ->whereHas('conclusion', function ($query){
+                    $query->where('fecha', '>=', $this->request->begin_date)
+                          ->where('fecha', '<=', $this->request->final_date);
+                  })->get();
+    }
+
+    protected function secondQueryUndated($table, $nameCenter, $idCenter)
+    {
+      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', '=', $idCenter)
+                  ->whereHas($table, function ($query) {
+                    $query->where($this->field, '=', 1);
+                  })->get();
+    }
+
+    protected function secondQueryDate($table, $nameCenter, $idCenter)
+    {
+      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', '=', $idCenter)
+                  ->whereHas($table, function ($query) {
+                    $query->where($this->field, '=', 1);
+                  })
+                  ->whereHas('conclusion', function ($query) {
+                    $query->where('fecha', '>=', $this->request->begin_date)
+                          ->where('fecha', '<=', $this->request->final_date);
+                  })->get();
     }
 }

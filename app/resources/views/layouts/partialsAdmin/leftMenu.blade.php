@@ -95,7 +95,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato11/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes por ITU</span>
                         </a>
                       </li>
