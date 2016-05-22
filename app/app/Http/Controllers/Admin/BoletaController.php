@@ -220,7 +220,7 @@ class BoletaController extends Controller
       $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
                   ->whereHas('conclusion', function ($query) use ($request) {
                     $query->where('fecha', '>=', $request->begin_date)
-                          ->where('conclusion.fecha', '<=', $request->final_date);
+                          ->where('fecha', '<=', $request->final_date);
                   })->get();
 
       $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
@@ -232,7 +232,7 @@ class BoletaController extends Controller
           $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
                       ->whereHas('conclusion', function ($query) use ($request) {
                         $query->where('fecha', '>=', $request->begin_date)
-                              ->where('conclusion.fecha', '<=', $request->final_date);
+                              ->where('fecha', '<=', $request->final_date);
                       })->get();
       }
 

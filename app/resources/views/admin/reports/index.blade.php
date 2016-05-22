@@ -22,7 +22,18 @@
                 <div class="box-header">
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-6"><h3 class="box-title">Reporte {{trans('fields.' . $field)}}</h3></div>
+                            <div class="col-md-6">
+                              <h3 class="box-title">
+                                {{trans('fields.' . $field)}}
+                                @if( isset($fecha_inicio) and isset($fecha_fin))
+                                  del {{ $fecha_inicio }}
+                                  a {{ $fecha_fin }}
+                                @endif
+                              </h3>
+                            </div>
+                            <div class="col-md-6 text-right">
+                              <a href="#" class="btn btn-primary" style="color:white;">Crear PDF</a>
+                            </div>
                         </div>
                     </div>
                 </div><!-- /.box-header -->
