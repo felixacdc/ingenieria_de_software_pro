@@ -35,15 +35,34 @@
                                   {{trans('fields.' . $field . 'C')}}
                                 @endif
 
-                                @if( isset($fecha_inicio) and isset($fecha_fin))
-                                  del {{ $fecha_inicio }}
-                                  al {{ $fecha_fin }}
-                                @endif
                               </h3>
                             </div>
                             <div class="col-md-6 text-right">
                               <a href="#" class="btn btn-primary" style="color:white;">Crear PDF</a>
                             </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p style="padding-left: 10px;">
+                              @if( isset($condicion) and isset($number) and $type == 0)
+                                {{trans('fields.' . $condicion)}}
+                                {{ $number }}
+                              @endif
+
+                              @if( isset($fecha_inicio) and isset($fecha_fin))
+                                del {{ $fecha_inicio }}
+                                al {{ $fecha_fin }}
+                              @endif
+
+                              @if( isset($actualCenter) )
+                                @foreach($centers as $key => $value)
+                                  @if( $key == $actualCenter)
+                                    <strong> {{ $value }}</strong>
+                                  @endif
+                                @endforeach
+                              @endif
+                            </p>
+                          </div>
                         </div>
                     </div>
                 </div><!-- /.box-header -->

@@ -1,9 +1,9 @@
 <?php
 
 return [
-  '<' => 'Menor a',
-  '>' => 'Mayor a',
-  '<=' => 'Menor o igual a',
-  '>=' => 'Mayor o igual a',
-  '=' => 'Igual a'
+  '<' => 'Menores a',
+  '>' => 'Mayores a',
+  '<=' => 'Menores o iguales a',
+  '>=' => 'Mayores o iguales a',
+  '=' => 'Iguales a'
 ];

@@ -50,7 +50,10 @@ class ReportsController extends BaseReportsController
                       ->with('field', $field)
                       ->with('fecha_inicio', $request->begin_date)
                       ->with('fecha_fin', $request->final_date)
-                      ->with('type', $type);
+                      ->with('type', $type)
+                      ->with('condicion', $this->request->condition)
+                      ->with('number', $this->request->number)
+                      ->with('actualCenter', $this->request->user()->centro_id);
         }
     }
 

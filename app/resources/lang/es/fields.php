@@ -15,5 +15,10 @@ return [
   'dato9B' => 'Desnutrición u obesidad',
   'dato4C' => 'Hipertensión',
   'dato1C' => 'Diabetes',
-  'dato2C' => 'Enfermedad renal'
+  'dato2C' => 'Enfermedad renal',
+  '<' => 'Menores a',
+  '>' => 'Mayores a',
+  '<=' => 'Menores o iguales a',
+  '>=' => 'Mayores o iguales a',
+  '=' => 'Iguales a'
 ];
