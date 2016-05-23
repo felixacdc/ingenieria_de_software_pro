@@ -35,6 +35,11 @@ class BaseReportsController extends Controller
       $this->request = $request;
       $this->field = $field;
       $this->type = $type;
+
+      if ( empty($this->request->condition) and empty($this->request->number) ) {
+        $this->request->condition = '>=';
+        $this->request->number = 0;
+      }
     }
 
     // Funcion que optiene los datos de los pacinetes del padre si no se envia un rando de fechas
@@ -43,7 +48,7 @@ class BaseReportsController extends Controller
       switch ($this->type) {
         case 0:
           $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
-                      ->where($this->field, '>', 0)
+                      ->where($this->field, $this->request->condition, $this->request->number)
                       ->get();
           break;
         case 1:
@@ -67,7 +72,7 @@ class BaseReportsController extends Controller
       switch ($this->type) {
         case 0:
           $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
-                      ->where($this->field, '>', 0)
+                      ->where($this->field, $this->request->condition, $this->request->number)
                       ->whereHas('conclusion', function ($query) {
                         $query->where('fecha', '>=', $this->request->begin_date)
                               ->where('fecha', '<=', $this->request->final_date);
@@ -102,7 +107,7 @@ class BaseReportsController extends Controller
           switch ($this->type) {
             case 0:
               $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                      ->where($this->field, '>', 0)
+                      ->where($this->field, $this->request->condition, $this->request->number)
                       ->get();
               break;
 
@@ -130,7 +135,7 @@ class BaseReportsController extends Controller
         switch ($this->type) {
           case 0:
             $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                    ->where($this->field, '>', 0)
+                    ->where($this->field, $this->request->condition, $this->request->number)
                     ->whereHas('conclusion', function ($query) {
                       $query->where('fecha', '>=', $this->request->begin_date)
                             ->where('fecha', '<=', $this->request->final_date);

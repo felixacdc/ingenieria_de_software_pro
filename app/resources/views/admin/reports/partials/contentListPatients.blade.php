@@ -1,5 +1,16 @@
 @extends('admin.reports.layouts.layoutContentList')
 
+@section('addItems')
+  <div class="form-group col-md-3">
+    {!!Form::label('condition','Condicion:')!!}
+    {!!Form::select('condition', config('optionsSelectReports'), null, ['class' => 'form-control', 'required' => 'required'])!!}
+  </div>
+  <div class="form-group col-md-3">
+    {!!Form::label('number','Numero:')!!}
+    {!!Form::number('number', null, array('class' => 'form-control', 'placeholder' => 'Numero', 'required' => 'required'))!!}
+  </div>
+@endsection
+
 @section('name')
   <th>{{trans('fields.' . $field)}}</th>
 @endsection

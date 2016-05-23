@@ -1,8 +1,17 @@
 use health;
 
+# Reporte enfermedad renal
 select p.nombre_paciente, c.fecha, h.dato2 from pacientes as p
 inner join historia_clinica_general as h on p.id = h.paciente_id
 inner join conclusion as c on p.id = c.paciente_id
 where h.dato2 = 1
 and (p.centro_id = 7 or p.centro_id = 8 or p.centro_id = 9)
 and (c.fecha >= '2016-05-02' and c.fecha <= '2016-05-29');
+
+# Reporte enfermedad renal
+select p.nombre_paciente, c.fecha, e.dato4 from pacientes as p
+inner join embarazo_actual as e on p.id = e.pacientes_id
+inner join conclusion as c on p.id = c.paciente_id
+where e.dato4 = 1
+and (p.centro_id = 7 or p.centro_id = 8 or p.centro_id = 9)
+and (c.fecha >= '2016-05-09' and c.fecha <= '2016-05-15');
