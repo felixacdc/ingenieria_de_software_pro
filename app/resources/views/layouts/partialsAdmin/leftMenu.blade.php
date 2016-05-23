@@ -105,7 +105,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato4/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con factor RH negativo</span>
                         </a>
                       </li>
@@ -120,12 +120,12 @@
 
                     <ul class="treeview-menu">
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato2/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes embarazadas adolescentes (10 a 19 años)</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato3/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes embarazadas mayores de 35 años</span>
                         </a>
                       </li>
@@ -139,22 +139,22 @@
 
                     <ul class="treeview-menu">
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato6/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con VIH</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato4/3') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con hipertensión</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato1/3') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con diabetes</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato8/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con anemia</span>
                         </a>
                       </li>
@@ -168,7 +168,7 @@
 
                     <ul class="treeview-menu">
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato9/2') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con desnutrición u obesidad</span>
                         </a>
                       </li>
