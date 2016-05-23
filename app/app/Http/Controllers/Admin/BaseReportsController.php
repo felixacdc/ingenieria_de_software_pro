@@ -21,6 +21,9 @@ class BaseReportsController extends Controller
     protected $request;
     protected $field;
     protected $type;
+    protected $centerCondition;
+    protected $centers;
+    protected $master = 0;
 
     // Variables de calculo
     protected $fatherCenter;
@@ -35,10 +38,43 @@ class BaseReportsController extends Controller
       $this->request = $request;
       $this->field = $field;
       $this->type = $type;
+      $this->centers = Centro::lists('centro', 'id');
 
+      $this->verifyConditionPatient();
+
+      $this->verifySuperAdmin();
+    }
+
+    // verifica si en las consultas de pacientes se mando una condicion logica
+    protected function verifyConditionPatient()
+    {
       if ( empty($this->request->condition) and empty($this->request->number) ) {
         $this->request->condition = '>=';
         $this->request->number = 0;
+      }
+    }
+
+    // verifica si se trata de un usuario super administrador
+    protected function verifySuperAdmin()
+    {
+      if ( $this->request->user()->tipo_usuario_id == 1)
+      {
+
+        if ( empty($this->request->searchCenter) or $this->request->searchCenter == 1) {
+
+          $this->centerCondition = '>=';
+          $this->request->user()->centro_id = 1;
+          $this->master = 1;
+
+        } else {
+
+          $this->centerCondition = '=';
+          $this->request->user()->centro_id = $this->request->searchCenter;
+
+        }
+
+      } else {
+        $this->centerCondition = '=';
       }
     }
 
@@ -47,7 +83,7 @@ class BaseReportsController extends Controller
     {
       switch ($this->type) {
         case 0:
-          $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+          $this->patients = Paciente::where('centro_id', $this->centerCondition, $this->request->user()->centro_id)
                       ->where($this->field, $this->request->condition, $this->request->number)
                       ->get();
           break;
@@ -71,7 +107,7 @@ class BaseReportsController extends Controller
     {
       switch ($this->type) {
         case 0:
-          $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+          $this->patients = Paciente::where('centro_id', $this->centerCondition, $this->request->user()->centro_id)
                       ->where($this->field, $this->request->condition, $this->request->number)
                       ->whereHas('conclusion', function ($query) {
                         $query->where('fecha', '>=', $this->request->begin_date)
@@ -106,7 +142,7 @@ class BaseReportsController extends Controller
       foreach ($this->childrenCenter as $son) {
           switch ($this->type) {
             case 0:
-              $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
+              $this->dataBallots[$son->centro] = Paciente::where('centro_id', $this->centerCondition, $son->id)
                       ->where($this->field, $this->request->condition, $this->request->number)
                       ->get();
               break;
@@ -134,7 +170,7 @@ class BaseReportsController extends Controller
 
         switch ($this->type) {
           case 0:
-            $this->dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
+            $this->dataBallots[$son->centro] = Paciente::where('centro_id', $this->centerCondition, $son->id)
                     ->where($this->field, $this->request->condition, $this->request->number)
                     ->whereHas('conclusion', function ($query) {
                       $query->where('fecha', '>=', $this->request->begin_date)
@@ -160,7 +196,7 @@ class BaseReportsController extends Controller
     // Funciones para optener los datos Genericas
     protected function firstQueryUndated($table)
     {
-      $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+      $this->patients = Paciente::where('centro_id', $this->centerCondition, $this->request->user()->centro_id)
                   ->whereHas($table, function ($query) {
                     $query->where($this->field, '=', 1);
                   })->get();
@@ -168,7 +204,7 @@ class BaseReportsController extends Controller
 
     protected function firstQueryDate($table)
     {
-      $this->patients = Paciente::where('centro_id', '=', $this->request->user()->centro_id)
+      $this->patients = Paciente::where('centro_id', $this->centerCondition, $this->request->user()->centro_id)
                   ->whereHas($table, function ($query){
                     $query->where($this->field, '=', 1);
                   })
@@ -180,7 +216,7 @@ class BaseReportsController extends Controller
 
     protected function secondQueryUndated($table, $nameCenter, $idCenter)
     {
-      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', '=', $idCenter)
+      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', $this->centerCondition, $idCenter)
                   ->whereHas($table, function ($query) {
                     $query->where($this->field, '=', 1);
                   })->get();
@@ -188,7 +224,7 @@ class BaseReportsController extends Controller
 
     protected function secondQueryDate($table, $nameCenter, $idCenter)
     {
-      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', '=', $idCenter)
+      $this->dataBallots[$nameCenter] = Paciente::where('centro_id', $this->centerCondition, $idCenter)
                   ->whereHas($table, function ($query) {
                     $query->where($this->field, '=', 1);
                   })

@@ -11,8 +11,17 @@
   </div>
 @endsection
 
+@section('centerCondition')
+  @if( Auth::user()->tipo_usuario_id == 1 )
+    <div class="form-group col-md-6">
+      {!!Form::label('searchCenter','Centro:')!!}
+      {!!Form::select('searchCenter', $centers, null, ['class' => 'form-control', 'required' => 'required'])!!}
+    </div>
+  @endif
+@endsection
+
 @section('name')
-  <th>{{trans('fields.' . $field)}}</th> 
+  <th>{{trans('fields.' . $field)}}</th>
 @endsection
 
 @section('tbody')

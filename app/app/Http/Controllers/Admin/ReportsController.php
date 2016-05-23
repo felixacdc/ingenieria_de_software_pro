@@ -22,7 +22,9 @@ class ReportsController extends BaseReportsController
 
           $this->dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
 
-          $this->queryChildren();
+          if ( $this->master == 0) {
+            $this->queryChildren();
+          }
 
         } else {
 
@@ -32,7 +34,9 @@ class ReportsController extends BaseReportsController
 
           $this->dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
 
-          $this->queryDateChildren();
+          if ( $this->master == 0) {
+            $this->queryDateChildren();
+          }
         }
 
         if ( $this->error ) {
@@ -40,8 +44,9 @@ class ReportsController extends BaseReportsController
         } else {
 
           $dataBallots = $this->dataBallots;
+          $centers = $this->centers;
 
-          return view('admin.reports.index', compact('dataBallots'))
+          return view('admin.reports.index', compact('dataBallots', 'centers'))
                       ->with('field', $field)
                       ->with('fecha_inicio', $request->begin_date)
                       ->with('fecha_fin', $request->final_date)

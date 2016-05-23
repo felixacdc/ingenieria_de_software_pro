@@ -11,10 +11,12 @@
       </div>
 
       @yield('addItems')
-      
+      @yield('centerCondition')
+
     </div>
     <div class="row">
       <div class="form-group col-md-12 text-right">
+        <br>
         {!!Form::submit('Buscar', array('class' => 'btn btn-primary'))!!}
       </div>
     </div>
