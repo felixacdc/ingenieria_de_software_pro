@@ -12,7 +12,7 @@
 @endsection
 
 @section('name')
-  <th>{{trans('fields.' . $field)}}</th>
+  <th>{{trans('fields.' . $field)}}</th> 
 @endsection
 
 @section('tbody')
