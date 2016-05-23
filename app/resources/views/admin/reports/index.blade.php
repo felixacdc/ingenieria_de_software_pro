@@ -31,6 +31,8 @@
                                   {{trans('fields.' . $field . 'A')}}
                                 @elseif( $type == 2)
                                   {{trans('fields.' . $field . 'B')}}
+                                @elseif( $type == 3)
+                                  {{trans('fields.' . $field . 'C')}}
                                 @endif
 
                                 @if( isset($fecha_inicio) and isset($fecha_fin))
@@ -52,6 +54,8 @@
                     @include('admin.reports.partials.contentListObstetricHistory')
                   @elseif( $type == 2)
                     @include('admin.reports.partials.contentListCurrentPregnancy')
+                  @elseif( $type == 3)
+                    @include('admin.reports.partials.contentListClinicHistory')
                   @endif
                 </div><!-- /.box-body -->
             </div><!-- /.box -->

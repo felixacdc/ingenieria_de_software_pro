@@ -52,7 +52,9 @@ class BaseReportsController extends Controller
         case 2:
           $this->firstQueryUndated('embarazoActual');
           break;
-
+        case 3:
+          $this->firstQueryUndated('historiaClinica');
+          break;
         default:
           $this->error = true;
           break;
@@ -76,6 +78,9 @@ class BaseReportsController extends Controller
           break;
         case 2:
           $this->firstQueryDate('embarazoActual');
+          break;
+        case 3:
+          $this->firstQueryDate('historiaClinica');
           break;
         default:
           $this->error = true;
@@ -107,6 +112,9 @@ class BaseReportsController extends Controller
             case 2:
               $this->secondQueryUndated('embarazoActual', $son->centro, $son->id);
               break;
+            case 3:
+              $this->secondQueryUndated('historiaClinica', $son->centro, $son->id);
+              break;
             default:
               $this->error = true;
               break;
@@ -133,6 +141,9 @@ class BaseReportsController extends Controller
             break;
           case 2:
             $this->secondQueryDate('embarazoActual', $son->centro, $son->id);
+            break;
+          case 3:
+            $this->secondQueryDate('historiaClinica', $son->centro, $son->id);
             break;
           default:
             $this->error = true;

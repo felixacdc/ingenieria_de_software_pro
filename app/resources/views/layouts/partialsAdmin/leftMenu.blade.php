@@ -100,7 +100,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="{{ url('admin/reports/dato2/3') }}">
                           <i class="fa fa-angle-right"></i> <span> Pacientes con enfermedad renal</span>
                         </a>
                       </li>

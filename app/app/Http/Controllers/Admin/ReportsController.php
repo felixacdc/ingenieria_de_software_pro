@@ -30,7 +30,7 @@ class ReportsController extends BaseReportsController
 
           $this->queryCenters();
 
-          $dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
+          $this->dataBallots[$this->fatherCenter[0]->centro] = $this->patients;
 
           $this->queryDateChildren();
         }
