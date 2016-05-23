@@ -43,12 +43,12 @@
                 </li>
             @endif
 
-            <li>
-                <a href="{{ url('admin/boleta/create') }}">
-                    <i class="fa fa-plus"></i> <span> Crear Boleta</span>
-                </a>
-            </li>
             @if( Auth::user()->tipo_usuario_id != 1 )
+              <li>
+                  <a href="{{ url('admin/boleta/create') }}">
+                      <i class="fa fa-plus"></i> <span> Crear Boleta</span>
+                  </a>
+              </li>
               <li>
                   <a href="{{ url('admin/boleta') }}">
                       <i class="fa fa-list" aria-hidden="true"></i> <span>Reporte Semanal</span>

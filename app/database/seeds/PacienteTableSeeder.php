@@ -11,17 +11,17 @@ class PacienteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Paciente::class, 50)->create();
+        factory(App\Paciente::class, 60)->create();
 
         DB::table('pacientes')
             ->where('id','>=' ,1)
             ->where('id','<=' ,10)
-            ->update(['user_id' => 1]);
+            ->update(['user_id' => 6]);
 
         DB::table('pacientes')
             ->where('id','>=' ,1)
             ->where('id','<=' ,10)
-            ->update(['centro_id' => 1]);
+            ->update(['centro_id' => 14]);
 ////////////////////////////////////////////////////////////////////
         DB::table('pacientes')
                 ->where('id','>=' ,11)
@@ -63,5 +63,17 @@ class PacienteTableSeeder extends Seeder
                   ->where('id','>=' ,41)
                   ->where('id','<=' ,50)
                   ->update(['centro_id' => 9]);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+        DB::table('pacientes')
+                ->where('id','>=' ,51)
+                ->where('id','<=' ,60)
+                ->update(['user_id' => 7]);
+
+          DB::table('pacientes')
+                  ->where('id','>=' ,51)
+                  ->where('id','<=' ,60)
+                  ->update(['centro_id' => 24]);
     }
 }

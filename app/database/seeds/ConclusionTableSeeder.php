@@ -14,7 +14,7 @@ class ConclusionTableSeeder extends Seeder
       //factory(App\Conclusion::class,50)->create();
 
 
-      for ($i=1; $i <=50 ; $i++) {
+      for ($i=1; $i <=60 ; $i++) {
         DB::table('conclusion')->insert([
           'evaluacion_medica'  => rand(1,0),
           'referido_a'         => 'Lorem ipsum',

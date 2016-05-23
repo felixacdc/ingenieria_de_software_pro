@@ -11,7 +11,7 @@ class EmbarazoTableSeeder extends Seeder
      */
     public function run()
     {
-      for ($i=1; $i <=50 ; $i++) {
+      for ($i=1; $i <=60 ; $i++) {
         DB::table('embarazo_actual')->insert([
           'dato1'          => rand(0,1),
           'dato2'          => rand(0,1),

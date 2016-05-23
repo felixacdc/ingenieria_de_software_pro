@@ -12,7 +12,7 @@ class HistorialTableSeeder extends Seeder
     public function run()
     {
       //factory(App\Historia_clinica_general::class, 50)->create();
-      for ($i=1; $i <=50 ; $i++) {
+      for ($i=1; $i <=60 ; $i++) {
         DB::table('historia_clinica_general')->insert([
           'dato1'         => rand(0,1),
           'dato2'         => rand(0,1),
