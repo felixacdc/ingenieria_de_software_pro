@@ -1,3 +1,14 @@
+function menorNo_abortos(value, element, param) {
+    if ($('#no_embarazos').val() == (parseInt(value) + parseInt($('#no_partos').val()) + parseInt($('#no_cesarias').val())) ) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+$.validator.addMethod("menorNo_abortos", menorNo_abortos, "La sumatoria de los campos No. Partos, de cesarias y de abortos debe ser igual a No. de embarazos.");
+
 $(document).ready(function () {
 
     /**
@@ -60,7 +71,8 @@ $(document).ready(function () {
                 },
 				no_abortos: {
 					required: true,
-                    digits: true
+                    digits: true,
+                    menorNo_abortos: true
 				},
                 no_hijos_vivos: {
                     required: true,
