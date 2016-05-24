@@ -44,6 +44,7 @@
                                 {!! Form::hidden('fecha_fin', $fecha_fin) !!}
                                 {!! Form::hidden('condicion', $condicion) !!}
                                 {!! Form::hidden('number', $number) !!}
+                                {!! Form::hidden('type', $type) !!}
                                 {!! Form::submit('Crear PDF', array('class' => 'btn btn-primary')) !!}
                               {!! Form::close() !!}
                             </div>

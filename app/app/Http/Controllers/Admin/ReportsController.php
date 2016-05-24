@@ -60,12 +60,18 @@ class ReportsController extends BaseReportsController
 
     public function pdfReports(Request $request)
     {
+      $dataBallots = $request->session()->get('dataPDFReport');
       // dd($request->session()->get('dataPDFReport'));
-      echo $request->field;
-      echo $request->fecha_inicio;
-      echo $request->fecha_fin;
-      echo $request->condicion;
-      echo $request->number;
+      // echo $request->field;
+      // echo $request->fecha_inicio;
+      // echo $request->fecha_fin;
+      // echo $request->condicion;
+      // echo $request->number;
+      // echo $request->type;
+
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['dataBallots' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+
+      return $pdf->stream();
     }
 
 
