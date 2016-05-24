@@ -45,6 +45,7 @@ class ReportsController extends BaseReportsController
 
           $dataBallots = $this->dataBallots;
           $centers = $this->centers;
+          $request->session()->put('dataPDFReport', $dataBallots);
 
           return view('admin.reports.index', compact('dataBallots', 'centers'))
                       ->with('field', $field)
@@ -55,6 +56,16 @@ class ReportsController extends BaseReportsController
                       ->with('number', $this->request->number)
                       ->with('actualCenter', $this->request->user()->centro_id);
         }
+    }
+
+    public function pdfReports(Request $request)
+    {
+      // dd($request->session()->get('dataPDFReport'));
+      echo $request->field;
+      echo $request->fecha_inicio;
+      echo $request->fecha_fin;
+      echo $request->condicion;
+      echo $request->number;
     }
 
 

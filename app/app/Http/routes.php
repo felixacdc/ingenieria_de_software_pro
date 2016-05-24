@@ -41,5 +41,5 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
     // Report Routes
     Route::get('reports/{field}/{type?}', 'ReportsController@showPatient');
-
+    Route::get('generate/report/pdf', ['as' => 'admin/generate/report/pdf', 'uses' => 'ReportsController@pdfReports']);
 });
