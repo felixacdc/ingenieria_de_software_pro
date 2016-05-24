@@ -87,6 +87,8 @@
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("js/datatables/dataTables.bootstrap.js")!!}
+    {!!Html::script("js/jquery.validate.js")!!}
+    {!!Html::script("js/admin/reports.js")!!}
 
     <!-- page script -->
     <script type="text/javascript">

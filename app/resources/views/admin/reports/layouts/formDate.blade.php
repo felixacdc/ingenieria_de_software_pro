@@ -1,5 +1,5 @@
 <div class="content">
-  {!!Form::open(['route' => Route::current()->getName(), 'method' => 'GET', 'class' => 'form-validate', 'id' => 'weekReport'])!!}
+  {!!Form::open(['route' => Route::current()->getName(), 'method' => 'GET', 'class' => 'form-validate', 'id' => 'Reports'])!!}
     <div class="row">
       <div class="form-group col-md-3">
         {!!Form::label('begin_date','Fecha inicial:')!!}
