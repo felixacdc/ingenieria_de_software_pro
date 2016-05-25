@@ -260,6 +260,17 @@ $(document).ready(function () {
 			}
     });
 
+    function finalDate(value, element, param) {
+        if ($('#begin_date').val() <= value ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    $.validator.addMethod("finalDate", finalDate, "La fecha final debe ser mayor o igual que la fecha inicial.");
+
     $("#weekReport").validate({
       rules: {
           begin_date: {
@@ -268,7 +279,8 @@ $(document).ready(function () {
           },
           final_date: {
             required: true,
-            date: true
+            date: true,
+            finalDate: true
           }
         },
         messages: {
@@ -282,7 +294,6 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form) {
-          $("#weekReport .btn-primary").prop('disabled', true);
           form.submit();
         }
     });

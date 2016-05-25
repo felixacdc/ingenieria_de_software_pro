@@ -38,7 +38,7 @@
                               </h3>
                             </div>
                             <div class="col-md-6 text-right">
-                              {!! Form::open(['route' => 'admin/generate/report/pdf', 'method' => 'GET']) !!}
+                              {!! Form::open(['route' => 'admin/generate/report/pdf', 'method' => 'POST', 'target' => "_blank"]) !!}
                                 {!! Form::hidden('field', $field) !!}
                                 {!! Form::hidden('fecha_inicio', $fecha_inicio) !!}
                                 {!! Form::hidden('fecha_fin', $fecha_fin) !!}

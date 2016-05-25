@@ -69,8 +69,6 @@ class ReportsController extends BaseReportsController
       ])->setPaper('Legal')->setOrientation('landscape');
 
       return $pdf->stream();
-
-      // return view('admin.reports.pdf.createpdf', compact('dataBallots'));
     }
 
 

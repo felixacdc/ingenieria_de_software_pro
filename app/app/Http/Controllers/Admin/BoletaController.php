@@ -236,15 +236,11 @@ class BoletaController extends Controller
                       })->get();
       }
 
-      // dd($dataBallots);
+      ini_set('max_execution_time', 600);
 
       $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['dataBallots' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
 
       return $pdf->stream();
-
-      // return view('admin.boletas.pdf.createpdf', compact('dataBallots'));
-
-      // dd($patients);
     }
 
     public static function correlativeNumber($request)
