@@ -238,7 +238,12 @@ class BoletaController extends Controller
 
       ini_set('max_execution_time', 600);
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['dataBallots' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf',
+      [
+        'dataBallots' => $dataBallots,
+        'request' => $request,
+        'actualCenter' => $fatherCenter[0]->centro
+      ])->setPaper('Legal')->setOrientation('landscape');
 
       return $pdf->stream();
     }

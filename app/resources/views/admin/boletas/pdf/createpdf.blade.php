@@ -20,6 +20,17 @@
 		    	<h2 class="name">MINISTERIO DE SALUD PÚBLICA Y ASISTENCIA SOCIAL</h2>
 		        <div>FICHA DE RIESGO OBSTÉTRICO</div>
 		        <div>Suchitepequez</div>
+						<div>
+							Reporte semanal 
+							@if( !empty($request->begin_date) and !empty($request->final_date))
+								del {{ date("d/m/Y", strtotime($request->begin_date)) }}
+								al {{ date("d/m/Y", strtotime($request->final_date)) }}
+							@endif
+
+							@if( !empty($actualCenter) )
+										<strong> {{ $actualCenter }}</strong>
+							@endif
+						</div>
 		        <!-- <div><a href="mailto:company@example.com">company@example.com</a></div> -->
 		        <!-- <hr style="color: #1B8EC7;"> -->
 	     	</div>
