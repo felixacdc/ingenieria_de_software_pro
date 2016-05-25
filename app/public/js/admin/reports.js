@@ -1,3 +1,14 @@
+function finalDate(value, element, param) {
+    if ($('#begin_date').val() <= value ) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+$.validator.addMethod("finalDate", finalDate, "La fecha final debe ser mayor o igual que la fecha inicial.");
+
 $("#Reports").validate({
   rules: {
       begin_date: {
@@ -6,7 +17,8 @@ $("#Reports").validate({
       },
       final_date: {
         required: true,
-        date: true
+        date: true,
+        finalDate: true
       },
       condition: {
         required: true
