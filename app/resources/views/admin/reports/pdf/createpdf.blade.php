@@ -21,16 +21,30 @@
 		        <div>FICHA DE RIESGO OBSTÉTRICO</div>
 		        <div>Suchitepequez</div>
 						<div>
-							Reporte semanal 
-							@if( !empty($request->begin_date) and !empty($request->final_date))
-								del {{ date("d/m/Y", strtotime($request->begin_date)) }}
-								al {{ date("d/m/Y", strtotime($request->final_date)) }}
+							@if( $request->type == 0 )
+								{{trans('fields.' . $request->field)}}
+							@elseif( $request->type == 1)
+								{{trans('fields.' . $request->field . 'A')}}
+							@elseif( $request->type == 2)
+								{{trans('fields.' . $request->field . 'B')}}
+							@elseif( $request->type == 3)
+								{{trans('fields.' . $request->field . 'C')}}
 							@endif
 
-							@if( !empty($actualCenter) )
-										<strong> {{ $actualCenter }}</strong>
+							@if( !empty($request->condicion) and $request->type == 0)
+								{{ trans('fields.' . $request->condicion) }}
+								{{ $request->number }}
 							@endif
-						</div>
+
+							@if( !empty($request->fecha_inicio) and !empty($request->fecha_fin))
+								del {{ date("d/m/Y", strtotime($request->fecha_inicio)) }}
+								al {{ date("d/m/Y", strtotime($request->fecha_fin)) }}
+							@endif
+
+							@if( !empty($request->actualCenter) )
+										<strong> {{ $request->actualCenter }}</strong>
+							@endif
+					</div>
 		        <!-- <div><a href="mailto:company@example.com">company@example.com</a></div> -->
 		        <!-- <hr style="color: #1B8EC7;"> -->
 	     	</div>

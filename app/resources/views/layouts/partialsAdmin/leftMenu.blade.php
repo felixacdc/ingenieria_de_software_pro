@@ -26,7 +26,7 @@
 
                 <li>
                     <a href="{{ url('admin/users') }}">
-                        <i class="fa fa-user"></i> <span> Crear Usuario</span>
+                        <i class="fa fa-user"></i> <span>Usuarios</span>
                     </a>
                 </li>
 

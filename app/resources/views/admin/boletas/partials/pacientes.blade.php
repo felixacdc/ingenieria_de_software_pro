@@ -93,31 +93,31 @@
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_embarazos','No. de embarazos:')!!}
-                	{!!Form::number('no_embarazos', null, array('class' => 'form-control', 'placeholder' => 'No. de embarazos', 'required' => 'required'))!!}
+                	{!!Form::number('no_embarazos', null, array('class' => 'form-control', 'placeholder' => 'No. de embarazos', 'required' => 'required', 'id' => 'no_embarazos'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_partos','No. de partos:')!!}
-                	{!!Form::number('no_partos', null, array('class' => 'form-control', 'placeholder' => 'No. de partos', 'required' => 'required'))!!}
+                	{!!Form::number('no_partos', null, array('class' => 'form-control', 'placeholder' => 'No. de partos', 'required' => 'required', 'id' => 'no_partos'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_cesarias','No. de cesáreas:')!!}
-                	{!!Form::number('no_cesarias', null, array('class' => 'form-control', 'placeholder' => 'No. de cesáreas', 'required' => 'required'))!!}
+                	{!!Form::number('no_cesarias', null, array('class' => 'form-control', 'placeholder' => 'No. de cesáreas', 'required' => 'required', 'id' => 'no_cesarias'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_abortos','No. de abortos:')!!}
-                	{!!Form::number('no_abortos', null, array('class' => 'form-control', 'placeholder' => 'No. de abortos', 'required' => 'required'))!!}
+                	{!!Form::number('no_abortos', null, array('class' => 'form-control', 'placeholder' => 'No. de abortos', 'required' => 'required', 'id' => 'no_abortos'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_vivos','No. de hijos vivos:')!!}
-                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required'))!!}
+                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required', 'id' => 'no_hijos_vivos'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_muertos','No. de hijos muertos:')!!}
-                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required'))!!}
+                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required', 'id' => 'no_hijos_muertos'))!!}
                 </div>
             </div>
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">

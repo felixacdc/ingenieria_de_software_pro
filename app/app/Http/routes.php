@@ -26,10 +26,15 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
         Route::resource('centros', 'CentrosController');
 
         //Routes Users
+        //Route::put('prueba/activate','UsersController@activate');
+        Route::put('prueba/activate/{id}',['as'=>'admin/prueba/activate','uses'=>'UsersController@activate']);
         Route::resource('users', 'UsersController');
+
         Route::resource('TiposCentros' , 'TiposCentrosController');
         Route::get('UserExists/{email}','UsersController@userExists');
         Route::get('EmailExists/{user}','UsersController@emailExists');
+
+
     });
 
 
@@ -41,5 +46,5 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
     // Report Routes
     Route::get('reports/{field}/{type?}', 'ReportsController@showPatient');
-    Route::get('generate/report/pdf', ['as' => 'admin/generate/report/pdf', 'uses' => 'ReportsController@pdfReports']);
+    Route::post('generate/report/pdf', ['as' => 'admin/generate/report/pdf', 'uses' => 'ReportsController@pdfReports']);
 });

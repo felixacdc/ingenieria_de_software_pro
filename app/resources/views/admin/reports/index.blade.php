@@ -38,13 +38,14 @@
                               </h3>
                             </div>
                             <div class="col-md-6 text-right">
-                              {!! Form::open(['route' => 'admin/generate/report/pdf', 'method' => 'GET']) !!}
+                              {!! Form::open(['route' => 'admin/generate/report/pdf', 'method' => 'POST', 'target' => "_blank"]) !!}
                                 {!! Form::hidden('field', $field) !!}
                                 {!! Form::hidden('fecha_inicio', $fecha_inicio) !!}
                                 {!! Form::hidden('fecha_fin', $fecha_fin) !!}
                                 {!! Form::hidden('condicion', $condicion) !!}
                                 {!! Form::hidden('number', $number) !!}
                                 {!! Form::hidden('type', $type) !!}
+                                {!! Form::hidden('actualCenter', $actualCenter) !!}
                                 {!! Form::submit('Crear PDF', array('class' => 'btn btn-primary')) !!}
                               {!! Form::close() !!}
                             </div>
@@ -52,22 +53,18 @@
                         <div class="row">
                           <div class="col-md-12">
                             <p style="padding-left: 10px;">
-                              @if( isset($condicion) and isset($number) and $type == 0)
+                              @if( !empty($condicion) and $type == 0)
                                 {{trans('fields.' . $condicion)}}
                                 {{ $number }}
                               @endif
 
-                              @if( isset($fecha_inicio) and isset($fecha_fin))
-                                del {{ $fecha_inicio }}
-                                al {{ $fecha_fin }}
+                              @if( !empty($fecha_inicio) and !empty($fecha_fin))
+                                del {{ date("d/m/Y", strtotime($fecha_inicio)) }}
+                                al {{ date("d/m/Y", strtotime($fecha_fin)) }}
                               @endif
 
-                              @if( isset($actualCenter) )
-                                @foreach($centers as $key => $value)
-                                  @if( $key == $actualCenter)
-                                    <strong> {{ $value }}</strong>
-                                  @endif
-                                @endforeach
+                              @if( !empty($actualCenter) )
+                                    <strong> {{ $actualCenter }}</strong>
                               @endif
                             </p>
                           </div>
