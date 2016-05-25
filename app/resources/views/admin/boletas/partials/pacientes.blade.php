@@ -113,11 +113,11 @@
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_vivos','No. de hijos vivos:')!!}
-                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required'))!!}
+                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required', 'id' => 'no_hijos_vivos'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_muertos','No. de hijos muertos:')!!}
-                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required'))!!}
+                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required', 'id' => 'no_hijos_muertos'))!!}
                 </div>
             </div>
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">

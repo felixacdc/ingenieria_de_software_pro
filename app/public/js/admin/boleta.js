@@ -7,7 +7,18 @@ function menorNo_abortos(value, element, param) {
     }
 }
 
+function menorHijos_muertos(value, element, param) {
+    if ($('#no_embarazos').val() <= ( parseInt(value) + parseInt($('#no_hijos_vivos').val()) ) ) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 $.validator.addMethod("menorNo_abortos", menorNo_abortos, "La sumatoria de los campos No. Partos, de cesarias y de abortos debe ser igual a No. de embarazos.");
+
+$.validator.addMethod("menorHijos_muertos", menorHijos_muertos, "La sumatoria de los campos No. de hijos vivos y No. de hojos muertos debe ser igual o mayor a No. de embarazos.");
 
 $(document).ready(function () {
 
@@ -80,7 +91,8 @@ $(document).ready(function () {
                 },
                 no_hijos_muertos: {
                     required: true,
-                    digits: true
+                    digits: true,
+                    menorHijos_muertos: true
                 },
                 dFecha: {
                     required: true,
@@ -248,6 +260,17 @@ $(document).ready(function () {
 			}
     });
 
+    function finalDate(value, element, param) {
+        if ($('#begin_date').val() <= value ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    $.validator.addMethod("finalDate", finalDate, "La fecha final debe ser mayor o igual que la fecha inicial.");
+
     $("#weekReport").validate({
       rules: {
           begin_date: {
@@ -256,7 +279,8 @@ $(document).ready(function () {
           },
           final_date: {
             required: true,
-            date: true
+            date: true,
+            finalDate: true
           }
         },
         messages: {
@@ -270,7 +294,6 @@ $(document).ready(function () {
             }
         },
         submitHandler: function(form) {
-          $("#weekReport .btn-primary").prop('disabled', true);
           form.submit();
         }
     });

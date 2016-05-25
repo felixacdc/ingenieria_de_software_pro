@@ -38,7 +38,7 @@
              <td>{{ $ballot->escolaridad_paciente }} </td>
              <td>{{ $ballot->ocupacion_paciente }} </td>
              <td>{{ $ballot->$field }} </td>
-             <td>{{ $ballot->conclusion->fecha }} </td>
+             <td>{{ date("d/m/Y", strtotime($ballot->conclusion->fecha)) }} </td>
          </tr>
        @endforeach
      @endforeach
