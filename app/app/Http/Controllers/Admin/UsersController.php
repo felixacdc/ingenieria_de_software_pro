@@ -69,7 +69,15 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return view('admin.users.partials.deleteForm')->with('id', $id);
+
+        $user=User::find($id);
+        if ($user->state==true) {
+          return view('admin.users.partials.deleteForm')->with('id', $id);
+        }else {
+
+          return view('admin.users.partials.activate')->with('id', $id);
+        }
+
     }
 
     /**
@@ -121,6 +129,15 @@ class UsersController extends Controller
           return redirect('/admin/users')->with('message','Usuario eliminado Exitosamente');
         }
 
+    }
+
+    public function activate($id)
+    {
+
+        $user=User::find($id);
+        $user->state=true;
+        $user->save();
+        return redirect('/admin/users')->with('message','Usuario Activado exitosamente');
     }
 
     public function userExists($email)
