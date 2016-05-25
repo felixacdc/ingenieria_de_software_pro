@@ -20,6 +20,31 @@
 		    	<h2 class="name">MINISTERIO DE SALUD PÚBLICA Y ASISTENCIA SOCIAL</h2>
 		        <div>FICHA DE RIESGO OBSTÉTRICO</div>
 		        <div>Suchitepequez</div>
+						<div>
+							@if( $request->type == 0 )
+								{{trans('fields.' . $request->field)}}
+							@elseif( $request->type == 1)
+								{{trans('fields.' . $request->field . 'A')}}
+							@elseif( $request->type == 2)
+								{{trans('fields.' . $request->field . 'B')}}
+							@elseif( $request->type == 3)
+								{{trans('fields.' . $request->field . 'C')}}
+							@endif
+
+							@if( !empty($request->condicion) and $request->type == 0)
+								{{ trans('fields.' . $request->condicion) }}
+								{{ $request->number }}
+							@endif
+
+							@if( !empty($request->fecha_inicio) and !empty($request->fecha_fin))
+								del {{ date("d/m/Y", strtotime($request->fecha_inicio)) }}
+								al {{ date("d/m/Y", strtotime($request->fecha_fin)) }}
+							@endif
+
+							@if( !empty($request->actualCenter) )
+										<strong> {{ $request->actualCenter }}</strong>
+							@endif
+					</div>
 		        <!-- <div><a href="mailto:company@example.com">company@example.com</a></div> -->
 		        <!-- <hr style="color: #1B8EC7;"> -->
 	     	</div>

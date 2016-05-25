@@ -44,34 +44,33 @@ class ReportsController extends BaseReportsController
         } else {
 
           $dataBallots = $this->dataBallots;
-          $centers = $this->centers;
           $request->session()->put('dataPDFReport', $dataBallots);
 
-          return view('admin.reports.index', compact('dataBallots', 'centers'))
+          return view('admin.reports.index', compact('dataBallots'))
                       ->with('field', $field)
                       ->with('fecha_inicio', $request->begin_date)
                       ->with('fecha_fin', $request->final_date)
                       ->with('type', $type)
                       ->with('condicion', $this->request->condition)
                       ->with('number', $this->request->number)
-                      ->with('actualCenter', $this->request->user()->centro_id);
+                      ->with('actualCenter', $this->fatherCenter[0]->centro);
         }
     }
 
     public function pdfReports(Request $request)
     {
       $dataBallots = $request->session()->get('dataPDFReport');
-      // dd($request->session()->get('dataPDFReport'));
-      // echo $request->field;
-      // echo $request->fecha_inicio;
-      // echo $request->fecha_fin;
-      // echo $request->condicion;
-      // echo $request->number;
-      // echo $request->type;
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf', ['dataBallots' => $dataBallots])->setPaper('Legal')->setOrientation('landscape');
+      ini_set('max_execution_time', 600);
+
+      $pdf = \PDF::loadView('admin.reports.pdf.createpdf',
+      ['dataBallots' => $dataBallots,
+        'request' => $request
+      ])->setPaper('Legal')->setOrientation('landscape');
 
       return $pdf->stream();
+
+      // return view('admin.reports.pdf.createpdf', compact('dataBallots'));
     }
 
 

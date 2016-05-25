@@ -22,7 +22,6 @@ class BaseReportsController extends Controller
     protected $field;
     protected $type;
     protected $centerCondition;
-    protected $centers;
     protected $master = 0;
 
     // Variables de calculo
@@ -38,7 +37,6 @@ class BaseReportsController extends Controller
       $this->request = $request;
       $this->field = $field;
       $this->type = $type;
-      $this->centers = Centro::lists('centro', 'id');
 
       $this->verifyConditionPatient();
 
