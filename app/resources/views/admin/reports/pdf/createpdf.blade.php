@@ -82,6 +82,7 @@
 					</tr>
 				@endforeach
 			@endforeach
+			<tr></tr>
 		</tbody>
 	</table>
 
@@ -268,6 +269,7 @@
 					</tr>
 				@endforeach
 			@endforeach
+			<tr></tr>
 		</tbody>
 	</table>
 </body>

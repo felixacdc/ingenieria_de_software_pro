@@ -21,7 +21,7 @@
 		        <div>FICHA DE RIESGO OBSTÉTRICO</div>
 		        <div>Suchitepequez</div>
 						<div>
-							Reporte semanal 
+							Reporte semanal
 							@if( !empty($request->begin_date) and !empty($request->final_date))
 								del {{ date("d/m/Y", strtotime($request->begin_date)) }}
 								al {{ date("d/m/Y", strtotime($request->final_date)) }}
@@ -68,6 +68,7 @@
 					</tr>
 				@endforeach
 			@endforeach
+			<tr></tr>
 		</tbody>
 	</table>
 
@@ -254,6 +255,7 @@
 					</tr>
 				@endforeach
 			@endforeach
+			<tr></tr>
 		</tbody>
 	</table>
 </body>
