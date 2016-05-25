@@ -59,7 +59,11 @@
                                      @endif
                                      <td class="text-center">
                                       <button type="button" name="edit" class="btn btn-info btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}/edit" data-title="Actualizar Usuario">Editar</button>
+                                      @if($usuario->state==0)
+                                      <button type="button" name="delete" class="btn btn-success btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}" data-title="Activar Usuario">Activar</button>
+                                      @else
                                       <button type="button" name="delete" class="btn btn-danger btn-sm loadModal" data-toggle='modal' data-target='#generalModal' data-url="users/{{ $usuario->id }}" data-title="Eliminar Usuario">Eliminar</button>
+                                      @endif
                                      </td>
 
                                  </tr>
