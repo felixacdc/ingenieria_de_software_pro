@@ -10,6 +10,8 @@ use App\Paciente;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Validator;
+
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserEditRequest;
 
@@ -158,6 +160,25 @@ class UsersController extends Controller
       }else{
         echo 'no';
       }
+    }
+
+    public function emailUpdate($email, $id)
+    {
+      
+      $email = ['email' => $email];
+
+      $rules=[
+            'email'    => 'required|email|unique:users,email,'  . $id
+        ];
+
+        $validator = Validator::make($email, $rules);
+        if ($validator->fails()) {
+            return 'si';
+        }else{
+           return 'no';
+        }
+
+
     }
 
 }
