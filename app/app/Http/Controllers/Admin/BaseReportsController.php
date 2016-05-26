@@ -30,6 +30,7 @@ class BaseReportsController extends Controller
     protected $dataBallots;
     protected $patients;
     protected $error;
+    protected $centers;
 
     // Funcion para asignar valores
     protected function insertData($request, $field, $type)
@@ -37,6 +38,7 @@ class BaseReportsController extends Controller
       $this->request = $request;
       $this->field = $field;
       $this->type = $type;
+      $this->centers = Centro::all()->lists('centro', 'id');
 
       $this->verifyConditionPatient();
 

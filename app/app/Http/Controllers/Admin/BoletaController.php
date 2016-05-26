@@ -17,8 +17,17 @@ use App\Conclusion;
 
 use App\Centro;
 
+use Illuminate\Contracts\Auth\Guard;
+
 class BoletaController extends Controller
 {
+    private $auth;
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,20 +35,25 @@ class BoletaController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->user()->tipo_usuario_id != 1) {
-            $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
-            $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
+      if ($request->user()->tipo_usuario_id == 2 ) {
 
-            $dataBallots['father'] = $patients;
+        $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)->get();
+        $children = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
-            foreach ($children as $son) {
-                $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
-            }
+        $dataBallots['father'] = $patients;
 
-          return view('admin/boletas/list', compact('dataBallots'));
-        } else {
-          return \back();
+        foreach ($children as $son) {
+            $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
         }
+
+        return view('admin/boletas/list', compact('dataBallots'));
+
+      } else {
+        $this->auth->logout();
+        return \back();
+      }
+
+
     }
 
     /**
@@ -47,9 +61,14 @@ class BoletaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+      if ($request->user()->tipo_usuario_id != 1 )
         return view('admin/boletas/create');
+      else {
+        $this->auth->logout();
+        return \back();
+      }
     }
 
     /**
@@ -208,44 +227,50 @@ class BoletaController extends Controller
 
     public function weekReport(Request $request)
     {
-      if ($request->user()->tipo_usuario_id != 1) {
+      if ($request->user()->tipo_usuario_id == 2 )
         return view('admin/boletas/weekReport');
-      } else {
+      else {
+        $this->auth->logout();
         return \back();
       }
     }
 
     public function dataWeekReport(Request $request)
     {
-      $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
-                  ->whereHas('conclusion', function ($query) use ($request) {
-                    $query->where('fecha', '>=', $request->begin_date)
-                          ->where('fecha', '<=', $request->final_date);
-                  })->get();
+      if ($request->user()->tipo_usuario_id == 2 ) {
+        $patients = Paciente::where('centro_id', '=', $request->user()->centro_id)
+                    ->whereHas('conclusion', function ($query) use ($request) {
+                      $query->where('fecha', '>=', $request->begin_date)
+                            ->where('fecha', '<=', $request->final_date);
+                    })->get();
 
-      $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
-      $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
+        $fatherCenter = Centro::where('id', '=', $request->user()->centro_id)->get();
+        $childrenCenter = Centro::where('padre', '=', $request->user()->centro_id)->get();
 
-      $dataBallots[$fatherCenter[0]->centro] = $patients;
+        $dataBallots[$fatherCenter[0]->centro] = $patients;
 
-      foreach ($childrenCenter as $son) {
-          $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
-                      ->whereHas('conclusion', function ($query) use ($request) {
-                        $query->where('fecha', '>=', $request->begin_date)
-                              ->where('fecha', '<=', $request->final_date);
-                      })->get();
+        foreach ($childrenCenter as $son) {
+            $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)
+                        ->whereHas('conclusion', function ($query) use ($request) {
+                          $query->where('fecha', '>=', $request->begin_date)
+                                ->where('fecha', '<=', $request->final_date);
+                        })->get();
+        }
+
+        ini_set('max_execution_time', 600);
+
+        $pdf = \PDF::loadView('admin.boletas.pdf.createpdf',
+        [
+          'dataBallots' => $dataBallots,
+          'request' => $request,
+          'actualCenter' => $fatherCenter[0]->centro
+        ])->setPaper('Legal')->setOrientation('landscape');
+
+        return $pdf->stream();
+      } else {
+        $this->auth->logout();
+        return \back();
       }
-
-      ini_set('max_execution_time', 600);
-
-      $pdf = \PDF::loadView('admin.boletas.pdf.createpdf',
-      [
-        'dataBallots' => $dataBallots,
-        'request' => $request,
-        'actualCenter' => $fatherCenter[0]->centro
-      ])->setPaper('Legal')->setOrientation('landscape');
-
-      return $pdf->stream();
     }
 
     public static function correlativeNumber($request)
