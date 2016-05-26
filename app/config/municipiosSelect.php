@@ -1,5 +1,6 @@
 <?php
 return[
+  '' => 'Seleccione un Municipio',
   'Mazatenango'=>'Mazatenango',
   'Cuyotenango'=>'Cuyotenango',
   'San Francisco Zapotitlán'=>'San Francisco Zapotitlán',
@@ -20,5 +21,5 @@ return[
   'Zunilito'=>'Zunilito',
   'Pueblo Nuevo'=>'Pueblo Nuevo',
   'Río Bravo'=>'Río Bravo',
-  
+
 ];

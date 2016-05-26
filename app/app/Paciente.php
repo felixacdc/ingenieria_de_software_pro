@@ -26,6 +26,7 @@ class Paciente extends Model
      'distancia_se_si_cercana',
      'tiempo_para_llegar',
      'nombre_comunidad',
+     'municipio',
      'dpi_paciente_com_esp',
      'fecha_ultima_regla',
      'fecha_probable_parto',

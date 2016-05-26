@@ -123,6 +123,7 @@ class BoletaController extends Controller
         $patient->distancia_se_si_cercana = $request->distancia_se_si_cercana;
         $patient->tiempo_para_llegar = $request->tiempo_para_llegar;
         $patient->nombre_comunidad = $request->nombre_comunidad;
+        $patient->municipio=$request->municipio;
         $patient->dpi_paciente_com_esp = $request->dpi_paciente_com_esp;
         $patient->fecha_ultima_regla = $request->fecha_ultima_regla;
         $patient->fecha_probable_parto = $request->fecha_probable_parto;
@@ -134,9 +135,7 @@ class BoletaController extends Controller
         $patient->no_hijos_muertos = $request->no_hijos_muertos;
         $patient->user_id = $request->user_id;
         $patient->centro_id = $request->centro_id;
-
         $patient->save();
-
         return $patient->id;
     }
 
@@ -152,7 +151,6 @@ class BoletaController extends Controller
         $obstetrical->dato6 = $request->adato6;
         $obstetrical->dato7 = $request->adato7;
         $obstetrical->pacientes_id = $idPatient;
-
         $obstetrical->save();
     }
 
