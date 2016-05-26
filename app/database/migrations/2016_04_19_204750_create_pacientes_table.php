@@ -29,6 +29,7 @@ class CreatePacientesTable extends Migration
             $table->decimal('distancia_se_si_cercana', 5, 2); # en KM
             $table->decimal('tiempo_para_llegar', 5, 2); # en Horas
             $table->string('nombre_comunidad');
+            $table->string('municipio');
             $table->string('dpi_paciente_com_esp'); # com = comunitario y esp = edad_esposo
             $table->date('fecha_ultima_regla');
             $table->date('fecha_probable_parto');

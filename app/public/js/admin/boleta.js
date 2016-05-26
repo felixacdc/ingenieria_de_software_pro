@@ -97,9 +97,17 @@ $(document).ready(function () {
                 dFecha: {
                     required: true,
                     date: true
+                },
+                municipio:{
+                  required:true
                 }
+
             },
             messages: {
+
+              municipio:{
+                required:"Por favor seleccione una opción."
+              },
                 no_registro: {
                     required: "Por favor ingrese el No. de Boleta."
                 },

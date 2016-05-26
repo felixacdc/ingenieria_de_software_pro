@@ -89,8 +89,8 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                  {!!Form::label('pueblo_paciente','Municipio:')!!}
-                  {!!Form::select('pueblo_paciente', config('municipiosSelect'), null, ['class' => 'form-control', 'required' => 'required'])!!}
+                  {!!Form::label('municipio','Municipio:')!!}
+                  {!!Form::select('municipio', config('municipiosSelect'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
