@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Contracts\Auth\Guard;
+
 class ReportsController extends BaseReportsController
 {
 
+    private $auth;
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     public function showPatient(Request $request, $field, $type = 0)
     {
+      if ($request->user()->tipo_usuario_id != 3 ) {
+
         $this->insertData($request, $field, $type);
 
         if ( !isset($request->begin_date) and !isset($request->final_date) ) {
@@ -53,22 +64,37 @@ class ReportsController extends BaseReportsController
                       ->with('type', $type)
                       ->with('condicion', $this->request->condition)
                       ->with('number', $this->request->number)
-                      ->with('actualCenter', $this->fatherCenter[0]->centro);
+                      ->with('actualCenter', $this->fatherCenter[0]->centro)
+                      ->with('centers', $this->centers);
         }
+
+      } else {
+        $this->auth->logout();
+        return \back();
+      }
     }
 
     public function pdfReports(Request $request)
     {
-      $dataBallots = $request->session()->get('dataPDFReport');
 
-      ini_set('max_execution_time', 600);
+      if ($request->user()->tipo_usuario_id != 3 ) {
 
-      $pdf = \PDF::loadView('admin.reports.pdf.createpdf',
-      ['dataBallots' => $dataBallots,
-        'request' => $request
-      ])->setPaper('Legal')->setOrientation('landscape');
+        $dataBallots = $request->session()->get('dataPDFReport');
 
-      return $pdf->stream();
+        ini_set('max_execution_time', 600);
+
+        $pdf = \PDF::loadView('admin.reports.pdf.createpdf',
+        ['dataBallots' => $dataBallots,
+          'request' => $request
+        ])->setPaper('Legal')->setOrientation('landscape');
+
+        return $pdf->stream();
+
+      } else {
+        $this->auth->logout();
+        return \back();
+      }
+
     }
 
 
