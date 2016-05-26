@@ -12,6 +12,18 @@
 {!! Form::hidden('id', $user->id, ['id' => 'user_id']) !!}
 
 <script type="text/javascript">
+
+    function valTypeUser(value, element, param) {
+        if ($('#tipo_usuario_id').val() == 1 && value == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    $.validator.addMethod("valTypeUser", valTypeUser, "El centro general solo puede ser asignado a un Super Administrador.");
+
     $("#createForm, #editForm").validate({
         rules: {
                 user:{
@@ -36,7 +48,8 @@
         					maxlength: 8
         				},
         				centro_id: {
-                            required: true
+                            required: true,
+                            valTypeUser: true
                         },
         				tipo_usuario_id: {
         						required: true
