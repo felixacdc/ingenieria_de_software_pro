@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
         Route::resource('TiposCentros' , 'TiposCentrosController');
         Route::get('UserExists/{email}','UsersController@userExists');
         Route::get('EmailExists/{user}','UsersController@emailExists');
+        Route::get('EmailUpdate/{email}/{id}','UsersController@emailUpdate');
 
 
     });

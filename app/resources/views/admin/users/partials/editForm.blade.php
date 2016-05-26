@@ -9,6 +9,7 @@
 
 {!! Form::close() !!}
 
+{!! Form::hidden('id', $user->id, ['id' => 'user_id']) !!}
 
 <script type="text/javascript">
 
@@ -92,7 +93,7 @@
         *
         **/
         $.ajax({
-          url: 'UserExists/' + $( "#correo" ).val(),
+          url: 'EmailUpdate/' + $( "#correo" ).val() + '/' + $('#user_id').val(),
           type: "get",
           data:{
              email:  $( "#correo" ).val()
@@ -105,9 +106,9 @@
 
              }//Fin de else Principal
              else{
-
+               alert('hola');
                $('#msg').css('display', 'none');
-                form.submit();
+                //form.submit();
              }
            }
         });
@@ -117,7 +118,7 @@
           Fin de Ajax Email
         *
         **/
-				form.submit();
+				//form.submit();
 			}
     });
 </script>
