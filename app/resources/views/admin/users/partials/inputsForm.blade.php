@@ -34,7 +34,7 @@
 
 <div class="form-group">
 	{!!Form::label('tipo_usuario_id','Tipo Usuario:')!!}
-	{!!Form::select('tipo_usuario_id', $type, null,['class' => 'form-control'])!!}
+	{!!Form::select('tipo_usuario_id', $type, null,['class' => 'form-control', 'id' => 'tipo_usuario_id'])!!}
 </div>
 
 <div class="form-group">

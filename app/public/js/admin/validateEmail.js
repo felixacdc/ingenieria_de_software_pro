@@ -1,5 +1,18 @@
+function valTypeUser(value, element, param) {
+    if ($('#tipo_usuario_id').val() == 1 && value == 1) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+$.validator.addMethod("valTypeUser", valTypeUser, "El centro general solo puede ser asignado a un Super Administrador.");
+
 $(document).ready(function () {
 
+if ($('#tipo_usuario_id').val() == 1)
+    alert($('#tipo_usuario_id').val());
     /**
     *
     * validacion
@@ -30,7 +43,8 @@ $(document).ready(function () {
                     maxlength: 8
                 },
                 centro_id:{
-                    required: true
+                    required: true,
+                    valTypeUser: true
                 },
                 tipo_usuario_id: {
                     required: true
@@ -84,9 +98,6 @@ $(document).ready(function () {
                     $('#msg2').css('display', 'inline');
                     $('#msg2').css('color', '#f56954');
                   }else{
-
-
-
                     /**
                     *
                         Ajax Valida Email
@@ -121,11 +132,6 @@ $(document).ready(function () {
 
 
                   }
-
-
-
-
-
 
 
                 }
