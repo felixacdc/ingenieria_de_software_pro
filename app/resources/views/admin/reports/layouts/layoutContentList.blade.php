@@ -4,11 +4,11 @@
     <thead>
         <tr>
             <th>No.</th>
-            <th>Nombre</th>
+            <th>No. Registro</th>
+            <th>Nombre Paciente</th>
             <th>Edad</th>
             <th>Pueblo</th>
-            <th>Escolaridad</th>
-            <th>Ocupación</th>
+            <th>Municipio</th>
             @yield('name')
             <th>Fecha de creación</th>
         </tr>
