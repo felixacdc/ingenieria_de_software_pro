@@ -21,21 +21,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-8">
+                    {!!Form::label('ocupacion_paciente','Ocupación:')!!}
+                  {!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
+                </div>
+                <div class="form-group col-md-4">
                 	{!!Form::label('pueblo_paciente','Pueblo:')!!}
                 	{!!Form::select('pueblo_paciente', config('pueblos'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-12">
                     {!!Form::label('escolaridad_paciente','Escolaridad:')!!}
                 	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required'))!!}
                 </div>
-                <div class="form-group col-md-4">
-                    {!!Form::label('ocupacion_paciente','Ocupación:')!!}
-                	{!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
-                </div>
+
             </div>
+            <h2>Datos Conyuge</h2>
+            <hr>
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('nombre_esposo','Nombre de esposo o conviviente:')!!}
@@ -47,27 +50,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-8">
+                  {!!Form::label('ocupacion_esposo','Ocupación:')!!}
+                  {!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
+                </div>
+                <div class="form-group col-md-4">
                 	{!!Form::label('pueblo_esposo','Pueblo:')!!}
                 	{!!Form::select('pueblo_esposo', config('pueblos'), null, ['class' => 'form-control'])!!}
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-12">
                 	{!!Form::label('escolaridad_esposo','Escolaridad:')!!}
                 	{!!Form::text('escolaridad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad'))!!}
                 </div>
-                <div class="form-group col-md-4">
-                	{!!Form::label('ocupacion_esposo','Ocupación:')!!}
-                	{!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
-                </div>
             </div>
+            <h2>Datos Complementarios</h2>
+            <hr>
             <div class="row">
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-6">
                     {!!Form::label('distancia_se_si_cercana','Distancia en KM al servicio de salud más cercano:')!!}
                 	{!!Form::number('distancia_se_si_cercana', null, array('class' => 'form-control', 'placeholder' => 'Distancia en KM al servicio de salud más cercano', 'required' => 'required', 'step' => 'any'))!!}
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     {!!Form::label('tiempo_para_llegar','Tiempo en horas para llegar:')!!}
                 	{!!Form::number('tiempo_para_llegar', null, array('class' => 'form-control', 'placeholder' => 'Tiempo en horas para llegar', 'required' => 'required', 'step' => 'any'))!!}
                 </div>
@@ -80,6 +85,12 @@
                 <div class="form-group col-md-6">
                 	{!!Form::label('dpi_pasiente_com_esp','No. de celular de señora, pareja o comunitario:')!!}
                 	{!!Form::text('dpi_paciente_com_esp', null, array('class' => 'form-control', 'placeholder' => 'No. de celular de señora, pareja o comunitario', 'required' => 'required'))!!}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                  {!!Form::label('pueblo_paciente','Municipio:')!!}
+                  {!!Form::select('pueblo_paciente', config('municipiosSelect'), null, ['class' => 'form-control', 'required' => 'required'])!!}
                 </div>
             </div>
             <div class="row">
