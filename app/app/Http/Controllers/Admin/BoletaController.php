@@ -46,7 +46,9 @@ class BoletaController extends Controller
             $dataBallots[$son->centro] = Paciente::where('centro_id', '=', $son->id)->get();
         }
 
-        return view('admin/boletas/list', compact('dataBallots'));
+        $num = $this->recordNumber($dataBallots);
+
+        return view('admin/boletas/list', compact('dataBallots'))->with('num', $num);
 
       } else {
         $this->auth->logout();
@@ -87,40 +89,6 @@ class BoletaController extends Controller
         $this::saveConclusion($request, $idPatient);
 
         return redirect('/admin/boleta/create')->with('message', 'Boleta creada correctamente.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public static function savePatient($request, $number)
@@ -255,13 +223,16 @@ class BoletaController extends Controller
                         })->get();
         }
 
+        $num = $this->recordNumber($dataBallots);
+
         ini_set('max_execution_time', 600);
 
         $pdf = \PDF::loadView('admin.boletas.pdf.createpdf',
         [
           'dataBallots' => $dataBallots,
           'request' => $request,
-          'actualCenter' => $fatherCenter[0]->centro
+          'actualCenter' => $fatherCenter[0]->centro,
+          'num' => $num
         ])->setPaper('Legal')->setOrientation('landscape');
 
         return $pdf->stream();
@@ -277,4 +248,16 @@ class BoletaController extends Controller
       $number++;
       return $number;
     }
+
+
+    private function recordNumber($dataBallots)
+    {
+      $num = 0;
+      foreach($dataBallots as  $key => $elemnt)
+        foreach($elemnt as $key => $ballot)
+          $num = $num + 1;
+
+      return $num;
+    }
+
 }

@@ -46,6 +46,7 @@
                                 {!! Form::hidden('number', $number) !!}
                                 {!! Form::hidden('type', $type) !!}
                                 {!! Form::hidden('actualCenter', $actualCenter) !!}
+                                {!! Form::hidden('num', $num) !!}
                                 {!! Form::submit('Crear PDF', array('class' => 'btn btn-primary')) !!}
                               {!! Form::close() !!}
                             </div>
@@ -66,6 +67,9 @@
                               @if( !empty($actualCenter) )
                                     <strong> {{ $actualCenter }}</strong>
                               @endif
+                            </p>
+                            <p style="padding-left: 10px;">
+                              <strong>Total de pacientes en el reporte: {{ $num }}</strong>
                             </p>
                           </div>
                         </div>

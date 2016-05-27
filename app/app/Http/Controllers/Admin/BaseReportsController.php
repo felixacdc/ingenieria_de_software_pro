@@ -233,4 +233,14 @@ class BaseReportsController extends Controller
                           ->where('fecha', '<=', $this->request->final_date);
                   })->get();
     }
+
+    protected function recordNumber()
+    {
+      $num = 0;
+      foreach($this->dataBallots as  $key => $elemnt)
+        foreach($elemnt as $key => $ballot)
+          $num = $num + 1;
+
+      return $num;
+    }
 }

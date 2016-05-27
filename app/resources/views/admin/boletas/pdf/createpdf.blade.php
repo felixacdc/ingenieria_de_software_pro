@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/pdf.css">
 </head>
 <body>
-	<header class="clearfix">
+		<header class="clearfix">
 
 		<div id="container">
 
@@ -30,6 +30,9 @@
 							@if( !empty($actualCenter) )
 										<strong> {{ $actualCenter }}</strong>
 							@endif
+						</div>
+						<div>
+							<strong>Numero total de pacientes en el reporte: {{ $num }}</strong>
 						</div>
 		        <!-- <div><a href="mailto:company@example.com">company@example.com</a></div> -->
 		        <!-- <hr style="color: #1B8EC7;"> -->
