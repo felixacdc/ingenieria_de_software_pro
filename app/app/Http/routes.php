@@ -27,17 +27,16 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
 
         //Routes Users
         //Route::put('prueba/activate','UsersController@activate');
+        Route::get('UserExists/{user}','UsersController@userExists');
+        Route::get('EmailExists/{email}','UsersController@emailExists');
+        Route::get('EmailUpdate/{email}/{id}','UsersController@emailUpdate');
         Route::put('prueba/activate/{id}',['as'=>'admin/prueba/activate','uses'=>'UsersController@activate']);
         Route::resource('users', 'UsersController');
 
         Route::resource('TiposCentros' , 'TiposCentrosController');
-        Route::get('UserExists/{email}','UsersController@userExists');
-        Route::get('EmailExists/{user}','UsersController@emailExists');
-        Route::get('EmailUpdate/{email}/{id}','UsersController@emailUpdate');
 
 
     });
-
 
     // Routes Boleta
     Route::resource('boleta', 'BoletaController');

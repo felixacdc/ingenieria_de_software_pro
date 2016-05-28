@@ -142,17 +142,7 @@ class UsersController extends Controller
         return redirect('/admin/users')->with('message','Usuario Activado exitosamente');
     }
 
-    public function userExists($email)
-    {
-      $n = User::where('email','=',$email)->count();
-      if ($n>0) {
-          return 'si';
-      } else {
-          return 'no';
-      }
-    }
-
-    public function emailExists($user)
+    public function userExists($user)
     {
       $n=User::where('user','=',$user)->count();
       if($n>0){
@@ -162,9 +152,19 @@ class UsersController extends Controller
       }
     }
 
+    public function emailExists($email)
+    {
+      $n = User::where('email','=',$email)->count();
+      if ($n>0) {
+          echo 'si';
+      } else {
+          echo 'no';
+      }
+    }
+
     public function emailUpdate($email, $id)
     {
-      
+
       $email = ['email' => $email];
 
       $rules=[

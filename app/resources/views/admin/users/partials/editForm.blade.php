@@ -14,17 +14,17 @@
 <script type="text/javascript">
 
     function valTypeUser(value, element, param) {
-        if ($('#tipo_usuario_id').val() == 1 && value == 1) {
-            return true;
-        }
-        else {
-            return false;
-        }
+      if ( ($('#tipo_usuario_id').val() == 1 && value == 1) || ($('#tipo_usuario_id').val() != 1 && value != 1) ) {
+          return true;
+      }
+      else {
+          return false;
+      }
     }
 
     $.validator.addMethod("valTypeUser", valTypeUser, "El centro general solo puede ser asignado a un Super Administrador.");
 
-    $("#createForm, #editForm").validate({
+    $("#editForm").validate({
         rules: {
                 user:{
                     required: true

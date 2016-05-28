@@ -1,5 +1,5 @@
 function valTypeUser(value, element, param) {
-    if ($('#tipo_usuario_id').val() == 1 && value == 1) {
+    if ( ($('#tipo_usuario_id').val() == 1 && value == 1) || ($('#tipo_usuario_id').val() != 1 && value != 1) ) {
         return true;
     }
     else {
@@ -10,15 +10,12 @@ function valTypeUser(value, element, param) {
 $.validator.addMethod("valTypeUser", valTypeUser, "El centro general solo puede ser asignado a un Super Administrador.");
 
 $(document).ready(function () {
-
-if ($('#tipo_usuario_id').val() == 1)
-    alert($('#tipo_usuario_id').val());
     /**
     *
     * validacion
     *
     **/
-    $("#createForm, #editForm").validate({
+    $("#createForm").validate({
         rules: {
                 user: {
                     required: true
@@ -84,37 +81,36 @@ if ($('#tipo_usuario_id').val() == 1)
             submitHandler: function(form){
               $('#msg').css('display', 'none');
               $('#msg2').css('display', 'none');
+              $("#createForm .btn-primary").prop('disabled', true);
               /**
               *
                 Inicio de Ajax User
               *
               **/
               $.ajax({
-                url:  'EmailExists/'+ $('#usuario').val(),
+                url:  'UserExists/'+ $('#usuario').val(),
                 type:  "get",
                 success:function(response){
                   if(response=='si'){
                     $("#msg2").html('El Usuario ya esta en Uso');
                     $('#msg2').css('display', 'inline');
                     $('#msg2').css('color', '#f56954');
-                  }else{
+                    $("#createForm .btn-primary").prop('disabled', false);
+                  }else if( $( "#correo" ).val() != "" ){
                     /**
                     *
                         Ajax Valida Email
                     *
                     **/
                     $.ajax({
-                      url: 'UserExists/' + $( "#correo" ).val(),
+                      url: 'EmailExists/' + $( "#correo" ).val(),
                       type: "get",
-                      data:{
-                         email:  $( "#correo" ).val()
-                       },
                        success: function(response){
                          if(response=='si'){
                            $("#msg").html('El correo ya esta en Uso');
                            $('#msg').css('display', 'inline');
                            $('#msg').css('color', '#f56954');
-
+                           $("#createForm .btn-primary").prop('disabled', false);
                          }//Fin de else Principal
                          else{
 
@@ -131,8 +127,10 @@ if ($('#tipo_usuario_id').val() == 1)
                     **/
 
 
+                  } else {
+                      $("#createForm .btn-primary").prop('disabled', true);
+                      form.submit();
                   }
-
 
                 }
               });
