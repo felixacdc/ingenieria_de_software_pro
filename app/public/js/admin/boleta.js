@@ -1,3 +1,20 @@
+// Función que suma o resta días a la fecha indicada
+sumaFecha = function(d, fecha)
+{
+   var sep = '-';
+   var aFecha = fecha.split(sep);
+   var fecha = aFecha[2]+'-'+aFecha[1]+'-'+aFecha[0];
+   fecha= new Date(fecha);
+   fecha.setDate(fecha.getDate()+parseInt(d));
+   var anno=fecha.getFullYear();
+   var mes= fecha.getMonth()+1;
+   var dia= fecha.getDate();
+   mes = (mes < 10) ? ("0" + mes) : mes;
+   dia = (dia < 10) ? ("0" + dia) : dia;
+   var fechaFinal = anno+sep+mes+sep+dia;
+   return (fechaFinal);
+ }
+
 function menorNo_abortos(value, element, param) {
     if ($('#no_embarazos').val() == (parseInt(value) + parseInt($('#no_partos').val()) + parseInt($('#no_cesarias').val())) ) {
         return true;
@@ -21,6 +38,13 @@ $.validator.addMethod("menorNo_abortos", menorNo_abortos, "La sumatoria de los c
 $.validator.addMethod("menorHijos_muertos", menorHijos_muertos, "La sumatoria de los campos No. de hijos vivos y No. de hojos muertos debe ser igual o mayor a No. de embarazos.");
 
 $(document).ready(function () {
+
+    $("#fecha_ultima_regla").change(function () {
+      var fecha = document.getElementById("fecha_ultima_regla").value.split("-");
+      var aniomysql = fecha.reverse().join("-");
+      var fecha = sumaFecha(281, aniomysql);
+      $("#fecha_probable_parto").val(fecha);
+    });
 
     /**
     *
