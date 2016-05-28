@@ -178,6 +178,23 @@ class UsersController extends Controller
            return 'no';
         }
 
+    }
+
+    public function userUpdate($user, $id)
+    {
+
+      $user = ['user' => $user];
+
+      $rules=[
+            'user'    => 'unique:users,user,'  . $id
+        ];
+
+        $validator = Validator::make($user, $rules);
+        if ($validator->fails()) {
+            return 'si';
+        }else{
+           return 'no';
+        }
 
     }
 

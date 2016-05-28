@@ -86,38 +86,66 @@
         		        }
                     },
 		submitHandler: function(form) {
-				//$("#generalModal .btn-primary").prop('disabled', true);
+        $('#msg').css('display', 'none');
+        $('#msg2').css('display', 'none');
+        $("#editForm .btn-primary").prop('disabled', true);
         /**
         *
-            Ajax Valida Email en editar
+          Inicio de Ajax User
         *
         **/
         $.ajax({
-          url: 'EmailUpdate/' + $( "#correo" ).val() + '/' + $('#user_id').val(),
-          type: "get",
-          data:{
-             email:  $( "#correo" ).val()
-           },
-           success: function(response){
-             if(response=='si'){
-               $("#msg").html('El correo ya esta en Uso');
-               $('#msg').css('display', 'inline');
-               $('#msg').css('color', '#f56954');
+          url:  'UserUpdate/'+ $('#usuario').val() + '/' + $('#user_id').val(),
+          type:  "get",
+          success:function(response){
+            if(response=='si'){
+              $("#msg2").html('El Usuario ya esta en Uso');
+              $('#msg2').css('display', 'inline');
+              $('#msg2').css('color', '#f56954');
+              $("#editForm .btn-primary").prop('disabled', false);
+            }else if( $( "#correo" ).val() != "" ){
+              /**
+              *
+                  Ajax Valida Email
+              *
+              **/
+              $.ajax({
+                url: 'EmailUpdate/' + $( "#correo" ).val() + '/' + $('#user_id').val(),
+                type: "get",
+                 success: function(response){
+                   if(response=='si'){
+                     $("#msg").html('El correo ya esta en Uso');
+                     $('#msg').css('display', 'inline');
+                     $('#msg').css('color', '#f56954');
+                     $("#editForm .btn-primary").prop('disabled', false);
+                   }//Fin de else Principal
+                   else {
+                     $('#msg').css('display', 'none');
+                      form.submit();
+                   }
+                 }
+              });
 
-             }//Fin de else Principal
-             else{
-               alert('hola');
-               $('#msg').css('display', 'none');
-                //form.submit();
-             }
-           }
+              /**
+              *
+                Fin de Ajax Email
+              *
+              **/
+
+
+            } else {
+                $("#editForm .btn-primary").prop('disabled', true);
+                form.submit();
+            }
+
+          }
         });
-
         /**
         *
-          Fin de Ajax Email
+          Fin de Ajax User
         *
         **/
+
 				//form.submit();
 			}
     });

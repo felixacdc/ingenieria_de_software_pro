@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
         //Route::put('prueba/activate','UsersController@activate');
         Route::get('UserExists/{user}','UsersController@userExists');
         Route::get('EmailExists/{email}','UsersController@emailExists');
+        Route::get('UserUpdate/{user}/{id}','UsersController@userUpdate');
         Route::get('EmailUpdate/{email}/{id}','UsersController@emailUpdate');
         Route::put('prueba/activate/{id}',['as'=>'admin/prueba/activate','uses'=>'UsersController@activate']);
         Route::resource('users', 'UsersController');
