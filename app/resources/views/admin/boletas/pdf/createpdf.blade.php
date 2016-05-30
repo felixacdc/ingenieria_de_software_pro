@@ -46,8 +46,11 @@
 	<!-- <div style="page-break-after: always;"></div> -->
 		<thead>
 			<tr>
+			
+				<th class="C7">Fecha Registro</th>
 				<th class="C1">No. de Registro</th>
 				<th class="C2">DAS</th>
+				<th class="C2">Municipio</th>
 				<th class="C3">Nombre Paciente</th>
 				<th class="C4">Edad</th>
 				<th class="C5">Pueblo</th>
@@ -60,8 +63,10 @@
 			@foreach($dataBallots as  $centro => $paciente)
 				@foreach($paciente as $key => $ballot)
 					<tr>
+						<td>{{ date("d/m/Y", strtotime($ballot->fecha)) }}</td>
 						<td>{{ $ballot->no_registro }}</td>
 						<td>{{ $centro }}</td>
+						<td>{{ $ballot->municipio }}</td>
 						<td>{{ $ballot->nombre_paciente }}</td>
 						<td>{{ $ballot->edad_paciente }} Años</td>
 						<td>{{ $ballot->pueblo_paciente }}</td>
