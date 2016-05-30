@@ -81,7 +81,9 @@
 			display: inline-block;
 			width: 59%;
 		}
+
 		.input input {
+			text-align: center;
 			border: none;
 			border-bottom: solid 1px black;
 			width: 200px;
@@ -218,7 +220,7 @@
 		.bloLabel {
 			display: inline-block;
 			padding-top: 5px;
-			width: 45%;
+			width: 10;
 		}
 		.bloLabel strong {
 			padding-left: 5px;
@@ -407,172 +409,19 @@
 	</style>
 </head>
 <body>
-<div class ="header">
-	<div class = "logo">
-		<img src="img/logo.jpg">
-	</div>
-	<div class = "title">
-		<p><strong>Ministerio de Salud Pública y Asistencia Social</strong></p>
-	</div>
-</div>
+@include('admin.boletas.pdf.partials.header')
 <div class="boleta">
-	<div class="boletaHeader">
-		<div class="boletaTitle">
-			<strong>BOLETA DE REFERENCIA</strong>
-		</div>
-		<div class="boletaNumero">
-			Númeo correlativo<input type ="text" value =" 54564">
-		</div>
-	</div>
-	<div class="boletaBody">
-    <div class="medicosTitle">
-  		<strong>Datos Personales</strong>
-  	</div>
-		<div class="boletaBodyLeft">
-			<div>
-				<div class="label"><strong>Nombre:</strong></div>
-				<div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez martinez"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Edad:</strong></div>
-				<div class="input"><input type = "text" value = "25 a;os"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Ocupacion:</strong></div>
-				<div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Pueblo:</strong> </div>
-				<div class="input"><input type = "text" value = "-------"></div>
-			</div>
-      <div>
-				<div class="label"><strong>Escolaridad:</strong> </div>
-				<div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
-			</div>
-		</div>
-		<div class="boletaBodyRight">
-      <div>
-				<div class="label"><strong>Nombre Cónyugue:</strong></div>
-				<div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Edad Cónyuge:</strong></div>
-				<div class="input"><input type = "text" value = "25 a;os"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Ocupacion Cónyuge:</strong></div>
-				<div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
-			</div>
-			<div>
-				<div class="label"><strong>Pueblo Cónyuge:</strong> </div>
-				<div class="input"><input type = "text" value = "xinca"></div>
-			</div>
-      <div>
-				<div class="label"><strong>Escolaridad Cónyuge:</strong> </div>
-				<div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
-			</div>
-		</div>
-	</div>
-
-
+@include('admin.boletas.pdf.partials.personales')
 <!------------------------------>
-
-<div class="boletaBody">
-  <div class="boletaBodyLeft">
-    <div>
-      <div class="label"><strong>Nombre:</strong></div>
-      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez martinez"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Edad:</strong></div>
-      <div class="input"><input type = "text" value = "25 a;os"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Ocupacion:</strong></div>
-      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Pueblo:</strong> </div>
-      <div class="input"><input type = "text" value = "-------"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Escolaridad:</strong> </div>
-      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
-    </div>
-  </div>
-  <div class="boletaBodyRight">
-    <div>
-      <div class="label"><strong>Nombre Cónyugue:</strong></div>
-      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Edad Cónyuge:</strong></div>
-      <div class="input"><input type = "text" value = "25 a;os"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Ocupacion Cónyuge:</strong></div>
-      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Pueblo Cónyuge:</strong> </div>
-      <div class="input"><input type = "text" value = "xinca"></div>
-    </div>
-    <div>
-      <div class="label"><strong>Escolaridad Cónyuge:</strong> </div>
-      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
-    </div>
-  </div>
-</div>
+<br>
+@include('admin.boletas.pdf.partials.complementarios')
+<!---------------------------------->
 <!---------------------------------->
 </div>
-<br><br><br><br><br><br><br><br>
-<div class="medicos">
-	<div class="medicosTitle">
-		<strong>Antecedentes Gíneco-Obstétricos</strong>
-	</div>
-	<div class="medicosBody">
-		<div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Distancia servicio de salud más cercano:</strong></div>
-				<div class="bloInput"><input type = "text" value = "5km"></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Tiempo en horas para llegar:</strong></div>
-				<div class="bloInput"><input type = "text" value = "5 horas"></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Nombre de la comunidad:</strong></div>
-				<div class="bloInput"><input type = "text" value = "La comunidad de cuchuapan"></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>No. de celular de señora, pareja o comunitario:</strong></div>
-				<div class="bloInput"><input type = "text" value = "54745874"></div>
-			</div>
-		</div>
-		<div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Hijos Muertos</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>FUR</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>CSTP</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-		</div>
-	</div>
-	<div class="medicosFoother">
-		<div class = "fox">
-			<strong>Otros:</strong>
-		</div>
-		<div class = "foxx">
-			<input type = "text" value = "">
-		</div>
-	</div>
-</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+@include('admin.boletas.pdf.partials.obstetricos')
+
+
 <br/>
 
 
