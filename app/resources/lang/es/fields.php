@@ -1,11 +1,11 @@
 <?php
 
 return [
-  'no_abortos' => 'Numero de abortos',
-  'no_cesarias' => 'Numero de cesarias',
-  'no_embarazos' => 'Numero de embarazos',
-  'no_partos' => 'Numero de partos',
-  'dato6A' => 'Preclampsia/Eclampsia',
+  'no_abortos' => 'Número de abortos',
+  'no_cesarias' => 'Número de cesareas',
+  'no_embarazos' => 'Número de embarazos',
+  'no_partos' => 'Número de partos',
+  'dato6A' => 'Preeclampsia/Eclampsia',
   'dato11B' => 'ITU (Sintomatología urinaria)',
   'dato4B' => 'Factor RH negativo',
   'dato2B' => ' Menos de 20 años',

@@ -22,7 +22,9 @@
                 <div class="box-header">
                     <div class="content">
                         <div class="row">
-                            <div class="col-md-6"><h3 class="box-title">Boletas del centro</h3></div>
+                            <div class="col-md-6">
+                              <h3 class="box-title">Boletas en el centro: {{ $num }}</h3>
+                            </div>
                             <div class="col-md-6 text-right">
                               <a href="{{url('admin/weekReport')}}" class="btn btn-primary" style="color:white;">Crear Reporte</a>
                             </div>

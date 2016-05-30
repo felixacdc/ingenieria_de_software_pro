@@ -22,7 +22,7 @@ $factory->define(App\User::class, function ($faker) {
 
 $factory->define(App\Paciente::class, function ($faker) {
     return [
-        'no_registro'             => 1,
+        'no_registro'             => "ab/52" . rand(1,500),
         'no_boleta'               => 1,
         'nombre_paciente'         => $faker->name,
         'edad_paciente'           => $faker->randomDigit,

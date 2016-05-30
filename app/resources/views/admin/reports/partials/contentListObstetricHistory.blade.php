@@ -21,11 +21,11 @@
       @foreach($elemnt as $key => $ballot)
          <tr>
              <td>{{ $num = $num +1 }} </td>
+             <td>{{ $ballot->no_registro }}</td>
              <td>{{ $ballot->nombre_paciente }} </td>
              <td>{{ $ballot->edad_paciente }} </td>
              <td>{{ $ballot->pueblo_paciente }} </td>
-             <td>{{ $ballot->escolaridad_paciente }} </td>
-             <td>{{ $ballot->ocupacion_paciente }} </td>
+             <td>{{ $ballot->municipio }} </td>
              <td>
                @if( $ballot->antecedentes->$field == 1)
                  Si

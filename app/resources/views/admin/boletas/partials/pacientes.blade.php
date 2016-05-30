@@ -96,11 +96,11 @@
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('fecha_ultima_regla','Fecha  última regla:')!!}
-                	{!!Form::date('fecha_ultima_regla', null, array('class' => 'form-control', 'placeholder' => 'Fecha  última regla', 'required' => 'required'))!!}
+                	{!!Form::date('fecha_ultima_regla', null, array('class' => 'form-control', 'placeholder' => 'Fecha  última regla', 'required' => 'required', 'id' => 'fecha_ultima_regla'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('fecha_probable_parto','Fecha probable de parto:')!!}
-                	{!!Form::date('fecha_probable_parto', null, array('class' => 'form-control', 'placeholder' => 'Fecha probable de parto', 'required' => 'required'))!!}
+                	{!!Form::date('fecha_probable_parto', null, array('class' => 'form-control', 'placeholder' => 'Fecha probable de parto', 'required' => 'required', 'id' => 'fecha_probable_parto'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_embarazos','No. de embarazos:')!!}

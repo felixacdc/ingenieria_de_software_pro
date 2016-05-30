@@ -54,6 +54,7 @@ class ReportsController extends BaseReportsController
           return \Redirect::to('admin');
         } else {
 
+          $num = $this->recordNumber();
           $dataBallots = $this->dataBallots;
           $request->session()->put('dataPDFReport', $dataBallots);
 
@@ -65,7 +66,8 @@ class ReportsController extends BaseReportsController
                       ->with('condicion', $this->request->condition)
                       ->with('number', $this->request->number)
                       ->with('actualCenter', $this->fatherCenter[0]->centro)
-                      ->with('centers', $this->centers);
+                      ->with('centers', $this->centers)
+                      ->with('num', $num);
         }
 
       } else {
