@@ -248,7 +248,6 @@ class BoletaController extends Controller
       $pdf = \PDF::loadView('admin.boletas.pdf.pdf',
       [
 
-      
       ])->setPaper('Legal')->setOrientation('portrait');
 
       return $pdf->stream();

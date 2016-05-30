@@ -418,10 +418,12 @@
 <!---------------------------------->
 <!---------------------------------->
 </div>
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 @include('admin.boletas.pdf.partials.obstetricos')
-
-
+<br>
+@include('admin.boletas.pdf.partials.embarazo')
+<br>
+@include('admin.boletas.pdf.partials.historial')
 <br/>
 
 
