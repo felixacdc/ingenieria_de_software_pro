@@ -242,6 +242,18 @@ class BoletaController extends Controller
       }
     }
 
+    public function pruebaPDF(){
+      ini_set('max_execution_time', 600);
+
+      $pdf = \PDF::loadView('admin.boletas.pdf.pdf',
+      [
+
+      
+      ])->setPaper('Legal')->setOrientation('portrait');
+
+      return $pdf->stream();
+    }
+
     public static function correlativeNumber($request)
     {
       $number = Paciente::where('centro_id', '=', $request->user()->centro_id)->count();

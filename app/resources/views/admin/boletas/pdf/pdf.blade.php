@@ -84,7 +84,7 @@
 		.input input {
 			border: none;
 			border-bottom: solid 1px black;
-			width: 190px;
+			width: 200px;
 		}
 		.labelRight {
 			display: inline-block;
@@ -427,138 +427,50 @@
 	<div class="boletaBody">
 		<div class="boletaBodyLeft">
 			<div>
-				<div class="label"><strong>Fecha:</strong></div>
-				<div class="input"><input type = "text" value = ""></div>
+				<div class="label"><strong>Nombre:</strong></div>
+				<div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez martinez"></div>
 			</div>
 			<div>
-				<div class="label"><strong>Nombre del Paciente:</strong></div>
-				<div class="input"><input type = "text" value = ""></div>
+				<div class="label"><strong>Edad:</strong></div>
+				<div class="input"><input type = "text" value = "25 a;os"></div>
 			</div>
 			<div>
-				<div class="label"><strong>Servicio de salud que refiere:</strong></div>
-				<div class="input"><input type = "text" value = ""></div>
+				<div class="label"><strong>Ocupacion:</strong></div>
+				<div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
 			</div>
 			<div>
-				<div class="label"><strong>Servicio de salud al que se envia:</strong> </div>
-				<div class="input"><input type = "text" value = ""></div>
+				<div class="label"><strong>Pueblo:</strong> </div>
+				<div class="input"><input type = "text" value = "-------"></div>
+			</div>
+      <div>
+				<div class="label"><strong>Escolaridad:</strong> </div>
+				<div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
 			</div>
 		</div>
 		<div class="boletaBodyRight">
-			<div class = "divR">
-				<div class="labelRight"><strong>Hora del traslado:</strong></div>
-				<div class="inputRight"><input type = "text" value = ""></div>
-			</div>
-			<div class = "divR">
-				<div class="labelRight"><strong>Telefono:</strong></div>
-				<div class="inputRight"><input type = "text" value = ""></div>
-			</div>
-			<div class = "divR">
-
-					<div class = "divLeft">
-						<div class="labelx"><strong>Consulta Externa:</strong></div>
-						<div class="inputx"><input type = "text" value = " X "></div>
-					</div>
-					<div class = "divLeftx">
-						<div class="labelx"><strong>Emergencia:</strong></div>
-						<div class="inputx"><input type = "text" value = " --- "></div>
-					</div>
-
-					<div class = "divLeft">
-						<div class="labelx"><strong>Consulta Externa:</strong></div>
-						<div class="inputx"><input type = "text" value = " --- "></div>
-					</div>
-					<div class = "divLeftx">
-						<div class="labelx"><strong>Emergencia:</strong></div>
-						<div class="inputx"><input type = "text" value = " X "></div>
-					</div>
-
-			</div>
-			<div class = "divR">
-				<div class = "divLeft">
-					<div class="labelx"><strong>Edad:</strong></div>
-					<div class="inputx"><input type = "text" value = ""></div>
-				</div>
-				<div class = "divLeftx">
-					<div class="labelx"><strong>Sexo:</strong></div>
-					<div class="inputx"><input type = "text" value = "{{$data['Group1Dato9']}}"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="boletaFoother">
-		<div id = "label">
-			<strong>Historia de la enfermad actual:</strong>
-		</div>
-		<div id ="area">
-			<input type = "text"  value = "{{$data['Group1Dato5']}}">
-		</div>
-	</div>
-</div>
-<br/>
-<div class="medicos">
-	<div class="medicosTitle">
-		<strong>Antecedentes Médicos</strong>
-	</div>
-	<div class="medicosBody">
-		<div class="medicosBodyLeft">
-			<div>
-				<div class = "medicLabel"><strong>Médicos:</strong></div>
-				<div class = "medicInput">
-
-					@if($data['Group2Dato1'] === '')
-						<input  type = "text" value = "----------------">
-					@else
-						<input type = "text" value = "{{$data['Group2Dato1']}}">
-					@endif
-				</div>
+      <div>
+				<div class="label"><strong>Nombre Cónyugue:</strong></div>
+				<div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez"></div>
 			</div>
 			<div>
-				<div class = "medicLabel"><strong>Quirúrgicos:</strong></div>
-				<div class = "medicInput">
-					@if($data['Group2Dato3'] === '')
-						<input  type = "text" value = "----------------">
-					@else
-						<input type = "text" value = "{{$data['Group2Dato3']}}">
-					@endif
-				</div>
+				<div class="label"><strong>Edad Cónyuge:</strong></div>
+				<div class="input"><input type = "text" value = "25 a;os"></div>
+			</div>
+			<div>
+				<div class="label"><strong>Ocupacion Cónyuge:</strong></div>
+				<div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
+			</div>
+			<div>
+				<div class="label"><strong>Pueblo Cónyuge:</strong> </div>
+				<div class="input"><input type = "text" value = "xinca"></div>
+			</div>
+      <div>
+				<div class="label"><strong>Escolaridad Cónyuge:</strong> </div>
+				<div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
 			</div>
 		</div>
-		<div class="medicosBodyRight">
-			<div>
-				<div class = "medicLabel"><strong>Mentales:</strong></div>
-				<div class = "medicInput">
+	</div>
 
-					@if($data['Group2Dato2'] === '')
-						<input  type = "text" value = "----------------">
-					@else
-						<input type = "text" value = "{{$data['Group2Dato2']}}">
-					@endif
-				</div>
-			</div>
-			<div>
-				<div class = "medicLabel"><strong>Traumáticos:</strong></div>
-				<div class = "medicInput">
-						@if($data['Group2Dato4'] === '')
-							<input  type = "text" value = "----------------">
-						@else
-							<input type = "text" value = "{{$data['Group2Dato4']}}">
-						@endif
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="medicosFoother">
-		<div class = "fox">
-			<strong>Alérgicos:</strong>
-		</div>
-		<div class = "foxx">
-			@if($data['Group2Dato5'] === '')
-				<input  type = "text" value = "----------------">
-			@else
-				<input type = "text" value = "{{$data['Group2Dato5']}}">
-			@endif
-		</div>
-	</div>
 </div>
 <br/>
 <div class="medicos">
@@ -568,34 +480,34 @@
 	<div class="medicosBody">
 		<div>
 			<div class="blo">
-				<div class="bloLabel"><strong>Gestas</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato1']}}"></div>
+				<div class="bloLabel"><strong>Distancia servicio de salud más cercano:</strong></div>
+				<div class="bloInput"><input type = "text" value = "5km"></div>
 			</div>
 			<div class="blo">
-				<div class="bloLabel"><strong>Partos</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato2']}}"></div>
+				<div class="bloLabel"><strong>Tiempo en horas para llegar:</strong></div>
+				<div class="bloInput"><input type = "text" value = "5 horas"></div>
 			</div>
 			<div class="blo">
-				<div class="bloLabel"><strong>Abortos</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato3']}}"></div>
+				<div class="bloLabel"><strong>Nombre de la comunidad:</strong></div>
+				<div class="bloInput"><input type = "text" value = "La comunidad de cuchuapan"></div>
 			</div>
 			<div class="blo">
-				<div class="bloLabel"><strong>Hijos vivos</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato4']}}"></div>
+				<div class="bloLabel"><strong>No. de celular de señora, pareja o comunitario:</strong></div>
+				<div class="bloInput"><input type = "text" value = "54745874"></div>
 			</div>
 		</div>
 		<div>
 			<div class="blo">
 				<div class="bloLabel"><strong>Hijos Muertos</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato5']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>FUR</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato6']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>CSTP</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo3Dato7']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 		</div>
 	</div>
@@ -604,10 +516,12 @@
 			<strong>Otros:</strong>
 		</div>
 		<div class = "foxx">
-			<input type = "text" value = "{{$data['Grupo3Dato8']}}">
+			<input type = "text" value = "">
 		</div>
 	</div>
 </div>
+<br/>
+
 <br/>
 <div class="medicos">
 	<div class="medicosTitle">
@@ -617,33 +531,33 @@
 		<div>
 			<div class="blo">
 				<div class="bloLabel"><strong>Peso</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato1']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>Talla</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato2']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>Pulso</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato3']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>P/A</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato4']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 		</div>
 		<div>
 			<div class="blo">
 				<div class="bloLabel"><strong>F/R</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato5']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>T°</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato6']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 			<div class="blo">
 				<div class="bloLabel"><strong>FCF</strong></div>
-				<div class="bloInput"><input type = "text" value = "{{$data['Grupo4Dato7']}}"></div>
+				<div class="bloInput"><input type = "text" value = ""></div>
 			</div>
 		</div>
 	</div>
@@ -653,11 +567,10 @@
 		</div>
 		<div class="eleInt">
 
-			@if($data['Grupo4Dato8'] === '')
+
 				<input  type = "text" value = "----------------">
-			@else
-				<input  type = "text" value = "{{$data['Grupo4Dato8']}}">
-			@endif
+
+
 		</div>
 	</div>
 	<div class = "elementBlo">
@@ -665,11 +578,11 @@
 			<p><strong>Impresión Clínica:</strong></p>
 		</div>
 		<div class="eleInt">
-			@if($data['Grupo4Dato9'] === '')
+
 				<input  type = "text" value = "----------------">
-			@else
-				<input  type = "text" value = "{{$data['Grupo4Dato9']}}">
-			@endif
+
+			">
+
 		</div>
 	</div>
 	<div class = "elementBlo">
@@ -677,11 +590,11 @@
 			<p><strong>Motivo de la referencia:</strong></p>
 		</div>
 		<div class="eleInt">
-			@if($data['Grupo4Dato10'] === '')
+
 				<input  type = "text" value = "----------------">
-			@else
-				<input  type = "text" value = "{{$data['Grupo4Dato10']}}">
-			@endif
+
+
+
 		</div>
 	</div>
 	<div class = "elementBlo">
@@ -689,11 +602,11 @@
 			<p><strong>Tratamiento y Manejo efectuado en el servicio:</strong></p>
 		</div>
 		<div class="eleInt">
-			@if($data['Grupo4Dato11'] === '')
+
 				<input  type = "text" value = "----------------">
-			@else
-				<input  type = "text" value = "{{$data['Grupo4Dato11']}}">
-			@endif
+
+
+
 		</div>
 	</div>
 </div>
