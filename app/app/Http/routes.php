@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin', 'namespace' => '\Admin', 'middleware' => 'aut
     Route::group(['middleware' => ['adminAuth']], function () {
         //Routes centros
         Route::resource('centros', 'CentrosController');
-        Route::get('pruebaPDF','BoletaController@pruebaPDF');
+        //Route::get('pruebaPDF','BoletaController@pruebaPDF');
 
         //Routes Users
         //Route::put('prueba/activate','UsersController@activate');

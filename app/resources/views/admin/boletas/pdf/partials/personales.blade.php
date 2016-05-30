@@ -13,37 +13,54 @@
   <div class="boletaBodyLeft">
     <div>
       <div class="label"><strong>Nombre:</strong></div>
-      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez martinez"></div>
+      <div class="input"><input type = "text" value = "{{$data->nombre_paciente}}"></div>
     </div>
     <div>
       <div class="label"><strong>Edad:</strong></div>
-      <div class="input"><input type = "text" value = "25 a;os"></div>
+      <div class="input"><input type = "text" value = "{{$data->edad_paciente}}"></div>
     </div>
     <div>
       <div class="label"><strong>Ocupacion:</strong></div>
-      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
+      <div class="input"><input type = "text" value = "{{$data->ocupacion_paciente}}"></div>
     </div>
     <div>
       <div class="label"><strong>Pueblo:</strong> </div>
-      <div class="input"><input type = "text" value = "-------"></div>
+      <div class="input"><input type = "text" value = "{{$data->pueblo_paciente}}"></div>
     </div>
     <div>
       <div class="label"><strong>Escolaridad:</strong> </div>
-      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
+      <div class="input"><input type = "text" value = "{{$data->escolaridad_paciente}}"></div>
     </div>
   </div>
   <div class="boletaBodyRight">
     <div>
       <div class="label"><strong>Nombre Cónyugue:</strong></div>
-      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez"></div>
+      @if($data->nombre_esposo=="")
+      <div class="input"><input type = "text" value = "--------------------"></div>
+      @else
+      <div class="input"><input type = "text" value = "{{$data->nombre_esposo}}"></div>
+      @endif
     </div>
+
     <div>
-      <div class="label"><strong>Edad Cónyuge:</strong></div>
-      <div class="input"><input type = "text" value = "25 a;os"></div>
+    <div class="label"><strong>Edad Cónyuge:</strong></div>
+      @if($data->edad_esposo=="")
+      <div class="input"><input type = "text" value = "--------------------"></div>
+      @else
+      <div class="input"><input type = "text" value = "{{$data->edad_esposo}}"></div>
+      @endif
     </div>
+
+
     <div>
+
       <div class="label"><strong>Ocupacion Cónyuge:</strong></div>
-      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
+      @if($data->ocupacion_esposo=="")
+      <div class="input"><input type = "text" value = "--------------------"></div>
+      @else
+      <div class="input"><input type = "text" value = "{{$data->ocupacion_esposo}}"></div>
+      @endif
+
     </div>
     <div>
       <div class="label"><strong>Pueblo Cónyuge:</strong> </div>

@@ -87,8 +87,19 @@ class BoletaController extends Controller
         $this::saveCurrentPregnancy($request, $idPatient);
         $this::saveClinicHistory($request, $idPatient);
         $this::saveConclusion($request, $idPatient);
+        ini_set('max_execution_time', 600);
 
-        return redirect('/admin/boleta/create')->with('message', 'Boleta creada correctamente.');
+        $pdf = \PDF::loadView('admin.boletas.pdf.pdf',
+        [
+
+          'data' => $request,
+
+        ])->setPaper('Legal')->setOrientation('portrait');
+
+        return $pdf->stream();
+        //return redirect('/admin/boleta/create')->with('message', 'Boleta creada correctamente.');
+
+
     }
 
     public static function savePatient($request, $number)
@@ -242,15 +253,8 @@ class BoletaController extends Controller
       }
     }
 
-    public function pruebaPDF(){
-      ini_set('max_execution_time', 600);
+    public function pruebaPDF(Request $request){
 
-      $pdf = \PDF::loadView('admin.boletas.pdf.pdf',
-      [
-
-      ])->setPaper('Legal')->setOrientation('portrait');
-
-      return $pdf->stream();
     }
 
     public static function correlativeNumber($request)
