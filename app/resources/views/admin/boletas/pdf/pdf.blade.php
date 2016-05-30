@@ -409,7 +409,7 @@
 <body>
 <div class ="header">
 	<div class = "logo">
-		<img src="logo.jpg">
+		<img src="img/logo.jpg">
 	</div>
 	<div class = "title">
 		<p><strong>Ministerio de Salud Pública y Asistencia Social</strong></p>
@@ -425,6 +425,9 @@
 		</div>
 	</div>
 	<div class="boletaBody">
+    <div class="medicosTitle">
+  		<strong>Datos Personales</strong>
+  	</div>
 		<div class="boletaBodyLeft">
 			<div>
 				<div class="label"><strong>Nombre:</strong></div>
@@ -471,8 +474,58 @@
 		</div>
 	</div>
 
+
+<!------------------------------>
+
+<div class="boletaBody">
+  <div class="boletaBodyLeft">
+    <div>
+      <div class="label"><strong>Nombre:</strong></div>
+      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez martinez"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Edad:</strong></div>
+      <div class="input"><input type = "text" value = "25 a;os"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Ocupacion:</strong></div>
+      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Pueblo:</strong> </div>
+      <div class="input"><input type = "text" value = "-------"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Escolaridad:</strong> </div>
+      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
+    </div>
+  </div>
+  <div class="boletaBodyRight">
+    <div>
+      <div class="label"><strong>Nombre Cónyugue:</strong></div>
+      <div class="input"><input type = "text" value = "Miguel Angel Julian Hernandez"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Edad Cónyuge:</strong></div>
+      <div class="input"><input type = "text" value = "25 a;os"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Ocupacion Cónyuge:</strong></div>
+      <div class="input"><input type = "text" value = "ama de casa. no hace nada"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Pueblo Cónyuge:</strong> </div>
+      <div class="input"><input type = "text" value = "xinca"></div>
+    </div>
+    <div>
+      <div class="label"><strong>Escolaridad Cónyuge:</strong> </div>
+      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
+    </div>
+  </div>
 </div>
-<br/>
+<!---------------------------------->
+</div>
+<br><br><br><br><br><br><br><br>
 <div class="medicos">
 	<div class="medicosTitle">
 		<strong>Antecedentes Gíneco-Obstétricos</strong>
@@ -522,94 +575,7 @@
 </div>
 <br/>
 
-<br/>
-<div class="medicos">
-	<div class="medicosTitle">
-		<strong>Examen Físico</strong>
-	</div>
-	<div class="medicosBody">
-		<div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Peso</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Talla</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>Pulso</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>P/A</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-		</div>
-		<div>
-			<div class="blo">
-				<div class="bloLabel"><strong>F/R</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>T°</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-			<div class="blo">
-				<div class="bloLabel"><strong>FCF</strong></div>
-				<div class="bloInput"><input type = "text" value = ""></div>
-			</div>
-		</div>
-	</div>
-	<div class = "elementBlo">
-		<div class="eleStron">
-			<p><strong>Exámenes Realizados:</strong></p>
-		</div>
-		<div class="eleInt">
 
-
-				<input  type = "text" value = "----------------">
-
-
-		</div>
-	</div>
-	<div class = "elementBlo">
-		<div class="eleStron">
-			<p><strong>Impresión Clínica:</strong></p>
-		</div>
-		<div class="eleInt">
-
-				<input  type = "text" value = "----------------">
-
-			">
-
-		</div>
-	</div>
-	<div class = "elementBlo">
-		<div class="eleStron">
-			<p><strong>Motivo de la referencia:</strong></p>
-		</div>
-		<div class="eleInt">
-
-				<input  type = "text" value = "----------------">
-
-
-
-		</div>
-	</div>
-	<div class = "elementBlo">
-		<div class="eleStron">
-			<p><strong>Tratamiento y Manejo efectuado en el servicio:</strong></p>
-		</div>
-		<div class="eleInt">
-
-				<input  type = "text" value = "----------------">
-
-
-
-		</div>
-	</div>
-</div>
 <div class="firmas">
 	<div class="firmasLesf">
 		<input type = "text" value = ".">
