@@ -426,7 +426,6 @@
 @include('admin.boletas.pdf.partials.historial')
 <br/>
 
-
 <div class="firmas">
 	<div class="firmasLesf">
 		<input type = "text" value = ".">
@@ -443,96 +442,69 @@
 		</div>
 	</div>
 	<div class="firmaFoother">
-		Fecha y Hora en que se recibe la referencia: <input type = "text" value="xs">
+		La presencia de algunas de las características anteriores hace necesaria la evaluación de la paciente por un médico, quien tomara la decisión de referirla o no a otro servicio de mayor complejidad:
 	</div>
 </div>
 
-<div class="boletaContra">
-    <div class = "titleContra">
-        <strong>BOLETA DE CONTRA REFERENCIA</strong>
-    </div>
-    <div class="correlativoContra">
-        <div class = "correlativoContraLeft">
-            Número correlativo:
-        </div>
-        <div class = "correlativoContraRight">
-            <input type = "text" value = "2" class = "oculto">
-        </div>
-    </div>
+<div class="">
+
     <div class="bodyContra">
         <div class="trileft">
-            <div class="leftBodyContra leftBodyContraDos">
+            <div class="leftBodyContra leftBodyContraDo">
                 <strong>Nombre del Paciente:</strong>
             </div>
             <div class="rightBodyContra rightBodyContraDos">
-                <input type = "text" value = "*" class = "oculto">
+                <input type = "text" value = "{{$data->nombre_paciente}}">
             </div>
         </div>
         <div class="tricenter">
-            Edad: <input type = "text" value = "*" class = "oculto">
+					@if($data->ddato1 == 1)
+						  Respuesta: <input type = "text" value = "Si">
+					@else
+					  	Respuesta: <input type = "text" value = "No">
+					@endif
+
         </div>
-        <div class="triright">
-            Sexo: <input type = "text" value = "*" class = "oculto">
-        </div>
+
 
     </div>
     <div class="bodyContra">
         <div class="leftBodyContra">
-            <strong>Dirección del Paciente:</strong>
+            <strong>Si la respuesta es SI, será referida a:</strong>
         </div>
         <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto" >
+					@if($data->ddato2 == " ")
+							<input type = "text" value = "-------">
+					@else
+						  <input type = "text" value = "{{$data->ddato2}}">
+					@endif
         </div>
     </div>
     <div class="bodyContra">
         <div class="leftBodyContra">
-            <strong>Servicio que atendió:</strong>
+            <strong>Fecha:</strong>
         </div>
         <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto">
+					@if($data->dFecha == " ")
+							<input type = "text" value = "-------">
+					@else
+							<input type = "text" value = "{{$data->dFecha}}">
+					@endif
         </div>
     </div>
     <div class="bodyContra">
         <div class="leftBodyContra">
-            <strong>Servicio a donde se contra refiere:</strong>
+            <strong>Nombre:</strong>
         </div>
         <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto">
+					@if($data->dNombre == " ")
+							<input type = "text" value = "-------">
+					@else
+							<input type = "text" value = "{{$data->dNombre}}">
+					@endif
         </div>
     </div>
-    <div class="bodyContra">
-        <div class="leftBodyContra">
-            <strong>Resumen de la evolucion:</strong>
-        </div>
-        <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto">
-        </div>
-    </div>
-    <div class="bodyContra">
-        <div class="leftBodyContra">
-            <strong>Tratamiento Brindado:</strong>
-        </div>
-        <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto">
 
-        </div>
-    </div>
-    <div class="bodyContra">
-        <div class="leftBodyContra">
-            <strong>Diagnostico:</strong>
-        </div>
-        <div class="rightBodyContra">
-            <input type = "text" value ="*" class = "oculto">
-        </div>
-    </div>
-    <div class="bodyContra">
-        <div class="leftBodyContra">
-            <strong>Recomendaciones:</strong>
-        </div>
-        <div class="rightBodyContra">
-            <input type = "text" value = "*" class = "oculto">
-        </div>
-    </div>
     <div class="firmas">
         <div class="firmasLesf firmasLesfDos">
             <input type = "text" value = "*" class = "oculto">
