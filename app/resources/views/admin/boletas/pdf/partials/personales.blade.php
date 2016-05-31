@@ -50,10 +50,7 @@
       <div class="input"><input type = "text" value = "{{$data->edad_esposo}}"></div>
       @endif
     </div>
-
-
     <div>
-
       <div class="label"><strong>Ocupacion Cónyuge:</strong></div>
       @if($data->ocupacion_esposo=="")
       <div class="input"><input type = "text" value = "--------------------"></div>
@@ -64,11 +61,19 @@
     </div>
     <div>
       <div class="label"><strong>Pueblo Cónyuge:</strong> </div>
-      <div class="input"><input type = "text" value = "xinca"></div>
+      @if($data->pueblo_esposo=="")
+      <div class="input"><input type = "text" value = "--------------------"></div>
+      @else
+      <div class="input"><input type = "text" value = "{{$data->pueblo_esposo}}"></div>
+      @endif
     </div>
     <div>
       <div class="label"><strong>Escolaridad Cónyuge:</strong> </div>
-      <div class="input"><input type = "text" value = "bachillerato en Computacion"></div>
+      @if($data->escolaridad_esposo=="")
+      <div class="input"><input type = "text" value = "--------------------"></div>
+      @else
+      <div class="input"><input type = "text" value = "{{$data->escolaridad_esposo}}"></div>
+      @endif
     </div>
   </div>
 </div>
