@@ -29,11 +29,11 @@
             <p class="login-img homeloader wow bounceInDown" data-wow-duration="1.5s"><i class="icon_lock_alt"></i></p>
             <div class="input-group wow fadeInLeft" data-wow-duration="1.5s">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              {!!Form::text('user', null, ['class' => 'form-control', 'placeholder' => 'Usuario', 'autofocus' => 'autofocus', 'required' => 'required'])!!}
+              {!!Form::text('user', null, ['class' => 'form-control', 'placeholder' => 'Usuario', 'autofocus' => 'autofocus', 'required' => 'required', 'autocomplete'=>'off'])!!}
             </div>
             <div class="input-group wow fadeInLeft" data-wow-duration="1.7s">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña', 'required' => 'required'])!!}
+                {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña', 'required' => 'required', 'autocomplete'=>'off'])!!}
             </div>
             {!!Form::submit('Iniciar Sesion', ['class' => 'btn btn-primary btn-lg btn-block homeloader wow bounceInDown', 'data-wow-duration' => '1.5s'])!!}
         </div>

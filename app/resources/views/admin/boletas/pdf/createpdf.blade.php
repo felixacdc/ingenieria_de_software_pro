@@ -53,8 +53,8 @@
 				<th class="C2">Municipio</th>
 				<th class="C3">Nombre Paciente</th>
 				<th class="C4">Edad</th>
-				<th class="C5">Pueblo</th>
-				<th class="C6">CSC</th>
+				<th class="C2">Pueblo</th>
+				<th class="C7">CSC</th>
 				<th class="C7">FUR</th>
 				<th class="C7">FPP</th>
 			</tr>
@@ -63,7 +63,7 @@
 			@foreach($dataBallots as  $centro => $paciente)
 				@foreach($paciente as $key => $ballot)
 					<tr>
-						<td>{{ date("d/m/Y", strtotime($ballot->fecha)) }}</td>
+						<td>{{ date("d/m/Y", strtotime($ballot->conclusion->fecha)) }}</td>
 						<td>{{ $ballot->no_registro }}</td>
 						<td>{{ $centro }}</td>
 						<td>{{ $ballot->municipio }}</td>

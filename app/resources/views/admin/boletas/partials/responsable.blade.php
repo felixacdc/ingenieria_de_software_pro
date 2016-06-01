@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="form-group col-md-12">
                     {!!Form::label('ddato2','Si la respuesta es SI, será referida a:')!!}
-                	{!!Form::text('ddato2', null, array('class' => 'form-control', 'placeholder' => 'Si la respuesta es SI, será referida a'))!!}
+                	{!!Form::text('ddato2', null, array('class' => 'form-control', 'placeholder' => 'Si la respuesta es SI, será referida a', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     {!!Form::label('dNombre','Nombre:')!!}
-                	{!!Form::text('dNombre', null, array('class' => 'form-control', 'placeholder' => 'Nombre', 'required' => 'required'))!!}
+                	{!!Form::text('dNombre', null, array('class' => 'form-control', 'placeholder' => 'Nombre', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
