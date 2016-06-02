@@ -183,6 +183,9 @@
                   </ul>
               </li>
             @endif
+            <li style="text-align:center;">
+                <img src="{{ url('img/umg.png') }}" style="margin: 30px auto;width: 45%;" />
+            </li>
         </ul>
         @else
         <script>window.location.href = "auth/logout";</script>
