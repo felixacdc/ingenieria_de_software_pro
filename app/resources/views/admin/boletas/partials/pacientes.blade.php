@@ -7,23 +7,23 @@
             <div class="row">
               <div class="form-group col-md-4">
                   {!!Form::label('no_registro','No. de Registro:')!!}
-                  {!!Form::text('no_registro', null, array('class' => 'form-control', 'placeholder' => 'No. de Registro', 'required' => 'required'))!!}
+                  {!!Form::text('no_registro', null, array('class' => 'form-control', 'placeholder' => 'No. de Registro', 'required' => 'required', 'autocomplete'=>'off'))!!}
               </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('nombre_paciente','Nombre de la embarazada:')!!}
-                	{!!Form::text('nombre_paciente', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la embarazada', 'required' => 'required'))!!}
+                	{!!Form::text('nombre_paciente', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la embarazada', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('edad_paciente','Edad en años:')!!}
-                	{!!Form::number('edad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Edad en años', 'required' => 'required'))!!}
+                	{!!Form::number('edad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Edad en años', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('ocupacion_paciente','Ocupación:')!!}
-                  {!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required'))!!}
+                  {!!Form::text('ocupacion_paciente', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('pueblo_paciente','Pueblo:')!!}
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="form-group col-md-12">
                     {!!Form::label('escolaridad_paciente','Escolaridad:')!!}
-                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required'))!!}
+                	{!!Form::text('escolaridad_paciente', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
 
             </div>
@@ -42,17 +42,17 @@
             <div class="row">
                 <div class="form-group col-md-8">
                     {!!Form::label('nombre_esposo','Nombre de esposo o conviviente:')!!}
-                	{!!Form::text('nombre_esposo', null, array('class' => 'form-control', 'placeholder' => 'Nombre de esposo o conviviente'))!!}
+                	{!!Form::text('nombre_esposo', null, array('class' => 'form-control', 'placeholder' => 'Nombre de esposo o conviviente', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                     {!!Form::label('edad_esposo','Edad en años:')!!}
-                	{!!Form::number('edad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Edad de esposo o conviviente'))!!}
+                	{!!Form::number('edad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Edad de esposo o conviviente', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-8">
                   {!!Form::label('ocupacion_esposo','Ocupación:')!!}
-                  {!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación'))!!}
+                  {!!Form::text('ocupacion_esposo', null, array('class' => 'form-control', 'placeholder' => 'Ocupación', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('pueblo_esposo','Pueblo:')!!}
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="form-group col-md-12">
                 	{!!Form::label('escolaridad_esposo','Escolaridad:')!!}
-                	{!!Form::text('escolaridad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad'))!!}
+                	{!!Form::text('escolaridad_esposo', null, array('class' => 'form-control', 'placeholder' => 'Escolaridad', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <h2>Datos Complementarios</h2>
@@ -70,21 +70,21 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     {!!Form::label('distancia_se_si_cercana','Distancia en KM al servicio de salud más cercano:')!!}
-                	{!!Form::number('distancia_se_si_cercana', null, array('class' => 'form-control', 'placeholder' => 'Distancia en KM al servicio de salud más cercano', 'required' => 'required', 'step' => 'any'))!!}
+                	{!!Form::number('distancia_se_si_cercana', null, array('class' => 'form-control', 'placeholder' => 'Distancia en KM al servicio de salud más cercano', 'required' => 'required', 'step' => 'any', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-6">
                     {!!Form::label('tiempo_para_llegar','Tiempo en horas para llegar:')!!}
-                	{!!Form::number('tiempo_para_llegar', null, array('class' => 'form-control', 'placeholder' => 'Tiempo en horas para llegar', 'required' => 'required', 'step' => 'any'))!!}
+                	{!!Form::number('tiempo_para_llegar', null, array('class' => 'form-control', 'placeholder' => 'Tiempo en horas para llegar', 'required' => 'required', 'step' => 'any', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                 	{!!Form::label('nombre_comunidad','Nombre de la comunidad:')!!}
-                	{!!Form::text('nombre_comunidad', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la comunidad', 'required' => 'required'))!!}
+                	{!!Form::text('nombre_comunidad', null, array('class' => 'form-control', 'placeholder' => 'Nombre de la comunidad', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-6">
-                	{!!Form::label('dpi_pasiente_com_esp','No. de celular de señora, pareja o comunitario:')!!}
-                	{!!Form::text('dpi_paciente_com_esp', null, array('class' => 'form-control', 'placeholder' => 'No. de celular de señora, pareja o comunitario', 'required' => 'required'))!!}
+                	{!!Form::label('dpi_pasiente_com_esp','No. DPI de señora, pareja o comunitario:')!!}
+                	{!!Form::text('dpi_paciente_com_esp', null, array('class' => 'form-control', 'placeholder' => 'No. de celular de señora, pareja o comunitario', 'required' => 'required', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
@@ -104,31 +104,31 @@
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_embarazos','No. de embarazos:')!!}
-                	{!!Form::number('no_embarazos', null, array('class' => 'form-control', 'placeholder' => 'No. de embarazos', 'required' => 'required', 'id' => 'no_embarazos'))!!}
+                	{!!Form::number('no_embarazos', null, array('class' => 'form-control', 'placeholder' => 'No. de embarazos', 'required' => 'required', 'id' => 'no_embarazos', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_partos','No. de partos:')!!}
-                	{!!Form::number('no_partos', null, array('class' => 'form-control', 'placeholder' => 'No. de partos', 'required' => 'required', 'id' => 'no_partos'))!!}
+                	{!!Form::number('no_partos', null, array('class' => 'form-control', 'placeholder' => 'No. de partos', 'required' => 'required', 'id' => 'no_partos', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_cesarias','No. de cesáreas:')!!}
-                	{!!Form::number('no_cesarias', null, array('class' => 'form-control', 'placeholder' => 'No. de cesáreas', 'required' => 'required', 'id' => 'no_cesarias'))!!}
+                	{!!Form::number('no_cesarias', null, array('class' => 'form-control', 'placeholder' => 'No. de cesáreas', 'required' => 'required', 'id' => 'no_cesarias', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_abortos','No. de abortos:')!!}
-                	{!!Form::number('no_abortos', null, array('class' => 'form-control', 'placeholder' => 'No. de abortos', 'required' => 'required', 'id' => 'no_abortos'))!!}
+                	{!!Form::number('no_abortos', null, array('class' => 'form-control', 'placeholder' => 'No. de abortos', 'required' => 'required', 'id' => 'no_abortos', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_vivos','No. de hijos vivos:')!!}
-                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required', 'id' => 'no_hijos_vivos'))!!}
+                	{!!Form::number('no_hijos_vivos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos vivos', 'required' => 'required', 'id' => 'no_hijos_vivos', 'autocomplete'=>'off'))!!}
                 </div>
                 <div class="form-group col-md-4">
                 	{!!Form::label('no_hijos_muertos','No. de hijos muertos:')!!}
-                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required', 'id' => 'no_hijos_muertos'))!!}
+                	{!!Form::number('no_hijos_muertos', null, array('class' => 'form-control', 'placeholder' => 'No. de hijos muertos', 'required' => 'required', 'id' => 'no_hijos_muertos', 'autocomplete'=>'off'))!!}
                 </div>
             </div>
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
