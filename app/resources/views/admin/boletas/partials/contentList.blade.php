@@ -23,7 +23,7 @@
                <td>{{ $ballot->pueblo_paciente }} </td>
                <td>{{ $ballot->municipio }} </td>
                <td>{{ $ballot->nombre_comunidad }} </td>
-               <td>{{ $ballot->conclusion->fecha }} </td>
+               <td>{{ date('d/m/Y', strtotime($ballot->conclusion->fecha)) }} </td>
            </tr>
         @endforeach
      @endforeach
