@@ -431,7 +431,7 @@
 
 	</div>
 	<div class="firmasRight">
-	
+
 	</div>
 	<div class="firmaFoother">
 		La presencia de algunas de las características anteriores hace necesaria la evaluación de la paciente por un médico, quien tomara la decisión de referirla o no a otro servicio de mayor complejidad:
@@ -510,10 +510,7 @@
                 <strong>fecha del alta</strong>
             </div>
         </div>
-        <div class="footherContraReferencia">
-            <label><strong>6ta. Avenida 3-45 zona 11</strong></label>
-            <p><strong>Teléfono: P.B.X. 2444-7474</strong></p>
-        </div>
+      
     </div>
 </div>
 
