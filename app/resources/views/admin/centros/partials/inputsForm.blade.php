@@ -1,15 +1,15 @@
 <div class="form-group">
 	<label for="">Nombre</label>
-	{!!Form::text('centro', null, array('class' => 'form-control', 'placeholder' => 'Inserta el Nombre del centro', 'required' => 'required'))!!}
+	{!!Form::text('centro', null, array('class' => 'form-control', 'placeholder' => 'Inserta el Nombre del centro', 'required' => 'required', 'autocomplete'=>'off'))!!}
 </div>
 <div class="form-group">
 	<label for="">Dirección</label>
-	{!!Form::text('direccion', null, array('class' => 'form-control', 'placeholder' => 'Inserta la dirección del centro', 'required' => 'required'))!!}
+	{!!Form::text('direccion', null, array('class' => 'form-control', 'placeholder' => 'Inserta la dirección del centro', 'required' => 'required', 'autocomplete'=>'off'))!!}
 </div>
 
 <div class="form-group">
 	<label for="">Teléfono</label>
-	{!!Form::text('telefono', null, array('class' => 'form-control', 'placeholder' => 'Inserta el teléfono del centro'))!!}
+	{!!Form::text('telefono', null, array('class' => 'form-control', 'placeholder' => 'Inserta el teléfono del centro', 'autocomplete'=>'off'))!!}
 </div>
 
 <div class="form-group">

@@ -1,6 +1,6 @@
 <div class="form-group">
 	<label for="">Usuario</label>
-	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required','id'=>'usuario'))!!}
+	{!!Form::text('user', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Usuario', 'required' => 'required','id'=>'usuario', 'autocomplete'=>'off'))!!}
 	<label for="" id="msg2" style="display:none;"></label>
 </div>
 
@@ -11,24 +11,24 @@
 
 <div class="form-group">
 	<label for="">Nombre</label>
-	{!!Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Inserte el nombre completo', 'required' => 'required'))!!}
+	{!!Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Inserte el nombre completo', 'required' => 'required', 'autocomplete'=>'off'))!!}
 </div>
 
 <div class="form-group">
 	<label for="">Dirección</label>
-	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la dirección ', 'required' => 'required'))!!}
+	{!!Form::text('address', null, array('class' => 'form-control', 'placeholder' => 'Inserte la dirección ', 'required' => 'required', 'autocomplete'=>'off'))!!}
 </div>
 
 <div class="form-group">
 
 	<label for="">Correo Electrónico</label>
-	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico','id'=>'correo'))!!}
+	{!!Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'Inserte el Correo Electrónico','id'=>'correo', 'autocomplete'=>'off'))!!}
 	<label for="" id="msg" style="display:none;"></label>
 </div>
 
 <div class="form-group">
 	<label for="">Teléfono</label>
-	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Teléfono del usuario'))!!}
+	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Teléfono del usuario', 'autocomplete'=>'off'))!!}
 </div>
 
 

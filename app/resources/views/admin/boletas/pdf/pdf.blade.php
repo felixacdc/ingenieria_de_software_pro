@@ -428,18 +428,10 @@
 
 <div class="firmas">
 	<div class="firmasLesf">
-		<input type = "text" value = ".">
-		<div>
-			<label>Nombre,cargo,firma y sello</label>
-			<p>de <strong>quien refiere</strong></p>
-		</div>
+
 	</div>
 	<div class="firmasRight">
-		<input type = "text"value= "prueba">
-		<div>
-			<label>Nombre,cargo,firma y sello</label>
-			<p>de <strong>quien recibe la referencia</strong></p>
-		</div>
+
 	</div>
 	<div class="firmaFoother">
 		La presencia de algunas de las características anteriores hace necesaria la evaluación de la paciente por un médico, quien tomara la decisión de referirla o no a otro servicio de mayor complejidad:
@@ -518,10 +510,7 @@
                 <strong>fecha del alta</strong>
             </div>
         </div>
-        <div class="footherContraReferencia">
-            <label><strong>6ta. Avenida 3-45 zona 11</strong></label>
-            <p><strong>Teléfono: P.B.X. 2444-7474</strong></p>
-        </div>
+      
     </div>
 </div>
 
