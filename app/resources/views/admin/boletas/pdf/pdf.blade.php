@@ -427,7 +427,12 @@
 <br/>
 
 <div class="firmas">
+	<div class="firmasLesf">
 
+	</div>
+	<div class="firmasRight">
+	
+	</div>
 	<div class="firmaFoother">
 		La presencia de algunas de las características anteriores hace necesaria la evaluación de la paciente por un médico, quien tomara la decisión de referirla o no a otro servicio de mayor complejidad:
 	</div>
