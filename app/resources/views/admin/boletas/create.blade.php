@@ -27,7 +27,7 @@
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
-                    {!!Form::open(['route' => 'admin.boleta.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createBoleta'])!!}
+                    {!!Form::open(['route' => 'admin.boleta.store', 'method' => 'POST', 'class' => 'form-validate', 'id' => 'createBoleta', 'target' => "_blank"])!!}
                         @include('admin.boletas.partials.pacientes')
                         @include('admin.boletas.partials.antecedentes')
                         @include('admin.boletas.partials.embarazoactual')

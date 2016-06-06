@@ -291,6 +291,7 @@ $(document).ready(function () {
                 },
             },
 			submitHandler: function(form) {
+                window.setTimeout('location.reload()', 1000);
 				$("#createBoleta .btn-primary").prop('disabled', true);
 				form.submit();
 			}
