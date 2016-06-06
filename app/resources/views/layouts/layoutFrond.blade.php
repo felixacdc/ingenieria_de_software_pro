@@ -1,7 +1,7 @@
 @include('layouts.partialsFrond.head')
   <body class="login-img3-body">
 
-    <div id="element" class="introLoading"></div>
+    <div id="element" class="introLoading" style="font-size: 80px;"></div>
 
     <div class="container">
 
