@@ -76,13 +76,16 @@ $(document).ready(function () {
                 edad_esposo: {
                     digits: true
                 },
-				distancia_se_si_cercana: {
+                distancia_se_si_cercana: {
 					required: true,
                     number: true
 				},
                 tiempo_para_llegar: {
                     required: true,
                     number: true
+                },
+                dpi_paciente_com_esp: {
+                    minlength: 13
                 },
                 fecha_ultima_regla: {
                     required: true,
@@ -166,7 +169,8 @@ $(document).ready(function () {
                     required: "Por favor ingrese el nombre de la comunidad."
                 },
 				dpi_paciente_com_esp: {
-					required: "Por favor ingrese el No. de celular de señora, pareja o comunitario."
+					required: "Por favor ingrese el No. de celular de señora, pareja o comunitario.",
+                    minlength: "No se aceptan menos de 13 caracteres."
 				},
                 fecha_ultima_regla: {
                     required: "Por favor seleccione la fecha última regla.",
