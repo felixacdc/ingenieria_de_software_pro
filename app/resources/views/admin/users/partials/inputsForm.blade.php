@@ -31,14 +31,17 @@
 	{!!Form::text('phone', null, array('class' => 'form-control', 'placeholder' => 'Teléfono del usuario', 'autocomplete'=>'off'))!!}
 </div>
 
+@if( $bandera != 1)
 
-<div class="form-group">
-	{!!Form::label('tipo_usuario_id','Tipo Usuario:')!!}
-	{!!Form::select('tipo_usuario_id', $type, null,['class' => 'form-control', 'id' => 'tipo_usuario_id'])!!}
-</div>
+	<div class="form-group">
+		{!!Form::label('tipo_usuario_id','Tipo Usuario:')!!}
+		{!!Form::select('tipo_usuario_id', $type, null,['class' => 'form-control', 'id' => 'tipo_usuario_id'])!!}
+	</div>
 
-<div class="form-group">
-	{!!Form::label('centro_id','Centro:')!!}
-	{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
-	{!! Form::radio('state', 1, true, ['class' => 'form-control op']) !!}
-</div>
+	<div class="form-group">
+		{!!Form::label('centro_id','Centro:')!!}
+		{!!Form::select('centro_id', $centro, null,['class' => 'form-control'])!!}
+		{!! Form::radio('state', 1, true, ['class' => 'form-control op']) !!}
+	</div>
+
+@endif

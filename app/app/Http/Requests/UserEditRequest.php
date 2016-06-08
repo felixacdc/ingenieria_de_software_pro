@@ -31,9 +31,7 @@ class UserEditRequest extends Request
             'name' => 'required',
             'address' => 'required',
             'phone' => 'numeric|min:8',
-            'email' => 'unique:users,email,' . $route->getParameter('users'),
-            'centro_id' => 'required',
-            'tipo_usuario_id' => 'required'
+            'email' => 'unique:users,email,' . $route->getParameter('users')
         ];
     }
 }
