@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CentersTableSeeder::class);
         $this->call(TypeUsersTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(PacienteTableSeeder::class);
-        $this->call(ObstetricosTableSeeder::class);
-        $this->call(EmbarazoTableSeeder::class);
-        $this->call(HistorialTableSeeder::class);
-        $this->call(ConclusionTableSeeder::class);
+        // $this->call(PacienteTableSeeder::class);
+        // $this->call(ObstetricosTableSeeder::class);
+        // $this->call(EmbarazoTableSeeder::class);
+        // $this->call(HistorialTableSeeder::class);
+        // $this->call(ConclusionTableSeeder::class);
 
         Model::reguard();
     }
