@@ -88,6 +88,7 @@ class BoletaController extends Controller
         $this::saveClinicHistory($request, $idPatient);
         $this::saveConclusion($request, $idPatient);
         ini_set('max_execution_time', 600);
+        $request->no_boleta = $number;
 
         $pdf = \PDF::loadView('admin.boletas.pdf.pdf',
         [

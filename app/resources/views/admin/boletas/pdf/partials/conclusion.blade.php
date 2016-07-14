@@ -68,7 +68,7 @@
 					@endif
         </div>
     </div>
-
+		<br><br><br><br><br>
     <div class="firmas">
         <div class="firmasLesf firmasLesfDos">
             <input type = "text" value = "*" class = "oculto">
@@ -79,7 +79,7 @@
         <div class="firmasRight firmasRightDos">
             <input type = "text"value= "*" class = "oculto">
             <div>
-                <strong>fecha del alta</strong>
+                <strong>Firma</strong>
             </div>
         </div>
 

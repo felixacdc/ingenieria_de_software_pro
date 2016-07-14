@@ -3,7 +3,7 @@
     <strong>BOLETA DE REFERENCIA</strong>
   </div>
   <div class="boletaNumero">
-    Númeo correlativo<input type ="text" value =" 54564">
+    Númeo correlativo<input type ="text" value ="{{$data->no_boleta}}">
   </div>
 </div>
 <div class="boletaBody">
