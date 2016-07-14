@@ -33,9 +33,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data=User::all();
+        $data = User::where('id', '!=', $request->user()->id)->get();
         return view('admin.users.list',compact('data'));
     }
 
